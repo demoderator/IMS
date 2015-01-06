@@ -1,0 +1,4 @@
+D:\code\IMS\IMS_v1\BLL\bin\Debug\BLL.dll
+D:\code\IMS\IMS_v1\BLL\bin\Debug\BLL.pdb
+D:\code\IMS\IMS_v1\BLL\obj\Debug\BLL.dll
+D:\code\IMS\IMS_v1\BLL\obj\Debug\BLL.pdb
