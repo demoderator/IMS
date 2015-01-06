@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
 body{
@@ -177,6 +177,32 @@ select{
 	border-radius: 7px;
 	padding-bottom:30px;
 	}
+
+.icons-cont-ho-warehouse {
+width: 810px;
+top: 50%;
+left: 50%;
+margin-top: -159px;
+margin-left: -414px;
+position: absolute;
+background: #FFF;
+-webkit-border-radius: 7px;
+border-radius: 7px;
+padding-bottom: 30px;
+}
+
+.icons-cont-ho-orders {
+width: 1184px;
+top: 50%;
+left: 50%;
+margin-top: -159px;
+margin-left: -593px;
+position: absolute;
+background: #FFF;
+-webkit-border-radius: 7px;
+border-radius: 7px;
+padding-bottom: 30px;
+}
 	
 .icons-header{
 	font-size:18px;
@@ -386,7 +412,80 @@ select{
 	
 .manage-vendor:hover{
 	background:url(../images/vendor-detail-list.png) left -196px no-repeat;
-	}	
+	}
+
+
+.place-order{
+	background:url(../images/place-order.png) top left no-repeat;
+	}
+	
+.place-order:hover{
+	background:url(../images/place-order.png) left -196px no-repeat;
+	}
+
+.recieve-orders{
+	background:url(../images/receive-order.png) top left no-repeat;
+	}
+	
+.recieve-orders:hover{
+	background:url(../images/receive-order.png) left -196px no-repeat;
+	}
+
+.sendorder-store{
+	background:url(../images/send-order-to-store.png) top left no-repeat;
+	}
+	
+.sendorder-store:hover{
+	background:url(../images/send-order-to-store.png) left -196px no-repeat;
+	}
+
+.view-pendingOrders{
+	background:url(../images/view-pending-orders.png) top left no-repeat;
+	}
+	
+.view-pendingOrders:hover{
+	background:url(../images/view-pending-orders.png) left -196px no-repeat;
+	}
+
+.view-historyOrders{
+	background:url(../images/view-order-history.png) top left no-repeat;
+	}
+	
+.view-historyOrders:hover{
+	background:url(../images/view-order-history.png) left -196px no-repeat;
+	}
+
+.manage-product{
+	background:url(../images/manage-products.png) top left no-repeat;
+	}
+	
+.manage-product:hover{
+	background:url(../images/manage-products.png) left -196px no-repeat;
+	}
+
+.manage-subcategory{
+	background:url(../images/manage-sub-cateogyr.png) top left no-repeat;
+	}
+	
+.manage-subcategory:hover{
+	background:url(../images/manage-sub-cateogyr.png) left -196px no-repeat;
+	}
+
+.manage-category{
+	background:url(../images/manage-category.png) top left no-repeat;
+	}
+	
+.manage-category:hover{
+	background:url(../images/manage-category.png) left -196px no-repeat;
+	}
+
+.manage-department{
+	background:url(../images/manage-department.png) top left no-repeat;
+	}
+	
+.manage-department:hover{
+	background:url(../images/manage-department.png) left -196px no-repeat;
+	}		
 	
 
 .left{

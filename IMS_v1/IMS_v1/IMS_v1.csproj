@@ -360,6 +360,14 @@
     <Content Include="js\tooltip.js" />
     <Content Include="js\transition.js" />
     <Content Include="login.aspx" />
+    <Content Include="ManageCategory.aspx" />
+    <Content Include="ManageDepartment.aspx" />
+    <Content Include="ManageInventory.aspx" />
+    <Content Include="ManageOrders.aspx" />
+    <Content Include="ManageProducts.aspx" />
+    <Content Include="ManageStores.aspx" />
+    <Content Include="ManageSubCategory.aspx" />
+    <Content Include="ManageVendors.aspx" />
     <Content Include="obj\Debug\IMS_v1.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\IMS_v1.dll" />
     <Content Include="obj\Debug\IMS_v1.pdb" />
@@ -475,6 +483,62 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCategory.aspx.cs">
+      <DependentUpon>ManageCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCategory.aspx.designer.cs">
+      <DependentUpon>ManageCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageDepartment.aspx.cs">
+      <DependentUpon>ManageDepartment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageDepartment.aspx.designer.cs">
+      <DependentUpon>ManageDepartment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageInventory.aspx.cs">
+      <DependentUpon>ManageInventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageInventory.aspx.designer.cs">
+      <DependentUpon>ManageInventory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageOrders.aspx.cs">
+      <DependentUpon>ManageOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageOrders.aspx.designer.cs">
+      <DependentUpon>ManageOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageProducts.aspx.cs">
+      <DependentUpon>ManageProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageProducts.aspx.designer.cs">
+      <DependentUpon>ManageProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageStores.aspx.cs">
+      <DependentUpon>ManageStores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageStores.aspx.designer.cs">
+      <DependentUpon>ManageStores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageSubCategory.aspx.cs">
+      <DependentUpon>ManageSubCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageSubCategory.aspx.designer.cs">
+      <DependentUpon>ManageSubCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageVendors.aspx.cs">
+      <DependentUpon>ManageVendors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageVendors.aspx.designer.cs">
+      <DependentUpon>ManageVendors.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />

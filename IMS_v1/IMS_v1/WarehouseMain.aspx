@@ -4,17 +4,17 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="wrapper">
 	
-		<div class="icons-cont-ho">
+		<div class="icons-cont-ho-warehouse">
 			
 			<div class="icons-header">
 				Warehouse Services
 			</div>
 			
 	    <div class="icons-body">
-                <asp:Button ID="btnManageOrders" CssClass="manage-orders" runat="server" Text="Manage Orders"/>
-                &nbsp;<asp:Button ID="btnManageInventory" CssClass="manage-inventorywarehouse" runat="server" Text="Manage Inventory"/>
-                &nbsp;<asp:Button ID="btnManageStores" CssClass="manage-stores" runat="server" Text="Manage Stores" />
-                &nbsp;<asp:Button ID="btnManageVendors" CssClass="manage-vendor" runat="server" Text="Manage Vendors"/>
+                <asp:Button ID="btnManageOrders" CssClass="anch-blocks manage-orders" runat="server" BorderWidth="0px" OnClick="btnManageOrders_Click" />
+                <asp:Button ID="btnManageInventory" CssClass="anch-blocks manage-inventorywarehouse" runat="server" BorderWidth="0px" OnClick="btnManageInventory_Click" />
+                <asp:Button ID="btnManageStores" CssClass="anch-blocks manage-stores" runat="server" BorderWidth="0px"  />
+                <asp:Button ID="btnManageVendors" CssClass="anch-blocks manage-vendor" runat="server" BorderWidth="0px" />
                
         </div>
             

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace IMS_v1
 {
-    public partial class WarehouseMain : System.Web.UI.Page
+    public partial class ManageInventory : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,12 +16,7 @@ namespace IMS_v1
 
         protected void btnManageOrders_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ManageOrders.aspx");
-        }
-
-        protected void btnManageInventory_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ManageInventory.aspx");
+            Response.Redirect("ManageProducts.aspx");
         }
     }
 }
