@@ -36,7 +36,7 @@ namespace IMS_v1
 
         protected void btnGoBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("WarehouseMain.aspx");
+            //Response.Redirect("WarehouseMain.aspx");
         }
     }
 }

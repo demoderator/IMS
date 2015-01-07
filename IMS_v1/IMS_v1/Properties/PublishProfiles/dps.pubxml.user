@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\IMS_Publishes\Publish(1\7\2015)\</_PublishTargetUrl>
+    <_PublishTargetUrl>D:\IMS_Publishes\Publish(1-7-2015</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="AddEditProducts.aspx">
@@ -76,7 +76,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2015 16:43:28</publishTime>
     </File>
     <File Include="bin/IMS_v1.dll">
-      <publishTime>01/07/2015 16:45:47</publishTime>
+      <publishTime>01/07/2015 19:58:53</publishTime>
     </File>
     <File Include="CheckInventory_Products.aspx">
       <publishTime>01/07/2015 16:09:56</publishTime>
@@ -814,7 +814,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/07/2015 16:09:56</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/07/2015 16:27:59</publishTime>
+      <publishTime>01/07/2015 19:58:55</publishTime>
     </File>
   </ItemGroup>
 </Project>
