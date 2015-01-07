@@ -13,10 +13,10 @@
 			
 	    <div class="icons-body">
                 <asp:Button ID="btnManageProduct" CssClass="anch-blocks manage-product" runat="server" BorderWidth="0px" OnClick="btnManageOrders_Click" />
-                <asp:Button ID="btnManageSubCategory" CssClass="anch-blocks manage-subcategory" runat="server" BorderWidth="0px" />
-                <asp:Button ID="btnManageCategory" CssClass="anch-blocks manage-category" runat="server" BorderWidth="0px"  />
-                <asp:Button ID="btnManageDepartment" CssClass="anch-blocks manage-department" runat="server" BorderWidth="0px" />
-                <asp:Button ID="btnGoBack" CssClass="anch-blocks go-back" runat="server" BorderWidth="0px" />
+                <asp:Button ID="btnManageSubCategory" CssClass="anch-blocks manage-subcategory" runat="server" BorderWidth="0px" OnClick="btnManageSubCategory_Click" />
+                <asp:Button ID="btnManageCategory" CssClass="anch-blocks manage-category" runat="server" BorderWidth="0px" OnClick="btnManageCategory_Click"  />
+                <asp:Button ID="btnManageDepartment" CssClass="anch-blocks manage-department" runat="server" BorderWidth="0px" OnClick="btnManageDepartment_Click" />
+                <asp:Button ID="btnGoBack" CssClass="anch-blocks go-back" runat="server" BorderWidth="0px" OnClick="btnGoBack_Click" />
                
         </div>
             

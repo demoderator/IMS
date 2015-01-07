@@ -150,6 +150,7 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="AddEditProducts.aspx" />
     <Content Include="assets\css\bootstrap-responsive.css" />
     <Content Include="assets\css\docs.css" />
     <Content Include="assets\css\pygments-manni.css" />
@@ -217,6 +218,7 @@
     <Content Include="bin\System.Web.Optimization.xml" />
     <Content Include="bin\System.Web.Providers.dll" />
     <Content Include="bin\WebGrease.dll" />
+    <Content Include="CheckInventory_Products.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
@@ -237,7 +239,10 @@
     <Content Include="dist\js\bootstrap.min.js" />
     <Content Include="dist\js\jquery.blueberry.js" />
     <Content Include="dist\js\script.js" />
+    <Content Include="EditVendor.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="HeadOfficeMain.aspx" />
+    <Content Include="HistoryOrders.aspx" />
     <Content Include="HTML Layouts\form.html" />
     <Content Include="HTML Layouts\headoffice-main.html" />
     <Content Include="HTML Layouts\login.html" />
@@ -371,6 +376,7 @@
     <Content Include="obj\Debug\IMS_v1.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\IMS_v1.dll" />
     <Content Include="obj\Debug\IMS_v1.pdb" />
+    <Content Include="OrderPurchasing.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -385,6 +391,9 @@
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="images\Thumbs.db" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="PendingOrders.aspx" />
+    <Content Include="RecieveOrder.aspx" />
+    <Content Include="Reports.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -416,12 +425,14 @@
     <Content Include="Scripts\_references.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="SendOrder_Store.aspx" />
     <Content Include="Site.Master" />
     <Content Include="StoreMain.aspx" />
     <Content Include="StoreTransfer.aspx" />
     <Content Include="VendorHeadOffice.aspx" />
     <Content Include="VendorList.aspx" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="ViewVendor.aspx" />
     <Content Include="WarehouseMain.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -471,11 +482,46 @@
     <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AddEditProducts.aspx.cs">
+      <DependentUpon>AddEditProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditProducts.aspx.designer.cs">
+      <DependentUpon>AddEditProducts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="CheckInventory_Products.aspx.cs">
+      <DependentUpon>CheckInventory_Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckInventory_Products.aspx.designer.cs">
+      <DependentUpon>CheckInventory_Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditVendor.aspx.cs">
+      <DependentUpon>EditVendor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditVendor.aspx.designer.cs">
+      <DependentUpon>EditVendor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HeadOfficeMain.aspx.cs">
+      <DependentUpon>HeadOfficeMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HeadOfficeMain.aspx.designer.cs">
+      <DependentUpon>HeadOfficeMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryOrders.aspx.cs">
+      <DependentUpon>HistoryOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HistoryOrders.aspx.designer.cs">
+      <DependentUpon>HistoryOrders.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
@@ -544,7 +590,42 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="OrderPurchasing.aspx.cs">
+      <DependentUpon>OrderPurchasing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderPurchasing.aspx.designer.cs">
+      <DependentUpon>OrderPurchasing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PendingOrders.aspx.cs">
+      <DependentUpon>PendingOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PendingOrders.aspx.designer.cs">
+      <DependentUpon>PendingOrders.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecieveOrder.aspx.cs">
+      <DependentUpon>RecieveOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecieveOrder.aspx.designer.cs">
+      <DependentUpon>RecieveOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.aspx.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports.aspx.designer.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SendOrder_Store.aspx.cs">
+      <DependentUpon>SendOrder_Store.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SendOrder_Store.aspx.designer.cs">
+      <DependentUpon>SendOrder_Store.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -594,6 +675,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewVendor.aspx.cs">
+      <DependentUpon>ViewVendor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewVendor.aspx.designer.cs">
+      <DependentUpon>ViewVendor.aspx</DependentUpon>
     </Compile>
     <Compile Include="WarehouseMain.aspx.cs">
       <DependentUpon>WarehouseMain.aspx</DependentUpon>

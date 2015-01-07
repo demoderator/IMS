@@ -13,5 +13,20 @@ namespace IMS_v1
         {
 
         }
+
+        protected void btnStoreInventory_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManageInventory.aspx");
+        }
+
+        protected void btnPicking_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnVendors_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

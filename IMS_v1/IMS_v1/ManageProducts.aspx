@@ -12,8 +12,8 @@
 			
 	    <div class="icons-body">
                 <asp:Button ID="btnAddEditInventory" CssClass="anch-blocks add-edit-inventory" runat="server" BorderWidth="0px" OnClick="btnAddEditInventory_Click" />
-                <asp:Button ID="btnCheckInventory" CssClass="anch-blocks all-stores" runat="server" BorderWidth="0px" />
-                <asp:Button ID="btnGoBack" CssClass="anch-blocks go-back" runat="server" BorderWidth="0px"  />
+                <asp:Button ID="btnCheckInventory" CssClass="anch-blocks all-stores" runat="server" BorderWidth="0px" OnClick="btnCheckInventory_Click" />
+                <asp:Button ID="btnGoBack" CssClass="anch-blocks go-back" runat="server" BorderWidth="0px" OnClick="btnGoBack_Click"  />
                
         </div>
             

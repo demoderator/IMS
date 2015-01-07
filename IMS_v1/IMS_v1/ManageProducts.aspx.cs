@@ -16,7 +16,17 @@ namespace IMS_v1
 
         protected void btnAddEditInventory_Click(object sender, EventArgs e)
         {
+            Response.Redirect("AddEditProducts.aspx");
+        }
 
+        protected void btnCheckInventory_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CheckInventory_Products.aspx");
+        }
+
+        protected void btnGoBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManageInventory.aspx");
         }
     }
 }

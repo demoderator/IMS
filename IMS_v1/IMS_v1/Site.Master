@@ -25,10 +25,16 @@
       <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
 	<link href="css/theme.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        function goBack() {
+            window.history.back()
+            }
+    </script>
 	  <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
 </head>
 
 <body>
+    <div class="main-cont">
     <form id="formMain" runat="server">
 	<div class="wrapper">
 		<div class="top-row">
@@ -44,13 +50,22 @@
                 <li><a href="Login.aspx">Logout</a></li>
               </ul>
             </li>
+             
           </ul>
 
 			<div class="clear"></div>
+
+            <div class="left">
+               
+            </div>
+
+            
+            
+
 		</div>
 		
 	</div>
-		
+	
 		<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -58,6 +73,15 @@
     <script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/js/holder.js"></script>
 	   <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+        
         </form>
+        </div>
+    <div class="footer-body">
+
+        <div class="col-lg-2">
+           <button onclick="goBack()" class="blue">Back</button>
+
+        </div>
+    </div>
 </body>
 </html>

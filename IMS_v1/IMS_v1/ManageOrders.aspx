@@ -11,11 +11,11 @@
 			</div>
 			
 	    <div class="icons-body">
-                <asp:Button ID="btnPlaceOrders" CssClass="anch-blocks place-order" runat="server" BorderWidth="0px" />
-                <asp:Button ID="btnRecieveOrders" CssClass="anch-blocks recieve-orders" runat="server" BorderWidth="0px" />
+                <asp:Button ID="btnPlaceOrders" CssClass="anch-blocks place-order" runat="server" BorderWidth="0px" OnClick="btnPlaceOrders_Click" />
+                <asp:Button ID="btnRecieveOrders" CssClass="anch-blocks recieve-orders" runat="server" BorderWidth="0px" OnClick="btnRecieveOrders_Click" />
                 <asp:Button ID="btnSendOrderStores" CssClass="anch-blocks sendorder-store" runat="server" BorderWidth="0px"  />
-                <asp:Button ID="btnPendingOrders" CssClass="anch-blocks view-pendingOrders" runat="server" BorderWidth="0px" />
-                <asp:Button ID="btnHisotryOrders" CssClass="anch-blocks view-historyOrders" runat="server" BorderWidth="0px" />
+                <asp:Button ID="btnPendingOrders" CssClass="anch-blocks view-pendingOrders" runat="server" BorderWidth="0px" OnClick="btnPendingOrders_Click" />
+                <asp:Button ID="btnHisotryOrders" CssClass="anch-blocks view-historyOrders" runat="server" BorderWidth="0px" OnClick="btnHisotryOrders_Click" />
                 <asp:Button ID="btnGoBack" CssClass="anch-blocks go-back" runat="server" BorderWidth="0px" OnClick="btnGoBack_Click" />
                
         </div>
