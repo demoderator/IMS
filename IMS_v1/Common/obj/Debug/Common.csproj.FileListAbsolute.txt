@@ -1,9 +1,0 @@
-D:\code\IMS\IMS_v1\Common\bin\Debug\Common.dll
-D:\code\IMS\IMS_v1\Common\bin\Debug\Common.pdb
-D:\code\IMS\IMS_v1\Common\obj\Debug\Common.dll
-D:\code\IMS\IMS_v1\Common\obj\Debug\Common.pdb
-D:\IMS\IMS_v1\Common\bin\Debug\Common.dll
-D:\IMS\IMS_v1\Common\bin\Debug\Common.pdb
-D:\IMS\IMS_v1\Common\obj\Debug\Common.dll
-D:\IMS\IMS_v1\Common\obj\Debug\Common.pdb
-D:\IMS\IMS_v1\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
