@@ -16,7 +16,7 @@ namespace IMS_DPS
 
         protected void btnAutoPurchaseOrder_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AutoPurchaseOrder.aspx");
+           Response.Redirect("AutoPurchaseOrder.aspx");
         }
 
         protected void btnManualPurchaseOrder_Click(object sender, EventArgs e)

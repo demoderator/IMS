@@ -3,3 +3,8 @@ c:\users\cv\documents\visual studio 2013\Projects\IMS_v1\IMS_v1\bin\IMS_v1.dll
 c:\users\cv\documents\visual studio 2013\Projects\IMS_v1\IMS_v1\bin\IMS_v1.pdb
 c:\users\cv\documents\visual studio 2013\Projects\IMS_v1\IMS_v1\obj\Debug\IMS_v1.dll
 c:\users\cv\documents\visual studio 2013\Projects\IMS_v1\IMS_v1\obj\Debug\IMS_v1.pdb
+D:\IMS\IMS_v1\IMS_v1\bin\IMS_v1.dll.config
+D:\IMS\IMS_v1\IMS_v1\bin\IMS_v1.dll
+D:\IMS\IMS_v1\IMS_v1\bin\IMS_v1.pdb
+D:\IMS\IMS_v1\IMS_v1\obj\Debug\IMS_v1.dll
+D:\IMS\IMS_v1\IMS_v1\obj\Debug\IMS_v1.pdb
