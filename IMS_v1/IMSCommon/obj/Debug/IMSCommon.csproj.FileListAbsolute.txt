@@ -1,0 +1,5 @@
+c:\Users\Cv\documents\visual studio 2013\Projects\IMS_v1\IMSCommon\bin\Debug\IMSCommon.dll
+c:\Users\Cv\documents\visual studio 2013\Projects\IMS_v1\IMSCommon\bin\Debug\IMSCommon.pdb
+c:\Users\Cv\documents\visual studio 2013\Projects\IMS_v1\IMSCommon\obj\Debug\IMSCommon.csprojResolveAssemblyReference.cache
+c:\Users\Cv\documents\visual studio 2013\Projects\IMS_v1\IMSCommon\obj\Debug\IMSCommon.dll
+c:\Users\Cv\documents\visual studio 2013\Projects\IMS_v1\IMSCommon\obj\Debug\IMSCommon.pdb

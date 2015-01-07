@@ -1,0 +1,5 @@
+c:\Users\Cv\documents\visual studio 2013\Projects\IMS_v1\IMSBusinessLogic\bin\Debug\IMSBusinessLogic.dll
+c:\Users\Cv\documents\visual studio 2013\Projects\IMS_v1\IMSBusinessLogic\bin\Debug\IMSBusinessLogic.pdb
+c:\Users\Cv\documents\visual studio 2013\Projects\IMS_v1\IMSBusinessLogic\obj\Debug\IMSBusinessLogic.csprojResolveAssemblyReference.cache
+c:\Users\Cv\documents\visual studio 2013\Projects\IMS_v1\IMSBusinessLogic\obj\Debug\IMSBusinessLogic.dll
+c:\Users\Cv\documents\visual studio 2013\Projects\IMS_v1\IMSBusinessLogic\obj\Debug\IMSBusinessLogic.pdb

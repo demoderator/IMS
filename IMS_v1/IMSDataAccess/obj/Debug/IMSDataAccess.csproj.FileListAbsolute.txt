@@ -1,0 +1,5 @@
+c:\Users\Cv\documents\visual studio 2013\Projects\IMS_v1\IMSDataAccess\bin\Debug\IMSDataAccess.dll
+c:\Users\Cv\documents\visual studio 2013\Projects\IMS_v1\IMSDataAccess\bin\Debug\IMSDataAccess.pdb
+c:\Users\Cv\documents\visual studio 2013\Projects\IMS_v1\IMSDataAccess\obj\Debug\IMSDataAccess.csprojResolveAssemblyReference.cache
+c:\Users\Cv\documents\visual studio 2013\Projects\IMS_v1\IMSDataAccess\obj\Debug\IMSDataAccess.dll
+c:\Users\Cv\documents\visual studio 2013\Projects\IMS_v1\IMSDataAccess\obj\Debug\IMSDataAccess.pdb
