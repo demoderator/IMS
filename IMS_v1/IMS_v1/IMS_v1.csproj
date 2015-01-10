@@ -538,6 +538,16 @@
     <Folder Include="Scripts\WebForms\MSAjax\" />
     <Folder Include="theme\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IMSBusinessLogic\IMSBusinessLogic.csproj">
+      <Project>{c3d2f7da-77d3-4f7f-af95-e072fa1eff4d}</Project>
+      <Name>IMSBusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IMSCommon\IMSCommon.csproj">
+      <Project>{ec9c2abd-9598-4777-a394-5e5ff700280c}</Project>
+      <Name>IMSCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

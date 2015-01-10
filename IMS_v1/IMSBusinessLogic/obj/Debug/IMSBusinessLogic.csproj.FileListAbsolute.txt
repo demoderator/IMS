@@ -7,3 +7,12 @@ D:\IMS\IMS_v1\IMSBusinessLogic\bin\Debug\IMSBusinessLogic.dll
 D:\IMS\IMS_v1\IMSBusinessLogic\bin\Debug\IMSBusinessLogic.pdb
 D:\IMS\IMS_v1\IMSBusinessLogic\obj\Debug\IMSBusinessLogic.dll
 D:\IMS\IMS_v1\IMSBusinessLogic\obj\Debug\IMSBusinessLogic.pdb
+D:\code\IMS\IMS_v1\IMSBusinessLogic\bin\Debug\IMSBusinessLogic.dll
+D:\code\IMS\IMS_v1\IMSBusinessLogic\bin\Debug\IMSBusinessLogic.pdb
+D:\code\IMS\IMS_v1\IMSBusinessLogic\bin\Debug\IMSCommon.dll
+D:\code\IMS\IMS_v1\IMSBusinessLogic\bin\Debug\IMSDataAccess.dll
+D:\code\IMS\IMS_v1\IMSBusinessLogic\bin\Debug\IMSCommon.pdb
+D:\code\IMS\IMS_v1\IMSBusinessLogic\bin\Debug\IMSDataAccess.pdb
+D:\code\IMS\IMS_v1\IMSBusinessLogic\obj\Debug\IMSBusinessLogic.csprojResolveAssemblyReference.cache
+D:\code\IMS\IMS_v1\IMSBusinessLogic\obj\Debug\IMSBusinessLogic.dll
+D:\code\IMS\IMS_v1\IMSBusinessLogic\obj\Debug\IMSBusinessLogic.pdb
