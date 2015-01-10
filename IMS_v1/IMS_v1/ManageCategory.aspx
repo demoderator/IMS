@@ -103,7 +103,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
      <div class="wrapper">
-         <div class="right">
+         <div class="right full">
              <asp:GridView ID="CategoryDisplayGrid" runat="server" cellspacing="0" cellpadding="0" border="0" width="100%" CssClass="grid" AllowPaging="True" PageSize="10" 
                 AutoGenerateColumns="false" OnPageIndexChanging="CategoryDisplayGrid_PageIndexChanging"   onrowcancelingedit="CategoryDisplayGrid_RowCancelingEdit" ShowFooter="true"
             onrowcommand="CategoryDisplayGrid_RowCommand" onrowdeleting="CategoryDisplayGrid_RowDeleting" onrowediting="CategoryDisplayGrid_RowEditing" onrowupdating="CategoryDisplayGrid_RowUpdating">

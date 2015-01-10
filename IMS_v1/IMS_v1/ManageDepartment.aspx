@@ -109,7 +109,7 @@
 				<asp:Button ID="ViewDepartment"  CssClass="anch-blocks manage-department" runat="server" BorderWidth="0px"  OnClick="ViewDepartment_Click" />
 			</div>
 	    </div>--%>
-        <div class="right">
+        <div class="right full">
             <asp:GridView ID="DepDisplayGrid" runat="server" cellspacing="0" cellpadding="0" border="0" width="100%" CssClass="grid" AllowPaging="True" PageSize="10" 
                 AutoGenerateColumns="false" OnPageIndexChanging="DepDisplayGrid_PageIndexChanging"   onrowcancelingedit="DepDisplayGrid_RowCancelingEdit" ShowFooter="true"
             onrowcommand="DepDisplayGrid_RowCommand" onrowdeleting="DepDisplayGrid_RowDeleting" onrowediting="DepDisplayGrid_RowEditing" onrowupdating="DepDisplayGrid_RowUpdating">
