@@ -6,13 +6,11 @@ using System.Text;
 
 namespace IMSDataAccess.Select
 {
-    public class DepartmentSelectDAL:DataAccessbase
+    public class SubCategorySelectDAL:DataAccessbase
     {
-      
-
-        public DepartmentSelectDAL() 
+        public SubCategorySelectDAL() 
         {
-            StoredProcedureName = StoredProcedure.Select.Sp_GetDepartmentList.ToString();
+            StoredProcedureName = StoredProcedure.Select.Sp_GetSubCategoryList.ToString();
         }
 
         public DataSet View()

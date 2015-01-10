@@ -9,19 +9,27 @@ namespace IMSDataAccess
     {
         public enum Insert 
         {
-            Sp_AddNewDepartment
+            Sp_AddNewDepartment,
+            Sp_AddNewSubCategory,
+            Sp_AddNewCategory
         }
         public enum Select 
         {
-            Sp_GetDepartmentList
+            Sp_GetDepartmentList,
+            Sp_GetSubCategoryList,
+            Sp_GetCategoryList
         }
         public enum Delete 
         {
-            Sp_DeleteDepartment
+            Sp_DeleteDepartment,
+            Sp_DeleteSubCategory,
+            Sp_DeleteCategory
         }
         public enum Update 
         {
-            Sp_UpdateSelectedDepartment
+            Sp_UpdateSelectedDepartment,
+            Sp_UpdateSubCategory,
+            Sp_UpdateCategory
         }
     }
 }

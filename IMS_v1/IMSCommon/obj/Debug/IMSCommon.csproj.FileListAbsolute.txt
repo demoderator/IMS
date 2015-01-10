@@ -11,3 +11,4 @@ D:\code\IMS\IMS_v1\IMSCommon\bin\Debug\IMSCommon.dll
 D:\code\IMS\IMS_v1\IMSCommon\bin\Debug\IMSCommon.pdb
 D:\code\IMS\IMS_v1\IMSCommon\obj\Debug\IMSCommon.dll
 D:\code\IMS\IMS_v1\IMSCommon\obj\Debug\IMSCommon.pdb
+D:\code\IMS\IMS_v1\IMSCommon\obj\Debug\IMSCommon.csprojResolveAssemblyReference.cache
