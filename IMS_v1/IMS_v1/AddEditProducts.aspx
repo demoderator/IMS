@@ -102,7 +102,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-     <div class="wrapper">
+   <%--  <div class="wrapper">
            <div class="right">
                <asp:GridView ID="ProdDisplayGrid" runat="server" cellspacing="0" cellpadding="0" border="0" width="100%" CssClass="grid" AllowPaging="True" PageSize="10" 
                 AutoGenerateColumns="false" OnPageIndexChanging="ProdDisplayGrid_PageIndexChanging" >
@@ -175,6 +175,6 @@
                </asp:GridView>  <%--onrowcancelingedit="DepDisplayGrid_RowCancelingEdit" ShowFooter="true"
             onrowcommand="DepDisplayGrid_RowCommand" onrowdeleting="DepDisplayGrid_RowDeleting" onrowediting="DepDisplayGrid_RowEditing" onrowupdating="DepDisplayGrid_RowUpdating">--%>
            </div>
-     </div>
+     </div>--%>
 </asp:Content>
     

@@ -10,7 +10,7 @@ namespace IMSBusinessLogic
     {
         public ProductBLL() { }
 
-        public static DataSet GetAllDepartment()
+        public static DataSet GetAllProducts()
         {
           
             DataSet resultSet = new DataSet();
