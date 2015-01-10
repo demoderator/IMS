@@ -56,10 +56,14 @@ namespace IMS_v1
                 depToDelete.DepartmentID = selectedId;
                 depManager.Delete(depToDelete);
 
+               
+            }
+            catch (Exception exp) { }
+            finally 
+            {
                 DepDisplayGrid.EditIndex = -1;
                 BindGrid();
             }
-            catch (Exception exp) { }
         }
 
         protected void DepDisplayGrid_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -78,10 +82,14 @@ namespace IMS_v1
                 depToUpdate.Code = code.Text;
                 depManager.Update(depToUpdate);
 
+              
+            }
+            catch (Exception exp) { }
+            finally 
+            {
                 DepDisplayGrid.EditIndex = -1;
                 BindGrid();
             }
-            catch (Exception exp) { }
         }
 
         protected void DepDisplayGrid_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -100,11 +108,15 @@ namespace IMS_v1
 
                     depManager.Add(depToAdd);
 
-                    DepDisplayGrid.EditIndex = -1;
-                    BindGrid();
+                    
                 }
             }
             catch (Exception exp) { }
+            finally 
+            {
+                DepDisplayGrid.EditIndex = -1;
+                BindGrid();
+            }
             
         }
 

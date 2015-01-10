@@ -62,11 +62,15 @@ namespace IMS_v1
                     }
 
 
-                    SubCategoryDisplayGrid.EditIndex = -1;
-                    BindGrid();
+                   
                 }
             }
             catch (Exception exp) { }
+            finally 
+            {
+                SubCategoryDisplayGrid.EditIndex = -1;
+                    BindGrid();
+            }
         }
 
         protected void SubCategoryDisplayGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -80,10 +84,14 @@ namespace IMS_v1
                 subCategoryToDelete.SubCategoryID = selectedId;
                 subCategoryManager.Delete(subCategoryToDelete);
 
+               
+            }
+            catch (Exception exp) { }
+            finally 
+            {
                 SubCategoryDisplayGrid.EditIndex = -1;
                 BindGrid();
             }
-            catch (Exception exp) { }
         }
 
         protected void SubCategoryDisplayGrid_RowEditing(object sender, GridViewEditEventArgs e)
@@ -117,10 +125,14 @@ namespace IMS_v1
                 }
 
 
+               
+            }
+            catch (Exception exp) { }
+            finally 
+            {
                 SubCategoryDisplayGrid.EditIndex = -1;
                 BindGrid();
             }
-            catch (Exception exp) { }
         }
 
         private void BindGrid()

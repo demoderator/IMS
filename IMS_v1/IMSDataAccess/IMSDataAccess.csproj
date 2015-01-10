@@ -52,6 +52,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Select\CategorySelectDAL.cs" />
     <Compile Include="Select\DepartmentSelectDAL.cs" />
+    <Compile Include="Select\ProductSelectDAL.cs" />
     <Compile Include="Select\SubCategorySelectDAL.cs" />
     <Compile Include="SqlHelper.cs" />
     <Compile Include="StoredProcedure.cs" />

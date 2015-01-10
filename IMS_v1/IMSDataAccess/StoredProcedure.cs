@@ -17,7 +17,8 @@ namespace IMSDataAccess
         {
             Sp_GetDepartmentList,
             Sp_GetSubCategoryList,
-            Sp_GetCategoryList
+            Sp_GetCategoryList,
+            Sp_GetProductList
         }
         public enum Delete 
         {
