@@ -29,7 +29,7 @@ namespace IMSCommon
         public int SubCategoryID
         {
             get { return _subCategoryID; }
-           // set { _subCategoryID = value; }
+            set { _subCategoryID = value; }
         }
 
 

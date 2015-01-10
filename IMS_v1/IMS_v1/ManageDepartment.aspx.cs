@@ -64,39 +64,47 @@ namespace IMS_v1
 
         protected void DepDisplayGrid_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            DepartmentBLL depManager = new DepartmentBLL();
-            Label id = (Label)DepDisplayGrid.Rows[e.RowIndex].FindControl("lblDep_Id");
-            TextBox name = (TextBox)DepDisplayGrid.Rows[e.RowIndex].FindControl("txtname");
-            TextBox code = (TextBox)DepDisplayGrid.Rows[e.RowIndex].FindControl("txtCode");
-          
-            int selectedId=int.Parse(id.Text);
-            Department depToUpdate = new Department();//= empid.Text;
-            depToUpdate.DepartmentID = selectedId;
-            depToUpdate.Name = name.Text;
-            depToUpdate.Code = code.Text;
-            depManager.Update( depToUpdate);
-          
-            DepDisplayGrid.EditIndex = -1;
-            BindGrid();
-        }
-
-        protected void DepDisplayGrid_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            if (e.CommandName.Equals("Add"))
+            try
             {
                 DepartmentBLL depManager = new DepartmentBLL();
-                TextBox txtname = (TextBox)DepDisplayGrid.FooterRow.FindControl("txtAddname");
-                TextBox txtCode = (TextBox)DepDisplayGrid.FooterRow.FindControl("txtAddCode");
-                
-                Department depToAdd = new Department();
-                depToAdd.Name = txtname.Text;
-                depToAdd.Code = txtCode.Text;
+                Label id = (Label)DepDisplayGrid.Rows[e.RowIndex].FindControl("lblDep_Id");
+                TextBox name = (TextBox)DepDisplayGrid.Rows[e.RowIndex].FindControl("txtname");
+                TextBox code = (TextBox)DepDisplayGrid.Rows[e.RowIndex].FindControl("txtCode");
 
-                depManager.Add(depToAdd);
+                int selectedId = int.Parse(id.Text);
+                Department depToUpdate = new Department();//= empid.Text;
+                depToUpdate.DepartmentID = selectedId;
+                depToUpdate.Name = name.Text;
+                depToUpdate.Code = code.Text;
+                depManager.Update(depToUpdate);
 
                 DepDisplayGrid.EditIndex = -1;
                 BindGrid();
             }
+            catch (Exception exp) { }
+        }
+
+        protected void DepDisplayGrid_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            try
+            {
+                if (e.CommandName.Equals("Add"))
+                {
+                    DepartmentBLL depManager = new DepartmentBLL();
+                    TextBox txtname = (TextBox)DepDisplayGrid.FooterRow.FindControl("txtAddname");
+                    TextBox txtCode = (TextBox)DepDisplayGrid.FooterRow.FindControl("txtAddCode");
+
+                    Department depToAdd = new Department();
+                    depToAdd.Name = txtname.Text;
+                    depToAdd.Code = txtCode.Text;
+
+                    depManager.Add(depToAdd);
+
+                    DepDisplayGrid.EditIndex = -1;
+                    BindGrid();
+                }
+            }
+            catch (Exception exp) { }
             
         }
 

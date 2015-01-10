@@ -37,7 +37,7 @@ namespace IMSCommon
         public int CategoryID
         {
             get { return _categoryID; }
-           // set { _categoryID = value; }
+            set { _categoryID = value; }
         }
         
         #endregion
