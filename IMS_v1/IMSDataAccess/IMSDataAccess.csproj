@@ -45,19 +45,28 @@
     <Compile Include="DataBaseHelper.cs" />
     <Compile Include="Delete\CategoryDeleteDAL.cs" />
     <Compile Include="Delete\DepartmentDeleteDAL.cs" />
+    <Compile Include="Delete\ProductDetailDeleteDAL.cs" />
+    <Compile Include="Delete\ProductMasterDeleteDAL.cs" />
     <Compile Include="Delete\SubCategoryDeleteDAL.cs" />
     <Compile Include="Insert\CategoryInsertDAL.cs" />
     <Compile Include="Insert\DepartmentInsertDAL.cs" />
+    <Compile Include="Insert\ProductDetailInsertDAL.cs" />
+    <Compile Include="Insert\ProductMasterInsertDAL.cs" />
     <Compile Include="Insert\SubCategoryInsertDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Select\CategorySelectDAL.cs" />
     <Compile Include="Select\DepartmentSelectDAL.cs" />
+    <Compile Include="Select\ProductDetailSelectByIdDAL.cs" />
+    <Compile Include="Select\ProductDetailSelectDAL.cs" />
+    <Compile Include="Select\ProductMasterSelectDAL.cs" />
     <Compile Include="Select\ProductSelectDAL.cs" />
     <Compile Include="Select\SubCategorySelectDAL.cs" />
     <Compile Include="SqlHelper.cs" />
     <Compile Include="StoredProcedure.cs" />
     <Compile Include="Update\CategoryUpdateDAL.cs" />
     <Compile Include="Update\DepartmentUpdateDAL.cs" />
+    <Compile Include="Update\ProductDetailUpdateDAL.cs" />
+    <Compile Include="Update\ProductMasterUpdateDAL.cs" />
     <Compile Include="Update\SubCategoryUpdateDAL.cs" />
   </ItemGroup>
   <ItemGroup>
