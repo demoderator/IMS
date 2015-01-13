@@ -1,6 +1,0 @@
-D:\IMS\IMS_v1\IMS_v1\bin\IMS_v1.dll.config
-D:\IMS\IMS_v1\IMS_v1\bin\IMS_v1.dll
-D:\IMS\IMS_v1\IMS_v1\bin\IMS_v1.pdb
-D:\IMS\IMS_v1\IMS_v1\obj\Release\IMS_v1.csprojResolveAssemblyReference.cache
-D:\IMS\IMS_v1\IMS_v1\obj\Release\IMS_v1.dll
-D:\IMS\IMS_v1\IMS_v1\obj\Release\IMS_v1.pdb
