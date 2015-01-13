@@ -12,7 +12,8 @@ namespace IMSDataAccess
             Sp_AddNewDepartment,
             Sp_AddNewSubCategory,
             Sp_AddNewCategory,
-            Sp_AddNewProductMaster
+            Sp_AddNewProductMaster,
+            Sp_AddNewProduct_Detail
         }
         public enum Select 
         {
