@@ -45,8 +45,8 @@ namespace IMSBusinessLogic
 
         public void Add(ProductMaster val)
         {
-            //ProductMasterInsertDAL instance = new ProductMasterInsertDAL();
-            //instance.Delete(val);
+            ProductMasterInsertDAL instance = new ProductMasterInsertDAL();
+            instance.Add(val);
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace IMSDataAccess.Insert
 {
-    class ProductMasterInsertDAL : DataAccessbase
+    public class ProductMasterInsertDAL : DataAccessbase
     {
         ProductMasterInsertDataParameters _insertParameters;
         public ProductMasterInsertDAL()
