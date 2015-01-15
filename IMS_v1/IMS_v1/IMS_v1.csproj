@@ -60,6 +60,7 @@
     <Content Include="AddEditMasterProduct.aspx" />
     <Content Include="AddEditProductDetail.aspx" />
     <Content Include="AddEditProducts.aspx" />
+    <Content Include="AddEditVendor.aspx" />
     <Content Include="assets\css\bootstrap-responsive.css" />
     <Content Include="assets\css\docs.css" />
     <Content Include="assets\css\pygments-manni.css" />
@@ -348,6 +349,13 @@
     </Compile>
     <Compile Include="AddEditProducts.aspx.designer.cs">
       <DependentUpon>AddEditProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditVendor.aspx.cs">
+      <DependentUpon>AddEditVendor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditVendor.aspx.designer.cs">
+      <DependentUpon>AddEditVendor.aspx</DependentUpon>
     </Compile>
     <Compile Include="AutoPurchaseOrder.aspx.cs">
       <DependentUpon>AutoPurchaseOrder.aspx</DependentUpon>

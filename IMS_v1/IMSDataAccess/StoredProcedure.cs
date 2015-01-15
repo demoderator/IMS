@@ -7,15 +7,17 @@ namespace IMSDataAccess
 {
     public class StoredProcedure
     {
-        public enum Insert 
+        public enum Insert
         {
             Sp_AddNewDepartment,
             Sp_AddNewSubCategory,
             Sp_AddNewCategory,
             Sp_AddNewProductMaster,
-            Sp_AddNewProduct_Detail
+            Sp_AddNewProduct_Detail,
+            Sp_AddNewVendor
+           
         }
-        public enum Select 
+        public enum Select
         {
             Sp_GetDepartmentList,
             Sp_GetSubCategoryList,
@@ -25,23 +27,27 @@ namespace IMSDataAccess
             Sp_GetProductMasterById,
             Sp_GetProduct_Detail,
             Sp_GetProduct_DetailById,
-            Sp_GetPro_DetailByDId
+            Sp_GetPro_DetailByDId,
+            Sp_GetVendor,
+            Sp_GetVendorById
         }
-        public enum Delete 
+        public enum Delete
         {
             Sp_DeleteDepartment,
             Sp_DeleteSubCategory,
             Sp_DeleteCategory,
             Sp_DeleteProductMasterById,
-            Sp_DeleteProduct_DetailById
+            Sp_DeleteProduct_DetailById,
+            Sp_DeleteVendor
         }
-        public enum Update 
+        public enum Update
         {
             Sp_UpdateSelectedDepartment,
             Sp_UpdateSubCategory,
             Sp_UpdateCategory,
             Sp_UpdateProductMasterById,
-            Sp_UpdateProduct_DetailById
+            Sp_UpdateProduct_DetailById,
+            Sp_UpdateVendor 
         }
     }
 }

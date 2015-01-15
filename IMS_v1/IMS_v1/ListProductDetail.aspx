@@ -7,7 +7,7 @@
 
     <div class="wrapper">
         <div class="right">
-
+            <a href="AddEditProductDetail.aspx"> Add Sub Detail</a>
 
             <asp:GridView ID="gdvlistProductDetail" runat="server" CellSpacing="0" CellPadding="0" border="0" Width="100%" CssClass="grid" AllowPaging="True" PageSize="10"
                 AutoGenerateColumns="false">

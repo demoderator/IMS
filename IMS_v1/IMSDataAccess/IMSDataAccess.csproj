@@ -50,6 +50,7 @@
     <Compile Include="Delete\SubCategoryDeleteDAL.cs" />
     <Compile Include="Delete\SystemRoleDeleteDAL.cs" />
     <Compile Include="Delete\UserRoleDeleteDAL.cs" />
+    <Compile Include="Delete\VendorDeleteDAL.cs" />
     <Compile Include="Insert\CategoryInsertDAL.cs" />
     <Compile Include="Insert\DepartmentInsertDAL.cs" />
     <Compile Include="Insert\ProductDetailInsertDAL.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Insert\SubCategoryInsertDAL.cs" />
     <Compile Include="Insert\SystemRoleInsertDAL.cs" />
     <Compile Include="Insert\UserRoleInsertDAL.cs" />
+    <Compile Include="Insert\VendorInsertDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Select\CategorySelectDAL.cs" />
     <Compile Include="Select\DepartmentSelectDAL.cs" />
@@ -71,6 +73,8 @@
     <Compile Include="Select\SystemRoleSelectDAL.cs" />
     <Compile Include="Select\UserRoleSelectById.cs" />
     <Compile Include="Select\UserRoleSelectDAL.cs" />
+    <Compile Include="Select\VendorSelect.cs" />
+    <Compile Include="Select\VendorSelectByID.cs" />
     <Compile Include="SqlHelper.cs" />
     <Compile Include="StoredProcedure.cs" />
     <Compile Include="Update\CategoryUpdateDAL.cs" />
@@ -78,6 +82,7 @@
     <Compile Include="Update\ProductDetailUpdateDAL.cs" />
     <Compile Include="Update\ProductMasterUpdateDAL.cs" />
     <Compile Include="Update\SubCategoryUpdateDAL.cs" />
+    <Compile Include="Update\VendorUpdateDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IMSCommon\IMSCommon.csproj">

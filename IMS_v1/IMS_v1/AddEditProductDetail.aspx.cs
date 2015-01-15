@@ -109,9 +109,9 @@ namespace IMS_v1
                     drpProductMaster.SelectedValue = getDsVal.Tables[0].Rows[0]["ProductID"].ToString();
                     txtCostPrice.Text = getDsVal.Tables[0].Rows[0]["CostPrice"].ToString();
                     txtStatus.Text = getDsVal.Tables[0].Rows[0]["Status"].ToString();
-                    DateCreated = Convert.ToDateTime(getDsVal.Tables[0].Rows[0]["DateCreated"].ToString());
-                    DateUpdated = Convert.ToDateTime(getDsVal.Tables[0].Rows[0]["DateUpdated"].ToString());
-                    DateExpired = Convert.ToDateTime(getDsVal.Tables[0].Rows[0]["DateExpired"].ToString());
+                    DateCreated = Convert.ToDateTime(getDsVal.Tables[0].Rows[0]["DateCreated"].ToString()).Date;
+                    DateUpdated = Convert.ToDateTime(getDsVal.Tables[0].Rows[0]["DateUpdated"].ToString()).Date;
+                    DateExpired = Convert.ToDateTime(getDsVal.Tables[0].Rows[0]["DateExpired"].ToString()).Date;
                 }
 
 
@@ -139,9 +139,9 @@ namespace IMS_v1
                 obj.SalePrice = float.Parse(txtSalePrice.Text);
                 obj.Discount = (txtDiscount.Text);
                 obj.Status = txtStatus.Text;
-                obj.DateCreated = DateCreated;
-                obj.DateUpdated = DateUpdated;
-                obj.DateExpired = DateExpired;
+                obj.DateCreated = DateTime.Now; //DateCreated.Date;
+                obj.DateUpdated = DateTime.Now;// DateUpdated.Date;
+                obj.DateExpired = DateTime.Now.AddDays(1000);//DateExpired.Date;
 
                 ProductDetailBLL updobj = new ProductDetailBLL();
                 updobj.Update(obj);
