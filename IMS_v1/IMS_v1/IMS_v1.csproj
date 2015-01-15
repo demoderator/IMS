@@ -312,6 +312,7 @@
     <Content Include="ManageProducts.aspx" />
     <Content Include="ManageStores.aspx" />
     <Content Include="ManageSubCategory.aspx" />
+    <Content Include="ManageSystemRoles.aspx" />
     <Content Include="ManageVendors.aspx" />
     <Content Include="ManualPurchaseOrder.aspx" />
     <Content Include="OrderPurchasing.aspx" />
@@ -454,6 +455,13 @@
     </Compile>
     <Compile Include="ManageSubCategory.aspx.designer.cs">
       <DependentUpon>ManageSubCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageSystemRoles.aspx.cs">
+      <DependentUpon>ManageSystemRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageSystemRoles.aspx.designer.cs">
+      <DependentUpon>ManageSystemRoles.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageVendors.aspx.cs">
       <DependentUpon>ManageVendors.aspx</DependentUpon>

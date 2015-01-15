@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Manage Departments" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManageDepartment.aspx.cs" Inherits="IMS_v1.ManageDepartment" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+ <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <script type = "text/javascript">
           function Check_Click(objRef) {
               //Get the Row based on checkbox
