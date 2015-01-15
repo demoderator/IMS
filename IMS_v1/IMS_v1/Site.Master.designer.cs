@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IMS_DPS {
+namespace IMS_v1 {
     
     
     public partial class SiteMaster {

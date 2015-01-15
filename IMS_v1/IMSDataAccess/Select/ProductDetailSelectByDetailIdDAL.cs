@@ -8,37 +8,40 @@ using System.Text;
 
 namespace IMSDataAccess.Select
 {
-    public  class ProductDetailSelectByIdDAL:DataAccessbase
+    public class ProductDetailSelectByDetailIdDAL : DataAccessbase
     {
-        ProductDetailSelectByIDDataParameters _insertParameters;
-        public ProductDetailSelectByIdDAL() 
+        ProductDetailSelectByDetailIDDataParameters _insertParameters;
+        public ProductDetailSelectByDetailIdDAL()
         {
-            StoredProcedureName = StoredProcedure.Select.Sp_GetProduct_DetailById.ToString();
-        }
+
+
+            StoredProcedureName = StoredProcedure.Select.Sp_GetPro_DetailByDId.ToString();
+}
 
         public DataSet View(ProductDetail val)
         {
             DataSet ds;
-            _insertParameters = new ProductDetailSelectByIDDataParameters(val);
+            _insertParameters = new ProductDetailSelectByDetailIDDataParameters(val);
             DataBaseHelper dbHelper = new DataBaseHelper(StoredProcedureName);
-            ds = dbHelper.Run(ConnectionString,_insertParameters.Parameters);
+            ds = dbHelper.Run(ConnectionString, _insertParameters.Parameters);
             return ds;
         }
-    }
 
-    public class ProductDetailSelectByIDDataParameters
+    }
+    public class ProductDetailSelectByDetailIDDataParameters
     {
         private ProductDetail _pDetail;
         private SqlParameter[] _parameters;
 
-        public ProductDetailSelectByIDDataParameters(ProductDetail val)
+        public ProductDetailSelectByDetailIDDataParameters(ProductDetail val)
         {
             PDetail = val;
             Build();
         }
         public void Build()
         {
-            SqlParameter[] parameters = { new SqlParameter("@p_ProductID", PDetail.ProductMasterID) };
+            SqlParameter[] parameters = { new SqlParameter("@p_ProductDetail_ID", PDetail.ProductDetailID)
+                                        };
             Parameters = parameters;
         }
         public SqlParameter[] Parameters

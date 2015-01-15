@@ -1,4 +1,5 @@
 ﻿using IMSBusinessLogic;
+using IMSCommon;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,28 +15,48 @@ namespace IMS_v1
         private DataSet ds;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!IsPostBack)
-            //{
-            //    try
-            //    {
+           if (!IsPostBack)
+           {
+               try
+              {
 
-            //        BindGrid();
-            //    }
-            //    catch (Exception exp) { }
-            //}
+                   BindGrid();
+              }
+              catch (Exception exp) {
+              
+              }
+           }
         }
 
-        //protected void ProdDisplayGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        //{
-        //    ProdDisplayGrid.PageIndex = e.NewPageIndex;
-        //    BindGrid();
-        //}
+        protected void ProdDisplayGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+           ProdDisplayGrid.PageIndex = e.NewPageIndex;
+           BindGrid();
+        }
 
-        //private void BindGrid()
-        //{
-        //    ds = ProductBLL.GetAllProducts();
-        //    ProdDisplayGrid.DataSource = ds;
-        //    ProdDisplayGrid.DataBind();
-        //}
+        private void BindGrid()
+        {
+
+            ds = ProductMasterBLL.GetAllProductMaster();
+            ProdDisplayGrid.DataSource = ds;
+            ProdDisplayGrid.DataBind();
+        }
+
+        protected void ProdDisplayGrid_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if ((e.CommandName == "del"))
+            {
+                ProductMaster obj = new ProductMaster();
+                obj.ProductID = Convert.ToInt16(e.CommandArgument);
+
+                ProductMasterBLL objDel = new ProductMasterBLL();
+                objDel.Delete(obj);
+
+                BindGrid();
+
+            }
+        }
+
+       
     }
 }

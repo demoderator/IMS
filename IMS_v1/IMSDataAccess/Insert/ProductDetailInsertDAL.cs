@@ -15,7 +15,7 @@ namespace IMSDataAccess.Insert
         public ProductDetailInsertDAL()
         {
 
-            StoredProcedureName = StoredProcedure.Insert.Sp_AddNewProductMaster.ToString();
+            StoredProcedureName = StoredProcedure.Insert.Sp_AddNewProduct_Detail.ToString();
         }
 
         public void Add(ProductDetail proDe)
@@ -42,8 +42,16 @@ namespace IMSDataAccess.Insert
         public void Build()
         {
             SqlParameter[] parameters = {
-                                            new SqlParameter("@Name", ProductDetail.DateCreated), 
-                                            new SqlParameter("@Code", ProductDetail.DateCreated) 
+                                            new SqlParameter("@p_QuantityUnit", ProductDetail.Quantity), 
+                                            new SqlParameter("@p_Discount", ProductDetail.Discount), 
+                                            new SqlParameter("@p_SalePrice", ProductDetail.SalePrice), 
+                                            new SqlParameter("@p_DateExpired", ProductDetail.DateExpired), 
+                                            new SqlParameter("@p_ProductID ", ProductDetail.ProductMasterID), 
+                                            new SqlParameter("@p_CostPrice", ProductDetail.CostPrice), 
+
+                                            new SqlParameter("@p_Status", ProductDetail.Status), 
+                                            new SqlParameter("@p_DateCreated ", ProductDetail.DateCreated), 
+                                            new SqlParameter("@p_DateUpdated", ProductDetail.DateUpdated) 
                                         
                                         
                                         };

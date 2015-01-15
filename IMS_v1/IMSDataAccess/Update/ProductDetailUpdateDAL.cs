@@ -7,10 +7,10 @@ using System.Text;
 
 namespace IMSDataAccess.Update
 {
-    public class ProductDetailUpdateDAL:DataAccessbase
+    public class ProductDetailUpdateDAL : DataAccessbase
     {
         ProductDetailUpdateDataParameters _insertParameters;
-        public ProductDetailUpdateDAL() 
+        public ProductDetailUpdateDAL()
         {
             StoredProcedureName = StoredProcedure.Update.Sp_UpdateProduct_DetailById.ToString();
         }
@@ -21,7 +21,7 @@ namespace IMSDataAccess.Update
             _insertParameters = new ProductDetailUpdateDataParameters(val);
             DataBaseHelper dbHelper = new DataBaseHelper(StoredProcedureName);
             dbHelper.Run(base.ConnectionString, _insertParameters.Parameters);
-        } 
+        }
     }
 
     public class ProductDetailUpdateDataParameters
@@ -36,7 +36,19 @@ namespace IMSDataAccess.Update
         }
         public void Build()
         {
-            SqlParameter[] parameters = { new SqlParameter("@p_Id", PDetails.ProductDetailID) };
+            SqlParameter[] parameters = { new SqlParameter("@p_ProductDetail_ID ", PDetails.ProductDetailID),
+                                        
+                                         new SqlParameter("@p_QuantityUnit", PDetails.Quantity), 
+                                            new SqlParameter("@p_Discount", PDetails.Discount), 
+                                            new SqlParameter("@p_SalePrice", PDetails.SalePrice), 
+                                            new SqlParameter("@p_DateExpired", PDetails.DateExpired), 
+                                            new SqlParameter("@p_ProductID ", PDetails.ProductMasterID), 
+                                            new SqlParameter("@p_CostPrice", PDetails.CostPrice), 
+
+                                            new SqlParameter("@p_Status", PDetails.Status), 
+                                            new SqlParameter("@p_DateCreated ", PDetails.DateCreated), 
+                                            new SqlParameter("@p_DateUpdated", PDetails.DateUpdated) };
+
             Parameters = parameters;
         }
         public SqlParameter[] Parameters
