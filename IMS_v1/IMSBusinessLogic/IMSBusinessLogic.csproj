@@ -47,6 +47,8 @@
     <Compile Include="ProductMasterBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SubCategoryBLL.cs" />
+    <Compile Include="SystemRoleBLL.cs" />
+    <Compile Include="UserRoleBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IMSCommon\IMSCommon.csproj">

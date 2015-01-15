@@ -105,11 +105,11 @@
          <div class="right full">
              <asp:GridView ID="SubCategoryDisplayGrid" runat="server" cellspacing="0" cellpadding="0" border="0" width="100%" CssClass="grid" AllowPaging="True" PageSize="10" 
                 AutoGenerateColumns="false" OnPageIndexChanging="SubCategoryDisplayGrid_PageIndexChanging"   onrowcancelingedit="SubCategoryDisplayGrid_RowCancelingEdit" ShowFooter="true"
-            onrowcommand="SubCategoryDisplayGrid_RowCommand" onrowdeleting="SubCategoryDisplayGrid_RowDeleting" onrowediting="SubCategoryDisplayGrid_RowEditing" onrowupdating="SubCategoryDisplayGrid_RowUpdating">
+            onrowcommand="SubCategoryDisplayGrid_RowCommand" OnRowDataBound="SubCategoryDisplayGrid_RowDataBound" onrowdeleting="SubCategoryDisplayGrid_RowDeleting" onrowediting="SubCategoryDisplayGrid_RowEditing" onrowupdating="SubCategoryDisplayGrid_RowUpdating">
                  <Columns>
                      <asp:TemplateField HeaderText="Sub-Category ID">
                         <ItemTemplate>
-                            <asp:Label ID="lblSubCat_ID" runat="server" Text='<%# Eval("Sub_CatID") %>'></asp:Label>
+                            <asp:Label ID="lblSubCat_ID" runat="server" Text='<%# Eval("subCatID") %>'></asp:Label>
                         </ItemTemplate>
                         
                         <FooterTemplate>
@@ -119,11 +119,11 @@
 
                      <asp:TemplateField HeaderText="Name">
                         <ItemTemplate>
-                            <asp:Label ID="lblSubCat_Name" runat="server" Text='<%# Eval("Name") %>'></asp:Label>
+                            <asp:Label ID="lblSubCat_Name" runat="server" Text='<%# Eval("subCatName") %>'></asp:Label>
                         </ItemTemplate>
                         
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtname" runat="server" Text='<%#Eval("Name") %>'></asp:TextBox>
+                            <asp:TextBox ID="txtname" runat="server" Text='<%#Eval("subCatName") %>'></asp:TextBox>
                         </EditItemTemplate>
                         
                         <FooterTemplate>
@@ -131,17 +131,23 @@
                         </FooterTemplate>
                     </asp:TemplateField>
 
-                     <asp:TemplateField HeaderText="Category ID">
+                     <asp:TemplateField HeaderText="Category Name">
                         <ItemTemplate>
-                            <asp:Label ID="lblCat_Id" runat="server" Text='<%# Eval("CategoryID") %>'></asp:Label>
+                            <asp:Label ID="lblCat_Id" runat="server" Text='<%# Eval("categoryName") %>'></asp:Label>
                         </ItemTemplate>
                         
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtCatID" runat="server" Text='<%#Eval("CategoryID") %>'></asp:TextBox>
+                            <%--<asp:TextBox ID="txtCatID" runat="server" Text='<%#Eval("categoryName") %>'></asp:TextBox>--%>
+                             <asp:DropDownList ID="ddlCategoryName" runat="server">
+
+                             </asp:DropDownList>
                         </EditItemTemplate>
                         
                         <FooterTemplate>
-                            <asp:TextBox ID="txtAddCatID" runat="server"></asp:TextBox>
+                            <%--<asp:TextBox ID="txtAddCatID" runat="server"></asp:TextBox>--%>
+                             <asp:DropDownList ID="ddlAddCategoryName" runat="server">
+
+                             </asp:DropDownList>
                         </FooterTemplate>
                     </asp:TemplateField>
 

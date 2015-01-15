@@ -2,6 +2,7 @@
 using IMSCommon;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Data;
 using System.Linq;
 using System.Web;
@@ -13,14 +14,14 @@ namespace IMS_v1
     public partial class ManageDepartment : System.Web.UI.Page
     {
         private DataSet ds;
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 try
                 {
-                
+
                     BindGrid();
                 }
                 catch (Exception exp) { }
@@ -29,8 +30,8 @@ namespace IMS_v1
 
         protected void ViewDepartment_Click(object sender, EventArgs e)
         {
-        
-           
+
+
         }
 
         protected void DepDisplayGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -38,13 +39,13 @@ namespace IMS_v1
             DepDisplayGrid.PageIndex = e.NewPageIndex;
             BindGrid();
         }
-        
+
         protected void DepDisplayGrid_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             DepDisplayGrid.EditIndex = -1;
             BindGrid();
         }
-       
+
         protected void DepDisplayGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             try
@@ -56,10 +57,10 @@ namespace IMS_v1
                 depToDelete.DepartmentID = selectedId;
                 depManager.Delete(depToDelete);
 
-               
+
             }
             catch (Exception exp) { }
-            finally 
+            finally
             {
                 DepDisplayGrid.EditIndex = -1;
                 BindGrid();
@@ -71,8 +72,9 @@ namespace IMS_v1
             try
             {
                 DepartmentBLL depManager = new DepartmentBLL();
-                Label id = (Label)DepDisplayGrid.Rows[e.RowIndex].FindControl("lblDep_Id");
-                TextBox name = (TextBox)DepDisplayGrid.Rows[e.RowIndex].FindControl("txtname");
+                GridViewRow row = DepDisplayGrid.Rows[e.RowIndex];
+                Label id = (Label)row.FindControl("lblDep_Id");
+                TextBox name = (TextBox)DepDisplayGrid.Rows[e.RowIndex].Cells[0].FindControl("txtname");
                 TextBox code = (TextBox)DepDisplayGrid.Rows[e.RowIndex].FindControl("txtCode");
 
                 int selectedId = int.Parse(id.Text);
@@ -82,10 +84,10 @@ namespace IMS_v1
                 depToUpdate.Code = code.Text;
                 depManager.Update(depToUpdate);
 
-              
+
             }
             catch (Exception exp) { }
-            finally 
+            finally
             {
                 DepDisplayGrid.EditIndex = -1;
                 BindGrid();
@@ -108,28 +110,41 @@ namespace IMS_v1
 
                     depManager.Add(depToAdd);
 
-                    
+
                 }
             }
             catch (Exception exp) { }
-            finally 
+            finally
             {
                 DepDisplayGrid.EditIndex = -1;
                 BindGrid();
             }
-            
+
         }
 
         protected void DepDisplayGrid_RowEditing(object sender, GridViewEditEventArgs e)
         {
             DepDisplayGrid.EditIndex = e.NewEditIndex;
-            BindGrid();
+           // BindGrid();
         }
         private void BindGrid()
         {
             ds = DepartmentBLL.GetAllDepartment();
             DepDisplayGrid.DataSource = ds;
             DepDisplayGrid.DataBind();
+        }
+
+        protected void DepDisplayGrid_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                if ((e.Row.RowState & DataControlRowState.Edit) > 0)
+                {
+
+                }
+            }
+
+
         }
     }
 }

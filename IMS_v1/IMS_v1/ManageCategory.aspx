@@ -106,11 +106,12 @@
          <div class="right full">
              <asp:GridView ID="CategoryDisplayGrid" runat="server" cellspacing="0" cellpadding="0" border="0" width="100%" CssClass="grid" AllowPaging="True" PageSize="10" 
                 AutoGenerateColumns="false" OnPageIndexChanging="CategoryDisplayGrid_PageIndexChanging"   onrowcancelingedit="CategoryDisplayGrid_RowCancelingEdit" ShowFooter="true"
-            onrowcommand="CategoryDisplayGrid_RowCommand" onrowdeleting="CategoryDisplayGrid_RowDeleting" onrowediting="CategoryDisplayGrid_RowEditing" onrowupdating="CategoryDisplayGrid_RowUpdating">
+            onrowcommand="CategoryDisplayGrid_RowCommand" onrowdatabound="CategoryDisplayGrid_RowDataBound" onrowdeleting="CategoryDisplayGrid_RowDeleting" onrowediting="CategoryDisplayGrid_RowEditing" onrowupdating="CategoryDisplayGrid_RowUpdating">
+                
                  <Columns>
                      <asp:TemplateField HeaderText="Category ID">
                         <ItemTemplate>
-                            <asp:Label ID="lblCat_ID" runat="server" Text='<%# Eval("CategoryId") %>'></asp:Label>
+                            <asp:Label ID="lblCat_ID" runat="server" Text='<%# Eval("categoryId") %>'></asp:Label>
                         </ItemTemplate>
                         
                         <FooterTemplate>
@@ -120,11 +121,11 @@
 
                      <asp:TemplateField HeaderText="Name">
                         <ItemTemplate>
-                            <asp:Label ID="lblCat_Name" runat="server" Text='<%# Eval("Name") %>'></asp:Label>
+                            <asp:Label ID="lblCat_Name" runat="server" Text='<%# Eval("categoryName") %>'></asp:Label>
                         </ItemTemplate>
                         
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtname" runat="server" Text='<%#Eval("Name") %>'></asp:TextBox>
+                            <asp:TextBox ID="txtname" runat="server" Text='<%#Eval("categoryName") %>'></asp:TextBox>
                         </EditItemTemplate>
                         
                         <FooterTemplate>
@@ -132,34 +133,40 @@
                         </FooterTemplate>
                     </asp:TemplateField>
 
-                     <asp:TemplateField HeaderText="Department ID">
+                     <asp:TemplateField HeaderText="Department Name">
                         <ItemTemplate>
-                            <asp:Label ID="lblDep_Id" runat="server" Text='<%# Eval("DepartmentID") %>'></asp:Label>
+                            <asp:Label ID="lblDep_Id" runat="server" Text='<%#Eval("DepartmentName") %>' ></asp:Label>
                         </ItemTemplate>
                         
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtDepID" runat="server" Text='<%#Eval("DepartmentID") %>'></asp:TextBox>
+                            <asp:DropDownList ID="ddlDepName" runat="server">
+
+                             </asp:DropDownList>
+                                         
                         </EditItemTemplate>
                         
                         <FooterTemplate>
-                            <asp:TextBox ID="txtAddDepID" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtAddDepID" runat="server" Visible="false"></asp:TextBox>
+                            <asp:DropDownList ID="ddlAddDepName" runat="server">
+
+                             </asp:DropDownList>
                         </FooterTemplate>
                     </asp:TemplateField>
 
                      <asp:TemplateField HeaderText="Edit">
                         <ItemTemplate>
-                            <asp:LinkButton ID="btnEdit" Text="Edit" runat="server" CommandName="Edit" />
+                            <asp:LinkButton ID="btnEdit" Text="Edit" runat="server" CommandName="Edit" ></asp:LinkButton>
                             <br />
                             <span onclick="return confirm('Are you sure you want to delete this record?')">
-                                <asp:LinkButton ID="btnDelete" Text="Delete" runat="server" CommandName="Delete"/>
+                                <asp:LinkButton ID="btnDelete" Text="Delete" runat="server" CommandName="Delete"></asp:LinkButton>
                             </span>
                         </ItemTemplate>
 
                         <EditItemTemplate>
-
-                            <asp:LinkButton ID="btnUpdate" Text="Update" runat="server" CommandName="Update" />
+                           
+                            <asp:LinkButton ID="btnUpdate" Text="Update" runat="server" CommandName="Update" ></asp:LinkButton>
                             <br />
-                            <asp:LinkButton ID="btnCancel" Text="Cancel" runat="server" CommandName="Cancel" />
+                            <asp:LinkButton ID="btnCancel" Text="Cancel" runat="server" CommandName="Cancel" ></asp:LinkButton>
                         </EditItemTemplate>
                         
                         <FooterTemplate>

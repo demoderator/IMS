@@ -11,7 +11,7 @@ namespace IMSDataAccess.Insert
     {
         ProductMasterInsertDataParameters _insertParameters;
         public ProductMasterInsertDAL()
-          {
+        {
                StoredProcedureName = StoredProcedure.Insert.Sp_AddNewProductMaster.ToString();
         }
 

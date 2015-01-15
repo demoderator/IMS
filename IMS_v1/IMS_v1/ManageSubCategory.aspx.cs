@@ -140,6 +140,32 @@ namespace IMS_v1
             ds = SubCategoryBLL.GetAllSubCategories();
             SubCategoryDisplayGrid.DataSource = ds;
             SubCategoryDisplayGrid.DataBind();
+
+            DropDownList catList = (DropDownList)SubCategoryDisplayGrid.FooterRow.FindControl("ddlAddCategoryName");
+            catList.DataSource = CategoryBLL.GetAllCategories();
+            catList.DataBind();
+            catList.DataTextField = "categoryName";
+            catList.DataValueField = "categoryID";
+            catList.DataBind();
+        }
+
+        protected void SubCategoryDisplayGrid_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow && SubCategoryDisplayGrid.EditIndex == e.Row.RowIndex)
+            {
+                try
+                {
+                    DropDownList catList = (DropDownList)e.Row.FindControl("ddlCategoryName");
+                    catList.DataSource = CategoryBLL.GetAllCategories();
+                    catList.DataBind();
+                    catList.DataTextField = "categoryName";
+                    catList.DataValueField = "categoryID";
+                    catList.DataBind();
+                   
+                }
+                catch (Exception exo)
+                { }
+            }
         }
     }
 }
