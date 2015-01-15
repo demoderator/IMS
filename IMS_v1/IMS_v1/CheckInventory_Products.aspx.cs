@@ -33,7 +33,7 @@ namespace IMS_v1
 
         private void BindGrid()
         {
-            ds = ProductBLL.GetAllProducts();
+            ds = stockDetailsBll.GetAllStockDetail();
             ProdDisplayGrid.DataSource = ds;
             ProdDisplayGrid.DataBind();
         }

@@ -16,7 +16,8 @@ namespace IMSDataAccess
             Sp_AddNewProduct_Detail,
             Sp_AddNewVendor,
             Sp_AddNewSystemRole,
-            Sp_AddNewUser_Role
+            Sp_AddNewUser_Role,
+            Sp_AddNewStock
         }
         public enum Select
         {
@@ -34,7 +35,8 @@ namespace IMSDataAccess
             Sp_GetSystemRoles,
             Sp_GetSystem_RoleById,
             Sp_GetUser_Roles,
-            Sp_GetUser_RolesById
+            Sp_GetUser_RolesById,
+            Sp_GetStockDetails
         }
         public enum Delete
         {

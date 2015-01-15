@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="View Inventory" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CheckInventory_Products.aspx.cs" Inherits="IMS_v1.CheckInventory_Products" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <script type = "text/javascript">
+    <script type="text/javascript">
         function Check_Click(objRef) {
             //Get the Row based on checkbox
             var row = objRef.parentNode.parentNode;
@@ -44,7 +45,7 @@
         }
     </script>
 
-    <script type = "text/javascript">
+    <script type="text/javascript">
         function checkAll(objRef) {
             var GridView = objRef.parentNode.parentNode.parentNode;
             var inputList = GridView.getElementsByTagName("input");
@@ -75,9 +76,9 @@
                 }
             }
         }
-   </script> 
+    </script>
 
-    <script type = "text/javascript">
+    <script type="text/javascript">
         function MouseEvents(objRef, evt) {
             var checkbox = objRef.getElementsByTagName("input")[0];
             if (evt.type == "mouseover") {
@@ -101,78 +102,72 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-     <div class="wrapper">
-           <div class="right">
-               <asp:GridView ID="ProdDisplayGrid" runat="server" cellspacing="0" cellpadding="0" border="0" width="100%" CssClass="grid" AllowPaging="True" PageSize="10" 
-                AutoGenerateColumns="false" OnPageIndexChanging="ProdDisplayGrid_PageIndexChanging" >
-                   <Columns>
-                        <asp:TemplateField HeaderText="Product ID">
-                            <ItemTemplate>
-                                <asp:Label ID="lblProd_ID" runat="server" Text='<%# Eval("ProductID") %>'></asp:Label>
-                            </ItemTemplate>
-                                                  
-                        </asp:TemplateField>
+    <div class="wrapper">
+        <div class="right">
+            <asp:GridView ID="ProdDisplayGrid" runat="server" CellSpacing="0" CellPadding="0" border="0" Width="100%" CssClass="grid" AllowPaging="True" PageSize="10"
+                AutoGenerateColumns="false" OnPageIndexChanging="ProdDisplayGrid_PageIndexChanging">
+                <Columns>
+                    <asp:TemplateField HeaderText="product Name">
+                        <ItemTemplate>
+                            <asp:Label ID="lblProd_ID" runat="server" Text='<%# Eval("productName") %>'></asp:Label>
+                        </ItemTemplate>
 
-                        <asp:TemplateField HeaderText="Product Name">
-                            <ItemTemplate>
-                                <asp:Label ID="lblProd_Name" runat="server" Text='<%# Eval("ProductName") %>'></asp:Label>
-                            </ItemTemplate>
-                                                 
-                        </asp:TemplateField>
+                    </asp:TemplateField>
 
-                        <asp:TemplateField HeaderText="Quantity">
-                            <ItemTemplate>
-                                <asp:Label ID="lblProd_Quan" runat="server" Text='<%# Eval("QuantityUnit") %>'></asp:Label>
-                            </ItemTemplate>
-                                                 
-                        </asp:TemplateField>
-                       
+                    <asp:TemplateField HeaderText="Sub Category">
+                        <ItemTemplate>
+                            <asp:Label ID="lblProd_Name" runat="server" Text='<%# Eval("SubCategory") %>'></asp:Label>
+                        </ItemTemplate>
 
-                        <asp:TemplateField HeaderText="Cost Price">
-                            <ItemTemplate>
-                                <asp:Label ID="lblProd_CP" runat="server" Text='<%# Eval("CostPrice") %>'></asp:Label>
-                            </ItemTemplate>
-                                                 
-                        </asp:TemplateField>
+                    </asp:TemplateField>
 
-                       <asp:TemplateField HeaderText="Sale Price">
-                            <ItemTemplate>
-                                <asp:Label ID="lblProd_SP" runat="server" Text='<%# Eval("SalePrice") %>'></asp:Label>
-                            </ItemTemplate>
-                                                 
-                        </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Assigned To">
+                        <ItemTemplate>
+                            <asp:Label ID="lblProd_Quan" runat="server" Text='<%# Eval("AssignedTo") %>'></asp:Label>
+                        </ItemTemplate>
 
-                        <asp:TemplateField HeaderText="Expiry Date">
-                            <ItemTemplate>
-                                <asp:Label ID="lblProd_ExD" runat="server" Text='<%# Eval("DateExpired") %>'></asp:Label>
-                            </ItemTemplate>
-                                                  
-                        </asp:TemplateField>
+                    </asp:TemplateField>
 
-                        <asp:TemplateField HeaderText="Manufacturer">
-                            <ItemTemplate>
-                                <asp:Label ID="lblProd_man" runat="server" Text='<%# Eval("Manufacturer") %>'></asp:Label>
-                            </ItemTemplate>
-                                                  
-                        </asp:TemplateField>
 
-                       <asp:TemplateField HeaderText="Manufacturer">
-                            <ItemTemplate>
-                                <asp:Label ID="lblProd_man" runat="server" Text='<%# Eval("Manufacturer") %>'></asp:Label>
-                            </ItemTemplate>
-                                                  
-                        </asp:TemplateField>
+                    <asp:TemplateField HeaderText="quantity">
+                        <ItemTemplate>
+                            <asp:Label ID="lblProd_CP" runat="server" Text='<%# Eval("quantity") %>'></asp:Label>
+                        </ItemTemplate>
 
-                        <asp:TemplateField HeaderText="Sub-Category ID">
-                            <ItemTemplate>
-                                <asp:Label ID="lblProd_ScI" runat="server" Text='<%# Eval("SubCategoryID") %>'></asp:Label>
-                            </ItemTemplate>
-                                                  
-                        </asp:TemplateField>
-                       
-                   </Columns>
-               </asp:GridView>  <%--onrowcancelingedit="DepDisplayGrid_RowCancelingEdit" ShowFooter="true"
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Expiry Date">
+                        <ItemTemplate>
+                            <asp:Label ID="lblProd_SP" runat="server" Text='<%# Eval("expiryDate") %>'></asp:Label>
+                        </ItemTemplate>
+
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Sale Price">
+                        <ItemTemplate>
+                            <asp:Label ID="lblProd_ExD" runat="server" Text='<%# Eval("salePrice") %>'></asp:Label>
+                        </ItemTemplate>
+
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Cost Price">
+                        <ItemTemplate>
+                            <asp:Label ID="lblProd_man" runat="server" Text='<%# Eval("costPrice") %>'></asp:Label>
+                        </ItemTemplate>
+
+                    </asp:TemplateField>
+
+
+                    <asp:TemplateField HeaderText="Actions">
+                        <ItemTemplate>
+                        </ItemTemplate>
+
+                    </asp:TemplateField>
+
+                </Columns>
+            </asp:GridView>
+            <%--onrowcancelingedit="DepDisplayGrid_RowCancelingEdit" ShowFooter="true"
             onrowcommand="DepDisplayGrid_RowCommand" onrowdeleting="DepDisplayGrid_RowDeleting" onrowediting="DepDisplayGrid_RowEditing" onrowupdating="DepDisplayGrid_RowUpdating">--%>
-           </div>
-     </div>
+        </div>
+    </div>
 </asp:Content>
