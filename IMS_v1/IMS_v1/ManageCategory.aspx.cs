@@ -46,12 +46,12 @@ namespace IMS_v1
                 {
                     CategoryBLL categoryManager = new CategoryBLL();
                     TextBox txtname = (TextBox)CategoryDisplayGrid.FooterRow.FindControl("txtAddname");
-                    TextBox txtDepId = (TextBox)CategoryDisplayGrid.FooterRow.FindControl("txtAddDepID");
-
+                   // TextBox txtDepId = (TextBox)CategoryDisplayGrid.FooterRow.FindControl("txtAddDepID");
+                    string depName = (CategoryDisplayGrid.FooterRow.FindControl("ddlAddDepName") as DropDownList).SelectedItem.Value;
                     Category categoryToAdd = new Category();
                     categoryToAdd.Name = txtname.Text;
                     int res;
-                    if (int.TryParse(txtDepId.Text, out res))
+                    if (int.TryParse(depName, out res))
                     {
                         categoryToAdd.DepartmentID = res;
 
@@ -103,19 +103,22 @@ namespace IMS_v1
         {
             try
             {
+                BindGrid();
                 CategoryBLL categoryManager = new CategoryBLL();
                 Label id = (Label)CategoryDisplayGrid.Rows[e.RowIndex].FindControl("lblCat_ID");
                 TextBox name = (TextBox)CategoryDisplayGrid.Rows[e.RowIndex].FindControl("txtname");
-                TextBox departmentId = (TextBox)CategoryDisplayGrid.Rows[e.RowIndex].FindControl("txtDepID");
+                DropDownList ddlDep = (DropDownList)(CategoryDisplayGrid.Rows[e.RowIndex].FindControl("ddlDepName"));
+                string  depName =ddlDep.SelectedItem.Value;
+               // TextBox departmentId = (TextBox)CategoryDisplayGrid.Rows[e.RowIndex].FindControl("txtDepID");
 
                 int selectedId = int.Parse(id.Text);
                 Category categoryToUpdate = new Category();//= empid.Text;
                 categoryToUpdate.CategoryID = selectedId;
                 categoryToUpdate.Name = name.Text;
                 int res;
-                if (int.TryParse(departmentId.Text, out res))
+                if (int.TryParse(depName, out res))
                 {
-                    categoryToUpdate.DepartmentID = int.Parse(departmentId.Text);
+                    categoryToUpdate.DepartmentID = int.Parse(depName);
                     categoryManager.Update(categoryToUpdate);
                 }
                 else
@@ -137,6 +140,45 @@ namespace IMS_v1
             ds = CategoryBLL.GetAllCategories();
             CategoryDisplayGrid.DataSource = ds;
             CategoryDisplayGrid.DataBind();
+
+            DropDownList depList = (DropDownList)CategoryDisplayGrid.FooterRow.FindControl("ddlAddDepName");
+            depList.DataSource = DepartmentBLL.GetAllDepartment();
+            depList.DataBind();
+            depList.DataTextField = "Name";
+            depList.DataValueField = "DepId";
+            depList.DataBind();
         }
+
+        protected void CategoryDisplayGrid_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+           
+           if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                if ((e.Row.RowState & DataControlRowState.Edit) > 0)
+                {
+                    try
+                    {
+                        DropDownList depList = (DropDownList)e.Row.FindControl("ddlDepName");
+                        depList.DataSource = DepartmentBLL.GetAllDepartment();
+                        depList.DataBind();
+                        depList.DataTextField = "Name";
+                        depList.DataValueField = "DepId";
+                        depList.DataBind();
+                        depList.Items.FindByValue((e.Row.FindControl("lblDep_Id") as Label).Text).Selected = true;
+
+                        DataRowView dr = e.Row.DataItem as DataRowView;
+                        depList.SelectedValue = (string)e.Row.DataItem; // you can use e.Row.DataItem to get the value
+                    }
+                    catch (Exception exo)
+                    { }
+                }
+            }
+           
+
+        }
+
+       // private void PopulateDepList
+
+       
     }
 }

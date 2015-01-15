@@ -48,6 +48,8 @@
     <Compile Include="ProductMaster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SubCategory.cs" />
+    <Compile Include="SystemRoles.cs" />
+    <Compile Include="UserRoles.cs" />
     <Compile Include="Util\WebMessageBoxUtil.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

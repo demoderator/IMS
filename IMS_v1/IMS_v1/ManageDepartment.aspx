@@ -112,11 +112,11 @@
         <div class="right full">
             <asp:GridView ID="DepDisplayGrid" runat="server" cellspacing="0" cellpadding="0" border="0" width="100%" CssClass="grid" AllowPaging="True" PageSize="10" 
                 AutoGenerateColumns="false" OnPageIndexChanging="DepDisplayGrid_PageIndexChanging"   onrowcancelingedit="DepDisplayGrid_RowCancelingEdit" ShowFooter="true"
-            onrowcommand="DepDisplayGrid_RowCommand" onrowdeleting="DepDisplayGrid_RowDeleting" onrowediting="DepDisplayGrid_RowEditing" onrowupdating="DepDisplayGrid_RowUpdating">
+            onrowcommand="DepDisplayGrid_RowCommand" OnRowDataBound="DepDisplayGrid_RowDataBound" onrowdeleting="DepDisplayGrid_RowDeleting" onrowediting="DepDisplayGrid_RowEditing" onrowupdating="DepDisplayGrid_RowUpdating">
                 <Columns>
                     <asp:TemplateField HeaderText="Department ID">
                         <ItemTemplate>
-                            <asp:Label ID="lblDep_ID" runat="server" Text='<%# Eval("DepId") %>'></asp:Label>
+                            <asp:Label ID="lblDep_ID" runat="server"  Text='<%# Eval("DepId") %>'></asp:Label>
                         </ItemTemplate>
                         
                         <FooterTemplate>
@@ -130,7 +130,8 @@
                         </ItemTemplate>
                         
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtname" runat="server" Text='<%#Eval("Name") %>'></asp:TextBox>
+
+                            <asp:TextBox ID="txtname" runat="server"  Text='<%#Eval("Name") %>'></asp:TextBox>
                         </EditItemTemplate>
                         
                         <FooterTemplate>
