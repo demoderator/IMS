@@ -13,7 +13,9 @@ namespace IMSDataAccess
             Sp_AddNewSubCategory,
             Sp_AddNewCategory,
             Sp_AddNewProductMaster,
-            Sp_AddNewProduct_Detail
+            Sp_AddNewProduct_Detail,
+            Sp_AddNewSystemRole,
+            Sp_AddNewUser_Role
         }
         public enum Select 
         {
@@ -24,7 +26,11 @@ namespace IMSDataAccess
             Sp_GetProductMaster,
             Sp_GetProductMasterById,
             Sp_GetProduct_Detail,
-            Sp_GetProduct_DetailById
+            Sp_GetProduct_DetailById,
+            Sp_GetSystemRoles,
+            Sp_GetSystem_RoleById,
+            Sp_GetUser_Roles,
+            Sp_GetUser_RolesById
         }
         public enum Delete 
         {
@@ -32,7 +38,9 @@ namespace IMSDataAccess
             Sp_DeleteSubCategory,
             Sp_DeleteCategory,
             Sp_DeleteProductMasterById,
-            Sp_DeleteProduct_DetailById
+            Sp_DeleteProduct_DetailById,
+            Sp_DeleteSystem_RoleById,
+            Sp_DeleteUser_RoleById
         }
         public enum Update 
         {

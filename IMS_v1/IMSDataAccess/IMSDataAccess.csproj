@@ -68,7 +68,7 @@
     <Compile Include="Select\SubCategorySelectDAL.cs" />
     <Compile Include="Select\SystemRoleSelectByIdDAL.cs" />
     <Compile Include="Select\SystemRoleSelectDAL.cs" />
-    <Compile Include="Select\UserRoleSelectById.cs" />
+    <Compile Include="Select\UserRoleSelectByIdDAL.cs" />
     <Compile Include="Select\UserRoleSelectDAL.cs" />
     <Compile Include="SqlHelper.cs" />
     <Compile Include="StoredProcedure.cs" />

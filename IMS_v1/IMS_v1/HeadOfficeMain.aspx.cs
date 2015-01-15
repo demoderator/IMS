@@ -28,5 +28,15 @@ namespace IMS_DPS
         {
             Response.Redirect("Reports.aspx");
         }
+
+        protected void btnManageRoles_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManageSystemRoles.aspx");
+        }
+
+        protected void btnManageStore_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManageStores.aspx");
+        }
     }
 }

@@ -1,41 +1,46 @@
 ﻿using IMSCommon;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
-namespace IMSDataAccess.Delete
+namespace IMSDataAccess.Select
 {
-    public class UserRoleDeleteDAL:DataAccessbase
+    public class UserRoleSelectByIdDAL: DataAccessbase
     {
-        UserRoleDeleteDataParameters _insertParameters;
-        public UserRoleDeleteDAL() 
+        UserRoleSelectDataParameters _insertParameters;
+        public UserRoleSelectByIdDAL() 
         {
-            StoredProcedureName = StoredProcedure.Delete.Sp_DeleteUser_RoleById.ToString();
+            StoredProcedureName = StoredProcedure.Select.Sp_GetUser_RolesById.ToString();
         }
 
-        public void Delete(UserRoles val)
+        public DataSet View(UserRoles val)
         {
-            _insertParameters = new UserRoleDeleteDataParameters(val);
+
+            DataSet ds;
+            _insertParameters = new UserRoleSelectDataParameters(val);
             DataBaseHelper dbHelper = new DataBaseHelper(StoredProcedureName);
-            dbHelper.Run(base.ConnectionString, _insertParameters.Parameters);
+            ds = dbHelper.Run(ConnectionString,_insertParameters.Parameters);
+            return ds;
         }
+
     }
 
-    internal class UserRoleDeleteDataParameters
+    internal class UserRoleSelectDataParameters
     {
         private UserRoles _userRole;
         private SqlParameter[] _parameters;
 
-        public UserRoleDeleteDataParameters(UserRoles dep)
+        public UserRoleSelectDataParameters(UserRoles val)
         {
-            UserRoles = dep;
+            UserRoles = val;
             Build();
         }
         public void Build()
         {
-            SqlParameter[] parameters = { new SqlParameter("@p_userRoleID", UserRoles.UserRoleId) };
+            SqlParameter[] parameters = { new SqlParameter("@Name", UserRoles.UserRoleId) };
             Parameters = parameters;
         }
         public SqlParameter[] Parameters
