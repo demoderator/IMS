@@ -30,6 +30,10 @@
             window.history.back()
             }
     </script>
+    <!-- fancybox popup -->
+    
+   
+   
 	  <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
 </head>
 

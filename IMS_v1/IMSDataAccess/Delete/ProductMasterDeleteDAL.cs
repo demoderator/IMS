@@ -36,7 +36,7 @@ namespace IMSDataAccess.Delete
         }
         public void Build()
         {
-            SqlParameter[] parameters = { new SqlParameter("@p_Id", PMaster.ProductID) };
+            SqlParameter[] parameters = { new SqlParameter("@p_ProductID", PMaster.ProductID) };
             Parameters = parameters;
         }
         public SqlParameter[] Parameters

@@ -24,7 +24,8 @@ namespace IMSDataAccess
             Sp_GetProductMaster,
             Sp_GetProductMasterById,
             Sp_GetProduct_Detail,
-            Sp_GetProduct_DetailById
+            Sp_GetProduct_DetailById,
+            Sp_GetPro_DetailByDId
         }
         public enum Delete 
         {

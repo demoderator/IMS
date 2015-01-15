@@ -56,6 +56,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Select\CategorySelectDAL.cs" />
     <Compile Include="Select\DepartmentSelectDAL.cs" />
+    <Compile Include="Select\ProductDetailSelectByDetailIdDAL.cs" />
     <Compile Include="Select\ProductDetailSelectByIdDAL.cs" />
     <Compile Include="Select\ProductDetailSelectDAL.cs" />
     <Compile Include="Select\ProductMasterSelectByIdDAL.cs" />

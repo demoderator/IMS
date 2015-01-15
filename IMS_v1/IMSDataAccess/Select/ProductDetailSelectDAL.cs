@@ -14,7 +14,7 @@ namespace IMSDataAccess.Select
             StoredProcedureName = StoredProcedure.Select.Sp_GetProduct_Detail.ToString();
         }
 
-        public DataSet View(ProductDetail val)
+        public DataSet View()
         {
             DataSet ds;
           

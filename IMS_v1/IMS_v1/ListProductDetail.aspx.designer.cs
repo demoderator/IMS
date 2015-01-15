@@ -10,24 +10,15 @@
 namespace IMS_v1 {
     
     
-    public partial class AddEditProducts {
+    public partial class ListProductDetail {
         
         /// <summary>
-        /// lblProd_ScI2 control.
+        /// gdvlistProductDetail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProd_ScI2;
-        
-        /// <summary>
-        /// ProdDisplayGrid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ProdDisplayGrid;
+        protected global::System.Web.UI.WebControls.GridView gdvlistProductDetail;
     }
 }

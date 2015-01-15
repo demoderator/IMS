@@ -57,6 +57,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddEditMasterProduct.aspx" />
+    <Content Include="AddEditProductDetail.aspx" />
     <Content Include="AddEditProducts.aspx" />
     <Content Include="assets\css\bootstrap-responsive.css" />
     <Content Include="assets\css\docs.css" />
@@ -152,6 +154,31 @@
     <Content Include="dist\js\jquery.blueberry.js" />
     <Content Include="dist\js\script.js" />
     <Content Include="EditVendor.aspx" />
+    <Content Include="fancybox\blank.gif" />
+    <Content Include="fancybox\fancybox-x.png" />
+    <Content Include="fancybox\fancybox-y.png" />
+    <Content Include="fancybox\fancybox.png" />
+    <Content Include="fancybox\fancy_close.png" />
+    <Content Include="fancybox\fancy_loading.png" />
+    <Content Include="fancybox\fancy_nav_left.png" />
+    <Content Include="fancybox\fancy_nav_right.png" />
+    <Content Include="fancybox\fancy_shadow_e.png" />
+    <Content Include="fancybox\fancy_shadow_n.png" />
+    <Content Include="fancybox\fancy_shadow_ne.png" />
+    <Content Include="fancybox\fancy_shadow_nw.png" />
+    <Content Include="fancybox\fancy_shadow_s.png" />
+    <Content Include="fancybox\fancy_shadow_se.png" />
+    <Content Include="fancybox\fancy_shadow_sw.png" />
+    <Content Include="fancybox\fancy_shadow_w.png" />
+    <Content Include="fancybox\fancy_title_left.png" />
+    <Content Include="fancybox\fancy_title_main.png" />
+    <Content Include="fancybox\fancy_title_over.png" />
+    <Content Include="fancybox\fancy_title_right.png" />
+    <Content Include="fancybox\jquery.easing-1.3.pack.js" />
+    <Content Include="fancybox\jquery.fancybox-1.3.4.css" />
+    <Content Include="fancybox\jquery.fancybox-1.3.4.js" />
+    <Content Include="fancybox\jquery.fancybox-1.3.4.pack.js" />
+    <Content Include="fancybox\jquery.mousewheel-3.0.4.pack.js" />
     <Content Include="HeadOfficeMain.aspx" />
     <Content Include="HistoryOrders.aspx" />
     <Content Include="HTML Layouts\form.html" />
@@ -275,6 +302,7 @@
     <Content Include="js\tests\vendor\qunit.js" />
     <Content Include="js\tooltip.js" />
     <Content Include="js\transition.js" />
+    <Content Include="ListProductDetail.aspx" />
     <Content Include="login.aspx" />
     <Content Include="ManageCategory.aspx" />
     <Content Include="ManageDepartment.aspx" />
@@ -297,8 +325,23 @@
     <Content Include="ViewVendor.aspx" />
     <Content Include="WarehouseMain.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEditMasterProduct.aspx.cs">
+      <DependentUpon>AddEditMasterProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditMasterProduct.aspx.designer.cs">
+      <DependentUpon>AddEditMasterProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditProductDetail.aspx.cs">
+      <DependentUpon>AddEditProductDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditProductDetail.aspx.designer.cs">
+      <DependentUpon>AddEditProductDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddEditProducts.aspx.cs">
       <DependentUpon>AddEditProducts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -340,6 +383,13 @@
     </Compile>
     <Compile Include="HistoryOrders.aspx.designer.cs">
       <DependentUpon>HistoryOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListProductDetail.aspx.cs">
+      <DependentUpon>ListProductDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListProductDetail.aspx.designer.cs">
+      <DependentUpon>ListProductDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
@@ -495,6 +545,13 @@
     </Compile>
     <Compile Include="WarehouseMain.aspx.designer.cs">
       <DependentUpon>WarehouseMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
