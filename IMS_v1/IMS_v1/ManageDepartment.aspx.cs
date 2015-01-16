@@ -67,32 +67,10 @@ namespace IMS_v1
             }
         }
 
-        protected void DepDisplayGrid_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-            try
-            {
-                DepartmentBLL depManager = new DepartmentBLL();
-                GridViewRow row = DepDisplayGrid.Rows[e.RowIndex];
-                Label id = (Label)row.FindControl("lblDep_Id");
-                TextBox name = (TextBox)DepDisplayGrid.Rows[e.RowIndex].Cells[0].FindControl("txtname");
-                TextBox code = (TextBox)DepDisplayGrid.Rows[e.RowIndex].FindControl("txtCode");
-
-                int selectedId = int.Parse(id.Text);
-                Department depToUpdate = new Department();//= empid.Text;
-                depToUpdate.DepartmentID = selectedId;
-                depToUpdate.Name = name.Text;
-                depToUpdate.Code = code.Text;
-                depManager.Update(depToUpdate);
-
-
-            }
-            catch (Exception exp) { }
-            finally
-            {
-                DepDisplayGrid.EditIndex = -1;
-                BindGrid();
-            }
-        }
+        //protected void DepDisplayGrid_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        //{
+           
+        //}
 
         protected void DepDisplayGrid_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -111,6 +89,22 @@ namespace IMS_v1
                     depManager.Add(depToAdd);
 
 
+                }
+                else if (e.CommandName.Equals("UpdateDep"))
+                {
+
+                    DepartmentBLL depManager = new DepartmentBLL();
+                    GridViewRow row = DepDisplayGrid.Rows[DepDisplayGrid.EditIndex];
+                    Label id = (Label)row.FindControl("lblDep_Id");
+                    TextBox name = (TextBox)DepDisplayGrid.Rows[DepDisplayGrid.EditIndex].Cells[0].FindControl("txtname");
+                    TextBox code = (TextBox)DepDisplayGrid.Rows[DepDisplayGrid.EditIndex].FindControl("txtCode");
+
+                    int selectedId = int.Parse(id.Text);
+                    Department depToUpdate = new Department();//= empid.Text;
+                    depToUpdate.DepartmentID = selectedId;
+                    depToUpdate.Name = name.Text;
+                    depToUpdate.Code = code.Text;
+                    depManager.Update(depToUpdate);
                 }
             }
             catch (Exception exp) { }
@@ -134,17 +128,6 @@ namespace IMS_v1
             DepDisplayGrid.DataBind();
         }
 
-        protected void DepDisplayGrid_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                if ((e.Row.RowState & DataControlRowState.Edit) > 0)
-                {
-
-                }
-            }
-
-
-        }
+      
     }
 }

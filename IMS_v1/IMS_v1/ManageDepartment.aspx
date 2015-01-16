@@ -112,7 +112,7 @@
         <div class="right full">
             <asp:GridView ID="DepDisplayGrid" runat="server" cellspacing="0" cellpadding="0" border="0" width="100%" CssClass="grid" AllowPaging="True" PageSize="10" 
                 AutoGenerateColumns="false" OnPageIndexChanging="DepDisplayGrid_PageIndexChanging"   onrowcancelingedit="DepDisplayGrid_RowCancelingEdit" ShowFooter="true"
-            onrowcommand="DepDisplayGrid_RowCommand" OnRowDataBound="DepDisplayGrid_RowDataBound" onrowdeleting="DepDisplayGrid_RowDeleting" onrowediting="DepDisplayGrid_RowEditing" onrowupdating="DepDisplayGrid_RowUpdating">
+            onrowcommand="DepDisplayGrid_RowCommand"  onrowdeleting="DepDisplayGrid_RowDeleting" onrowediting="DepDisplayGrid_RowEditing">
                 <Columns>
                     <asp:TemplateField HeaderText="Department ID">
                         <ItemTemplate>
@@ -163,7 +163,7 @@
 
                         <EditItemTemplate>
 
-                            <asp:LinkButton ID="btnUpdate" Text="Update" runat="server" CommandName="Update" />
+                            <asp:LinkButton ID="btnUpdate" Text="Update" runat="server" CommandName="UpdateDep" />
                             <br />
                             <asp:LinkButton ID="btnCancel" Text="Cancel" runat="server" CommandName="Cancel" />
                         </EditItemTemplate>
