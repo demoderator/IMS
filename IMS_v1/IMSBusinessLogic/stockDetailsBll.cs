@@ -31,6 +31,16 @@ namespace IMSBusinessLogic
          return resultSet;
      }
 
+
+
+     public static DataSet GetStockDetailSearch(StockDetails val)
+     {
+         DataSet resultSet = new DataSet();
+         StockDetailSearchDAL instance = new StockDetailSearchDAL();
+         resultSet = instance.View(val);
+         return resultSet;
+     }
+
      public void Update(StockDetails val)
      {
          stockDetailsUpdateDAL instance = new stockDetailsUpdateDAL();
