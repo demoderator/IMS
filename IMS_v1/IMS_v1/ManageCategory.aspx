@@ -106,8 +106,7 @@
          <div class="right full">
              <asp:GridView ID="CategoryDisplayGrid" runat="server" cellspacing="0" cellpadding="0" border="0" width="100%" CssClass="grid" AllowPaging="True" PageSize="10" 
                 AutoGenerateColumns="false" OnPageIndexChanging="CategoryDisplayGrid_PageIndexChanging"   onrowcancelingedit="CategoryDisplayGrid_RowCancelingEdit" ShowFooter="true"
-            onrowcommand="CategoryDisplayGrid_RowCommand"
-                  onrowdatabound="CategoryDisplayGrid_RowDataBound" onrowdeleting="CategoryDisplayGrid_RowDeleting" onrowediting="CategoryDisplayGrid_RowEditing">
+            onrowcommand="CategoryDisplayGrid_RowCommand" onrowdatabound="CategoryDisplayGrid_RowDataBound" onrowdeleting="CategoryDisplayGrid_RowDeleting" onrowediting="CategoryDisplayGrid_RowEditing" onrowupdating="CategoryDisplayGrid_RowUpdating">
                 
                  <Columns>
                      <asp:TemplateField HeaderText="Category ID">
@@ -165,7 +164,7 @@
 
                         <EditItemTemplate>
                            
-                            <asp:LinkButton ID="btnUpdate" Text="Update" runat="server" CommandName="Update1" ></asp:LinkButton>
+                            <asp:LinkButton ID="btnUpdate" Text="Update" runat="server" CommandName="Update" ></asp:LinkButton>
                             <br />
                             <asp:LinkButton ID="btnCancel" Text="Cancel" runat="server" CommandName="Cancel" ></asp:LinkButton>
                         </EditItemTemplate>

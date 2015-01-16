@@ -36,10 +36,7 @@ namespace IMSDataAccess
             Sp_GetSystem_RoleById,
             Sp_GetUser_Roles,
             Sp_GetUser_RolesById,
-            Sp_GetStockDetails,
-            Sp_GetStockDetailByParameters,
-            Sp_GetStockDetailsByUserId
-
+            Sp_GetStockDetails
         }
         public enum Delete
         {

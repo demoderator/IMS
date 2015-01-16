@@ -42,12 +42,11 @@ namespace IMS_v1
         {
             try
             {
-                
                 if (e.CommandName.Equals("Add"))
                 {
                     CategoryBLL categoryManager = new CategoryBLL();
                     TextBox txtname = (TextBox)CategoryDisplayGrid.FooterRow.FindControl("txtAddname");
-                    // TextBox txtDepId = (TextBox)CategoryDisplayGrid.FooterRow.FindControl("txtAddDepID");
+                   // TextBox txtDepId = (TextBox)CategoryDisplayGrid.FooterRow.FindControl("txtAddDepID");
                     string depName = (CategoryDisplayGrid.FooterRow.FindControl("ddlAddDepName") as DropDownList).SelectedItem.Value;
                     Category categoryToAdd = new Category();
                     categoryToAdd.Name = txtname.Text;
@@ -58,33 +57,18 @@ namespace IMS_v1
 
                         categoryManager.Add(categoryToAdd);
                     }
-
-
                     else
                     {
                         WebMessageBoxUtil.Show("Invalid input in Department field ");
                     }
-
-
-
+                   
                 }
-
-                else if (e.CommandName == "Update1")
-                {
-
-                    GridViewRow row = (GridViewRow)(((LinkButton)e.CommandSource).NamingContainer);
-
-                    TextBox textBox = (TextBox)row.FindControl("txtname");
-                    string a = textBox.ToString();
-
-                }
-
             }
             catch (Exception exp) { }
-            finally
+            finally 
             {
-                CategoryDisplayGrid.EditIndex = -1;
-                BindGrid();
+                    CategoryDisplayGrid.EditIndex = -1;
+                    BindGrid();
             }
         }
 
@@ -101,7 +85,7 @@ namespace IMS_v1
 
             }
             catch (Exception exp) { }
-            finally
+            finally 
             {
 
                 CategoryDisplayGrid.EditIndex = -1;
@@ -115,41 +99,41 @@ namespace IMS_v1
             BindGrid();
         }
 
-        //protected void CategoryDisplayGrid_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        //{
-        //    //try
-        //    //{
-        //    //  //  BindGrid();
-        //    //    CategoryBLL categoryManager = new CategoryBLL();
-        //    //    Label id = (Label)CategoryDisplayGrid.Rows[e.RowIndex].FindControl("lblCat_ID");
-        //    //    TextBox name = (TextBox)CategoryDisplayGrid.Rows[e.RowIndex].FindControl("txtname");
-        //    //    DropDownList ddlDep = (DropDownList)(CategoryDisplayGrid.Rows[e.RowIndex].FindControl("ddlDepName"));
-        //    //    string  depName =ddlDep.SelectedItem.Value;
-        //    //   // TextBox departmentId = (TextBox)CategoryDisplayGrid.Rows[e.RowIndex].FindControl("txtDepID");
+        protected void CategoryDisplayGrid_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            try
+            {
+                BindGrid();
+                CategoryBLL categoryManager = new CategoryBLL();
+                Label id = (Label)CategoryDisplayGrid.Rows[e.RowIndex].FindControl("lblCat_ID");
+                TextBox name = (TextBox)CategoryDisplayGrid.Rows[e.RowIndex].FindControl("txtname");
+                DropDownList ddlDep = (DropDownList)(CategoryDisplayGrid.Rows[e.RowIndex].FindControl("ddlDepName"));
+                string  depName =ddlDep.SelectedItem.Value;
+               // TextBox departmentId = (TextBox)CategoryDisplayGrid.Rows[e.RowIndex].FindControl("txtDepID");
 
-        //    //    int selectedId = int.Parse(id.Text);
-        //    //    Category categoryToUpdate = new Category();//= empid.Text;
-        //    //    categoryToUpdate.CategoryID = selectedId;
-        //    //    categoryToUpdate.Name = name.Text;
-        //    //    int res;
-        //    //    if (int.TryParse(depName, out res))
-        //    //    {
-        //    //        categoryToUpdate.DepartmentID = int.Parse(depName);
-        //    //        categoryManager.Update(categoryToUpdate);
-        //    //    }
-        //    //    else
-        //    //    {
-        //    //        WebMessageBoxUtil.Show("Invalid input in Department field ");
-        //    //    }
-
-        //    //}
-        //    //catch (Exception exp) { }
-        //    //finally 
-        //    //{
-        //    //    CategoryDisplayGrid.EditIndex = -1;
-        //    //    BindGrid();
-        //    //}
-        //}
+                int selectedId = int.Parse(id.Text);
+                Category categoryToUpdate = new Category();//= empid.Text;
+                categoryToUpdate.CategoryID = selectedId;
+                categoryToUpdate.Name = name.Text;
+                int res;
+                if (int.TryParse(depName, out res))
+                {
+                    categoryToUpdate.DepartmentID = int.Parse(depName);
+                    categoryManager.Update(categoryToUpdate);
+                }
+                else
+                {
+                    WebMessageBoxUtil.Show("Invalid input in Department field ");
+                }
+               
+            }
+            catch (Exception exp) { }
+            finally 
+            {
+                CategoryDisplayGrid.EditIndex = -1;
+                BindGrid();
+            }
+        }
 
         private void BindGrid()
         {
@@ -167,8 +151,8 @@ namespace IMS_v1
 
         protected void CategoryDisplayGrid_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-
-            if (e.Row.RowType == DataControlRowType.DataRow)
+           
+           if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 if ((e.Row.RowState & DataControlRowState.Edit) > 0)
                 {
@@ -189,12 +173,12 @@ namespace IMS_v1
                     { }
                 }
             }
-
+           
 
         }
 
-        // private void PopulateDepList
+       // private void PopulateDepList
 
-
+       
     }
 }
