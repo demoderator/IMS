@@ -1,3 +1,4 @@
+F:\DPS\code\IMS\IMS_v1\IMS_v1\obj\Debug\IMS_v1.csprojResolveAssemblyReference.cache
 F:\DPS\code\IMS\IMS_v1\IMS_v1\bin\IMS_v1.dll.config
 F:\DPS\code\IMS\IMS_v1\IMS_v1\bin\IMS_v1.dll
 F:\DPS\code\IMS\IMS_v1\IMS_v1\bin\IMS_v1.pdb
@@ -7,6 +8,5 @@ F:\DPS\code\IMS\IMS_v1\IMS_v1\bin\IMSDataAccess.dll
 F:\DPS\code\IMS\IMS_v1\IMS_v1\bin\IMSBusinessLogic.pdb
 F:\DPS\code\IMS\IMS_v1\IMS_v1\bin\IMSCommon.pdb
 F:\DPS\code\IMS\IMS_v1\IMS_v1\bin\IMSDataAccess.pdb
-F:\DPS\code\IMS\IMS_v1\IMS_v1\obj\Debug\IMS_v1.csprojResolveAssemblyReference.cache
 F:\DPS\code\IMS\IMS_v1\IMS_v1\obj\Debug\IMS_v1.dll
 F:\DPS\code\IMS\IMS_v1\IMS_v1\obj\Debug\IMS_v1.pdb

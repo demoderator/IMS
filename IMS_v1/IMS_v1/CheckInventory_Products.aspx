@@ -103,25 +103,43 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="wrapper">
-        <div class="right">
-            <asp:GridView ID="ProdDisplayGrid" runat="server" CellSpacing="0" CellPadding="0" border="0" Width="100%" CssClass="grid" AllowPaging="True" PageSize="10"
-                AutoGenerateColumns="false" OnPageIndexChanging="ProdDisplayGrid_PageIndexChanging">
+        <div class="right full">
+
+            <table>
+                <tr>
+                    <th colspan="2">Search</th>
+                </tr>
+
+                <tr>
+                    <td>Search by Product</td>
+                    <td>
+                        <asp:DropDownList ID="drpSerchUser" runat="server"></asp:DropDownList></td>
+                </tr>
+
+                <tr><td colspan="2">
+
+                    <asp:Button ID="btnSubmit" runat="server" Text="Search" OnClick="btnSubmit_Click"  />
+                    </td></tr>
+               
+            </table>
+            <asp:GridView ID="ProdDisplayGrid" AllowSorting="true" runat="server" CellSpacing="0" CellPadding="0" border="0" Width="100%" CssClass="grid" AllowPaging="True" PageSize="10"
+                AutoGenerateColumns="false" OnPageIndexChanging="ProdDisplayGrid_PageIndexChanging" OnSorting="ProdDisplayGrid_Sorting">
                 <Columns>
-                    <asp:TemplateField HeaderText="product Name">
+                    <asp:TemplateField HeaderText="Product Name" SortExpression="productName">
                         <ItemTemplate>
                             <asp:Label ID="lblProd_ID" runat="server" Text='<%# Eval("productName") %>'></asp:Label>
                         </ItemTemplate>
 
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="Sub Category">
+                    <asp:TemplateField HeaderText="Sub Category" SortExpression="SubCategory">
                         <ItemTemplate>
                             <asp:Label ID="lblProd_Name" runat="server" Text='<%# Eval("SubCategory") %>'></asp:Label>
                         </ItemTemplate>
 
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="Assigned To">
+                    <asp:TemplateField HeaderText="Assigned To" SortExpression="AssignedTo">
                         <ItemTemplate>
                             <asp:Label ID="lblProd_Quan" runat="server" Text='<%# Eval("AssignedTo") %>'></asp:Label>
                         </ItemTemplate>
@@ -129,19 +147,16 @@
                     </asp:TemplateField>
 
 
-                    <asp:TemplateField HeaderText="quantity">
+                    <asp:TemplateField HeaderText="quantity" SortExpression="quantity">
                         <ItemTemplate>
                             <asp:Label ID="lblProd_CP" runat="server" Text='<%# Eval("quantity") %>'></asp:Label>
                         </ItemTemplate>
 
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="Expiry Date">
-                        <ItemTemplate>
-                            <asp:Label ID="lblProd_SP" runat="server" Text='<%# Eval("expiryDate") %>'></asp:Label>
-                        </ItemTemplate>
 
-                    </asp:TemplateField>
+
+
 
                     <asp:TemplateField HeaderText="Sale Price">
                         <ItemTemplate>
