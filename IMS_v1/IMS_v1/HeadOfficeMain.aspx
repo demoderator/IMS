@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="wrapper">
 	
-		<div class="icons-cont">
+		<div class="icons-cont-ho-warehouse">
 			
 			<div class="icons-header">
 				Head Office Services

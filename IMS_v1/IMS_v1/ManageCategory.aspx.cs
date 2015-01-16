@@ -63,6 +63,31 @@ namespace IMS_v1
                     }
                    
                 }
+                else if (e.CommandName.Equals("UpdateCategory")) 
+                {
+                    
+                    CategoryBLL categoryManager = new CategoryBLL();
+                    Label id = (Label)CategoryDisplayGrid.Rows[CategoryDisplayGrid.EditIndex].FindControl("lblCat_ID");
+                    TextBox name = (TextBox)CategoryDisplayGrid.Rows[CategoryDisplayGrid.EditIndex].FindControl("txtname");
+                    DropDownList ddlDep = (DropDownList)(CategoryDisplayGrid.Rows[CategoryDisplayGrid.EditIndex].FindControl("ddlDepName"));
+                    string depName = ddlDep.SelectedItem.Value;
+                    // TextBox departmentId = (TextBox)CategoryDisplayGrid.Rows[e.RowIndex].FindControl("txtDepID");
+
+                    int selectedId = int.Parse(id.Text);
+                    Category categoryToUpdate = new Category();//= empid.Text;
+                    categoryToUpdate.CategoryID = selectedId;
+                    categoryToUpdate.Name = name.Text;
+                    int res;
+                    if (int.TryParse(depName, out res))
+                    {
+                        categoryToUpdate.DepartmentID = int.Parse(depName);
+                        categoryManager.Update(categoryToUpdate);
+                    }
+                    else
+                    {
+                        WebMessageBoxUtil.Show("Invalid input in Department field ");
+                    }
+                }
             }
             catch (Exception exp) { }
             finally 
@@ -86,8 +111,7 @@ namespace IMS_v1
             }
             catch (Exception exp) { }
             finally 
-            {
-
+            {   
                 CategoryDisplayGrid.EditIndex = -1;
                 BindGrid();
             }
@@ -97,42 +121,6 @@ namespace IMS_v1
         {
             CategoryDisplayGrid.EditIndex = e.NewEditIndex;
             BindGrid();
-        }
-
-        protected void CategoryDisplayGrid_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-            try
-            {
-                BindGrid();
-                CategoryBLL categoryManager = new CategoryBLL();
-                Label id = (Label)CategoryDisplayGrid.Rows[e.RowIndex].FindControl("lblCat_ID");
-                TextBox name = (TextBox)CategoryDisplayGrid.Rows[e.RowIndex].FindControl("txtname");
-                DropDownList ddlDep = (DropDownList)(CategoryDisplayGrid.Rows[e.RowIndex].FindControl("ddlDepName"));
-                string  depName =ddlDep.SelectedItem.Value;
-               // TextBox departmentId = (TextBox)CategoryDisplayGrid.Rows[e.RowIndex].FindControl("txtDepID");
-
-                int selectedId = int.Parse(id.Text);
-                Category categoryToUpdate = new Category();//= empid.Text;
-                categoryToUpdate.CategoryID = selectedId;
-                categoryToUpdate.Name = name.Text;
-                int res;
-                if (int.TryParse(depName, out res))
-                {
-                    categoryToUpdate.DepartmentID = int.Parse(depName);
-                    categoryManager.Update(categoryToUpdate);
-                }
-                else
-                {
-                    WebMessageBoxUtil.Show("Invalid input in Department field ");
-                }
-               
-            }
-            catch (Exception exp) { }
-            finally 
-            {
-                CategoryDisplayGrid.EditIndex = -1;
-                BindGrid();
-            }
         }
 
         private void BindGrid()

@@ -60,16 +60,37 @@ namespace IMS_v1
                     {
                         WebMessageBoxUtil.Show("Invalid input in Category field ");
                     }
+                 }
+                else if (e.CommandName.Equals("UpdateSubCategory")) 
+                {
+                    SubCategoryBLL subCategoryManager = new SubCategoryBLL();
+                    Label id = (Label)SubCategoryDisplayGrid.Rows[SubCategoryDisplayGrid.EditIndex].FindControl("lblSubCat_ID");
+                    TextBox name = (TextBox)SubCategoryDisplayGrid.Rows[SubCategoryDisplayGrid.EditIndex].FindControl("txtname");
+                    DropDownList ddlDep = (DropDownList)(SubCategoryDisplayGrid.Rows[SubCategoryDisplayGrid.EditIndex].FindControl("ddlCategoryName"));
+                    string catName = ddlDep.SelectedItem.Value;
+                    
 
-
-                   
+                    int selectedId = int.Parse(id.Text);
+                    SubCategory subCategoryToUpdate = new SubCategory();//= empid.Text;
+                    subCategoryToUpdate.SubCategoryID = selectedId;
+                    subCategoryToUpdate.Name = name.Text;
+                    int res;
+                    if (int.TryParse(catName, out res))
+                    {
+                        subCategoryToUpdate.CategoryID = res;
+                        subCategoryManager.Update(subCategoryToUpdate);
+                    }
+                    else
+                    {
+                        WebMessageBoxUtil.Show("Invalid input in Category field ");
+                    }
                 }
             }
             catch (Exception exp) { }
             finally 
             {
                 SubCategoryDisplayGrid.EditIndex = -1;
-                    BindGrid();
+                BindGrid();
             }
         }
 
@@ -100,41 +121,7 @@ namespace IMS_v1
             BindGrid();
         }
 
-        protected void SubCategoryDisplayGrid_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-            try
-            {
-                SubCategoryBLL subCategoryManager = new SubCategoryBLL();
-                Label id = (Label)SubCategoryDisplayGrid.Rows[e.RowIndex].FindControl("lblSubCat_ID");
-                TextBox name = (TextBox)SubCategoryDisplayGrid.Rows[e.RowIndex].FindControl("txtname");
-                TextBox catId = (TextBox)SubCategoryDisplayGrid.Rows[e.RowIndex].FindControl("txtCatID");
-
-                int selectedId = int.Parse(id.Text);
-                SubCategory subCategoryToUpdate = new SubCategory();//= empid.Text;
-                subCategoryToUpdate.SubCategoryID = selectedId;
-                subCategoryToUpdate.Name = name.Text;
-                int res;
-                if (int.TryParse(catId.Text, out res))
-                {
-                    subCategoryToUpdate.CategoryID = res;
-                    subCategoryManager.Update(subCategoryToUpdate);
-                }
-                else
-                {
-                    WebMessageBoxUtil.Show("Invalid input in Category field ");
-                }
-
-
-               
-            }
-            catch (Exception exp) { }
-            finally 
-            {
-                SubCategoryDisplayGrid.EditIndex = -1;
-                BindGrid();
-            }
-        }
-
+     
         private void BindGrid()
         {
             ds = SubCategoryBLL.GetAllSubCategories();
