@@ -16,12 +16,12 @@ namespace IMS_v1
 
         protected void btnadd_Click(object sender, EventArgs e)
         {
-            Response.Redirect("EditVendor.aspx");
+            Response.Redirect("AddEditVendor.aspx");
         }
 
         protected void btnVendor_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ViewVendor.aspx");
+            Response.Redirect("VendorList.aspx");
         }
 
         protected void btnback_Click(object sender, EventArgs e)

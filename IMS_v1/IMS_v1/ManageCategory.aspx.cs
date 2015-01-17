@@ -165,6 +165,49 @@ namespace IMS_v1
 
         }
 
+        protected void CategoryDisplayGrid_Sorting(object sender, GridViewSortEventArgs e)
+        {
+            DataView sortedView;
+            string sortingDirection = string.Empty;
+            if (direction == SortDirection.Ascending)
+            {
+                direction = SortDirection.Descending;
+                sortingDirection = "Desc";
+
+            }
+            else
+            {
+                direction = SortDirection.Ascending;
+                sortingDirection = "Asc";
+
+            }
+
+
+            ds = CategoryBLL.GetAllCategories();
+            CategoryDisplayGrid.DataSource = ds;
+            sortedView = new DataView(ds.Tables[0]);
+            sortedView.Sort = e.SortExpression + " " + sortingDirection;
+            Session["SortedView"] = sortedView;
+            CategoryDisplayGrid.DataSource = sortedView;
+            CategoryDisplayGrid.DataBind();
+        }
+
+        public SortDirection direction
+        {
+            get
+            {
+                if (ViewState["directionState"] == null)
+                {
+                    ViewState["directionState"] = SortDirection.Ascending;
+                }
+                return (SortDirection)ViewState["directionState"];
+            }
+            set
+            {
+                ViewState["directionState"] = value;
+            }
+        }
+
        // private void PopulateDepList
 
        

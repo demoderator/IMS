@@ -34,7 +34,7 @@ namespace IMS_v1
 
                 DataSet ds2 = new DataSet();
                 ds2 = ProductMasterBLL.GetAllProductMaster();
-                drpProductMaster.Items.Insert(0, new ListItem("Select Product", ""));
+                drpProductMaster.Items.Insert(0, new ListItem("Select Product"," ab"));
                 drpProductMaster.DataSource = ds2;
                 drpProductMaster.DataValueField = "ProductID";
                 drpProductMaster.DataTextField = "ProductName";

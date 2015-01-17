@@ -12,7 +12,7 @@ namespace IMSDataAccess.Update
         CategoryUpdateDataParameters _insertParameters;
         public CategoryUpdateDAL() 
         {
-            StoredProcedureName = StoredProcedure.Update.Sp_UpdateCategory.ToString();
+            StoredProcedureName = StoredProcedure.Update.Sp_UpdateSelectedCategory.ToString();
         }
 
         public void Update(Category _category)

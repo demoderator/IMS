@@ -13,7 +13,7 @@ namespace IMSDataAccess.Update
         SubCategoryUpdateDataParameters _insertParameters;
         public SubCategoryUpdateDAL() 
         {
-            StoredProcedureName = StoredProcedure.Update.Sp_UpdateSubCategory.ToString();
+            StoredProcedureName = StoredProcedure.Update.Sp_UpdateSelectedSubCategory.ToString();
         }
 
         public void Update(SubCategory subCategory)

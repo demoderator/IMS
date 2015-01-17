@@ -15,17 +15,17 @@ namespace IMS_v1
         DataSet ds;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
-                              BindgdvVendor();
-                }
+                BindgdvVendor();
+            }
         }
 
 
         public void BindgdvVendor()
         {
-            ds=VendorBll.GetAllVendor();
-            gdvVendor.DataSource=ds;
+            ds = VendorBll.GetAllVendor();
+            gdvVendor.DataSource = ds;
             gdvVendor.DataBind();
 
 
@@ -40,7 +40,19 @@ namespace IMS_v1
         {
 
             gdvVendor.PageIndex = e.NewPageIndex;
-            BindgdvVendor();
+          
+            if (Session["SortedView"] != null)
+            {
+                gdvVendor.DataSource = Session["SortedView"];
+                gdvVendor.DataBind();
+            }
+            else
+            {
+                gdvVendor.DataSource = ds;
+                gdvVendor.DataBind();
+            }  
+
+            
         }
 
         protected void gVStoreInfo_SelectedIndexChanged(object sender, EventArgs e)
@@ -60,6 +72,49 @@ namespace IMS_v1
 
                 BindgdvVendor();
 
+            }
+        }
+
+        protected void gdvVendor_Sorting(object sender, GridViewSortEventArgs e)
+        {
+            DataView sortedView;
+            string sortingDirection = string.Empty;
+            if (direction == SortDirection.Ascending)
+            {
+                direction = SortDirection.Descending;
+                sortingDirection = "Desc";
+
+            }
+            else
+            {
+                direction = SortDirection.Ascending;
+                sortingDirection = "Asc";
+
+            }
+
+
+            ds = VendorBll.GetAllVendor();
+            gdvVendor.DataSource = ds;
+            sortedView = new DataView(ds.Tables[0]);
+            sortedView.Sort = e.SortExpression + " " + sortingDirection;
+            Session["SortedView"] = sortedView;
+            gdvVendor.DataSource = sortedView;
+            gdvVendor.DataBind();
+        }
+
+        public SortDirection direction
+        {
+            get
+            {
+                if (ViewState["directionState"] == null)
+                {
+                    ViewState["directionState"] = SortDirection.Ascending;
+                }
+                return (SortDirection)ViewState["directionState"];
+            }
+            set
+            {
+                ViewState["directionState"] = value;
             }
         }
     }

@@ -53,8 +53,8 @@ namespace IMSDataAccess
         public enum Update
         {
             Sp_UpdateSelectedDepartment,
-            Sp_UpdateSubCategory,
-            Sp_UpdateCategory,
+            Sp_UpdateSelectedSubCategory,
+            Sp_UpdateSelectedCategory,
             Sp_UpdateProductMasterById,
             Sp_UpdateProduct_DetailById,
             Sp_UpdateVendor 

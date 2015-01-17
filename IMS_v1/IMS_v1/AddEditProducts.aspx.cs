@@ -31,6 +31,20 @@ namespace IMS_v1
         protected void ProdDisplayGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
            ProdDisplayGrid.PageIndex = e.NewPageIndex;
+
+         
+
+           if (Session["SortedView"] != null)
+           {
+               ProdDisplayGrid.DataSource = Session["SortedView"];
+               ProdDisplayGrid.DataBind();
+           }
+           else
+           {
+               ProdDisplayGrid.DataSource = ds;
+               ProdDisplayGrid.DataBind();
+           }  
+
            BindGrid();
         }
 
@@ -57,6 +71,53 @@ namespace IMS_v1
             }
         }
 
+
+        public SortDirection direction
+        {
+            get
+            {
+                if (ViewState["directionState"] == null)
+                {
+                    ViewState["directionState"] = SortDirection.Ascending;
+                }
+                return (SortDirection)ViewState["directionState"];
+            }
+            set
+            {
+                ViewState["directionState"] = value;
+            }
+        }
+
+        protected void ProdDisplayGrid_Sorting(object sender, GridViewSortEventArgs e)
+        {
+            DataView sortedView;
+            string sortingDirection = string.Empty;
+            if (direction == SortDirection.Ascending)
+            {
+                direction = SortDirection.Descending;
+                sortingDirection = "Desc";
+
+            }
+            else
+            {
+                direction = SortDirection.Ascending;
+                sortingDirection = "Asc";
+
+            }
+
+            ds = ProductMasterBLL.GetAllProductMaster();
+            ProdDisplayGrid.DataSource = ds;
+            sortedView = new DataView(ds.Tables[0]);
+            sortedView.Sort = e.SortExpression + " " + sortingDirection;
+            Session["SortedView"] = sortedView;
+            ProdDisplayGrid.DataSource = sortedView;
+            ProdDisplayGrid.DataBind();
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+
+        }
        
     }
 }

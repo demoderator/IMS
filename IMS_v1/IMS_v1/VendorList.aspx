@@ -5,14 +5,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="wrapper">
 
-        <div class="right">
-
+        <div class="right full">
+            <a href="AddEditVendor.aspx"> add New vendor</a>
             <asp:GridView ID="gdvVendor" runat="server" CellSpacing="0" CellPadding="0" border="0" Width="100%" CssClass="grid"
                 AutoGenerateColumns="false" OnSelectedIndexChanged="gVStoreInfo_SelectedIndexChanged"
                 OnRowDataBound="gVStoreInfo_RowDataBound" AllowPaging="True" PageSize="10"
-                OnPageIndexChanging="gVStoreInfo_PageIndexChanging" OnRowCommand="gdvVendor_RowCommand">
+                OnPageIndexChanging="gVStoreInfo_PageIndexChanging" OnRowCommand="gdvVendor_RowCommand" AllowSorting="true" OnSorting="gdvVendor_Sorting">
                 <Columns>
-                    <asp:TemplateField HeaderText="Vendor Name">
+                    <asp:TemplateField HeaderText="Vendor Name" SortExpression="SupName">
                         <ItemTemplate>
                             <asp:Label ID="lblVendor" runat="server" Text='<%# Eval("SupName") %>'></asp:Label>
                         </ItemTemplate>

@@ -19,6 +19,7 @@ namespace IMS_v1
             {
                 try
                 {
+                    // drpSerchUser.Items.Insert(0, new ListItem("Select Product", ""));
 
                     BindGrid();
                     BindDrpSearch();
@@ -30,6 +31,18 @@ namespace IMS_v1
         protected void ProdDisplayGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             ProdDisplayGrid.PageIndex = e.NewPageIndex;
+
+
+            if (Session["SortedView"] != null)
+            {
+                ProdDisplayGrid.DataSource = Session["SortedView"];
+                ProdDisplayGrid.DataBind();
+            }
+            else
+            {
+                ProdDisplayGrid.DataSource = ds;
+                ProdDisplayGrid.DataBind();
+            }  
             BindGrid();
         }
         public void BindDrpSearch()
@@ -39,18 +52,18 @@ namespace IMS_v1
             drpSerchUser.Items.Insert(0, new ListItem("Select Product", ""));
             drpSerchUser.DataTextField = "ProductName";
             drpSerchUser.DataValueField = "ProductID";
+
             drpSerchUser.DataBind();
         }
         private void BindGrid()
         {
-            ds = stockDetailsBll.GetAllStockDetail();
-            ProdDisplayGrid.DataSource = ds;
-            ProdDisplayGrid.DataBind();
+
             if (drpSerchUser.SelectedIndex != -1)
             {
                 StockDetails obj = new StockDetails();
 
                 obj.ProductID = Convert.ToInt32(drpSerchUser.SelectedValue);
+                obj.UserRoleID = 1;
                 ds = stockDetailsBll.GetStockDetailSearch(obj);
                 ProdDisplayGrid.DataSource = ds;
                 ProdDisplayGrid.DataBind();
@@ -65,6 +78,7 @@ namespace IMS_v1
         }
         protected void ProdDisplayGrid_Sorting(object sender, GridViewSortEventArgs e)
         {
+            DataView sortedView;
             string sortingDirection = string.Empty;
             if (direction == SortDirection.Ascending)
             {
@@ -78,9 +92,25 @@ namespace IMS_v1
                 sortingDirection = "Asc";
 
             }
-            ds = stockDetailsBll.GetAllStockDetail();
+            if (drpSerchUser.SelectedIndex != -1)
+            {
+                StockDetails obj = new StockDetails();
+
+                obj.ProductID = Convert.ToInt32(drpSerchUser.SelectedValue);
+                ds = stockDetailsBll.GetStockDetailSearch(obj);
+                ProdDisplayGrid.DataSource = ds;
+                ProdDisplayGrid.DataBind();
+            }
+
+            else
+            {
+
+                ds = stockDetailsBll.GetAllStockDetail();
+            }
+
+
             ProdDisplayGrid.DataSource = ds;
-            DataView sortedView = new DataView(ds.Tables[0]);
+            sortedView = new DataView(ds.Tables[0]);
             sortedView.Sort = e.SortExpression + " " + sortingDirection;
             Session["SortedView"] = sortedView;
             ProdDisplayGrid.DataSource = sortedView;
@@ -106,6 +136,6 @@ namespace IMS_v1
             BindGrid();
         }
 
-       
+
     }
 }
