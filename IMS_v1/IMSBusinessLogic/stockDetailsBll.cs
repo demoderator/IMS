@@ -41,6 +41,14 @@ namespace IMSBusinessLogic
          return resultSet;
      }
 
+     public static DataSet GetStockDetailSearchExpiry(StockDetails val)
+     {
+         DataSet resultSet = new DataSet();
+         StockExpiryDetailsDal instance = new StockExpiryDetailsDal();
+         resultSet = instance.View(val);
+         return resultSet;
+     }
+
      public void Update(StockDetails val)
      {
          stockDetailsUpdateDAL instance = new stockDetailsUpdateDAL();

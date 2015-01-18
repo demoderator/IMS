@@ -15,45 +15,60 @@ namespace IMS_v1
         private DataSet ds;
         protected void Page_Load(object sender, EventArgs e)
         {
-           if (!IsPostBack)
-           {
-               try
-              {
+            if (!IsPostBack)
+            {
+                try
+                {
 
-                   BindGrid();
-              }
-              catch (Exception exp) {
-              
-              }
-           }
+                    BindGrid();
+                    BindDrpProduct();
+                }
+                catch (Exception exp)
+                {
+
+                }
+            }
         }
 
         protected void ProdDisplayGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-           ProdDisplayGrid.PageIndex = e.NewPageIndex;
+            ProdDisplayGrid.PageIndex = e.NewPageIndex;
 
-         
 
-           if (Session["SortedView"] != null)
-           {
-               ProdDisplayGrid.DataSource = Session["SortedView"];
-               ProdDisplayGrid.DataBind();
-           }
-           else
-           {
-               ProdDisplayGrid.DataSource = ds;
-               ProdDisplayGrid.DataBind();
-           }  
 
-           BindGrid();
+            if (Session["SortedView"] != null)
+            {
+                ProdDisplayGrid.DataSource = Session["SortedView"];
+                ProdDisplayGrid.DataBind();
+            }
+            else
+            {
+                ProdDisplayGrid.DataSource = ds;
+                ProdDisplayGrid.DataBind();
+            }
+
+            BindGrid();
         }
 
         private void BindGrid()
         {
+            ProductMaster obj = new ProductMaster();
 
-            ds = ProductMasterBLL.GetAllProductMaster();
-            ProdDisplayGrid.DataSource = ds;
-            ProdDisplayGrid.DataBind();
+            if (drpSerchProduct.SelectedValue != "")
+            {
+
+                obj.ProductID = Convert.ToInt32(drpSerchProduct.SelectedValue);
+                ds = ProductMasterBLL.GetProductMasterByID(obj);
+                ProdDisplayGrid.DataSource = ds;
+                ProdDisplayGrid.DataBind();
+            }
+            else
+            {
+                ds = ProductMasterBLL.GetAllProductMaster();
+                ProdDisplayGrid.DataSource = ds;
+                ProdDisplayGrid.DataBind();
+            }
+
         }
 
         protected void ProdDisplayGrid_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -116,8 +131,23 @@ namespace IMS_v1
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            BindGrid();
+        }
+
+
+        public void BindDrpProduct()
+        {
+
+            ds = ProductMasterBLL.GetAllProductMaster();
+
+            drpSerchProduct.DataSource = ds;
+            drpSerchProduct.Items.Insert(0, new ListItem("Select Product", ""));
+            drpSerchProduct.DataTextField = "ProductName";
+            drpSerchProduct.DataValueField = "ProductID";
+
+            drpSerchProduct.DataBind();
 
         }
-       
+
     }
 }

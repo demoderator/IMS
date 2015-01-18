@@ -18,16 +18,30 @@ namespace IMS_v1
             if (!IsPostBack)
             {
                 BindgdvVendor();
+                BindDrpendor();
             }
         }
 
 
         public void BindgdvVendor()
         {
-            ds = VendorBll.GetAllVendor();
-            gdvVendor.DataSource = ds;
-            gdvVendor.DataBind();
 
+
+            if (drpVendor.SelectedValue != "")
+            {
+                Vendor obj = new Vendor();
+                obj.supp_ID = drpVendor.SelectedValue;
+
+                ds = VendorBll.GetAllVendorById(obj);
+                gdvVendor.DataSource = ds;
+                gdvVendor.DataBind();
+            }
+            else
+            {
+                ds = VendorBll.GetAllVendor();
+                gdvVendor.DataSource = ds;
+                gdvVendor.DataBind();
+            }
 
         }
 
@@ -40,7 +54,7 @@ namespace IMS_v1
         {
 
             gdvVendor.PageIndex = e.NewPageIndex;
-          
+
             if (Session["SortedView"] != null)
             {
                 gdvVendor.DataSource = Session["SortedView"];
@@ -50,9 +64,9 @@ namespace IMS_v1
             {
                 gdvVendor.DataSource = ds;
                 gdvVendor.DataBind();
-            }  
+            }
 
-            
+
         }
 
         protected void gVStoreInfo_SelectedIndexChanged(object sender, EventArgs e)
@@ -93,8 +107,21 @@ namespace IMS_v1
             }
 
 
-            ds = VendorBll.GetAllVendor();
-            gdvVendor.DataSource = ds;
+            if (drpVendor.SelectedValue != "")
+            {
+                Vendor obj = new Vendor();
+                obj.supp_ID = drpVendor.SelectedValue;
+
+                ds = VendorBll.GetAllVendorById(obj);
+
+            }
+            else
+            {
+                ds = VendorBll.GetAllVendor();
+
+            }
+
+
             sortedView = new DataView(ds.Tables[0]);
             sortedView.Sort = e.SortExpression + " " + sortingDirection;
             Session["SortedView"] = sortedView;
@@ -117,5 +144,25 @@ namespace IMS_v1
                 ViewState["directionState"] = value;
             }
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            BindgdvVendor();
+        }
+
+        public void BindDrpendor()
+        {
+
+            ds = VendorBll.GetAllVendor();
+            gdvVendor.DataSource = ds;
+            drpVendor.DataSource = ds;
+            drpVendor.Items.Insert(0, new ListItem("Select Product", ""));
+            drpVendor.DataTextField = "SupName";
+            drpVendor.DataValueField = "Supp_ID";
+
+            drpVendor.DataBind();
+
+        }
+
     }
 }

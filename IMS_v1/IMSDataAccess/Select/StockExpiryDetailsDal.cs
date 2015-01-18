@@ -8,35 +8,34 @@ using System.Text;
 
 namespace IMSDataAccess.Select
 {
-    public class StockDetailSearchDAL : DataAccessbase
+    public class StockExpiryDetailsDal:DataAccessbase
     {
-        StockDetailSearchDALDataParameter _insertParameters;
-        public StockDetailSearchDAL()
+        StockExpiryDetailsDalDataParameters _insertParameters;
+        public StockExpiryDetailsDal()
         {
-            StoredProcedureName = StoredProcedure.Select.Sp_GetStockDetailByParameters.ToString();
-
+            StoredProcedureName = StoredProcedure.Select.Sp_GetProductExpiryDetails.ToString();
         }
 
         public DataSet View(StockDetails val)
         {
 
             DataSet ds;
-            _insertParameters = new StockDetailSearchDALDataParameter(val);
+            _insertParameters = new StockExpiryDetailsDalDataParameters(val);
             DataBaseHelper dbHelper = new DataBaseHelper(StoredProcedureName);
             ds = dbHelper.Run(ConnectionString, _insertParameters.Parameters);
             return ds;
         }
-
-
     }
 
 
-    public class StockDetailSearchDALDataParameter
+    public class StockExpiryDetailsDalDataParameters
     {
+
+
         private StockDetails _pDetail;
         private SqlParameter[] _parameters;
 
-        public StockDetailSearchDALDataParameter(StockDetails val)
+        public StockExpiryDetailsDalDataParameters(StockDetails val)
         {
             PDetail = val;
             Build();
@@ -61,10 +60,6 @@ namespace IMSDataAccess.Select
                                         
                                         
                                         };
-
-
-
-
             Parameters = parameters;
         }
         public SqlParameter[] Parameters
@@ -89,8 +84,7 @@ namespace IMSDataAccess.Select
                 _pDetail = value;
             }
         }
+
+
     }
-
-
 }
-
