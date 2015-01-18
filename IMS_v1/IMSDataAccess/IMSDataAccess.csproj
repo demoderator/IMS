@@ -77,6 +77,7 @@
     <Compile Include="Select\stockDetailsByIdDAL.cs" />
     <Compile Include="Select\StockDetailSearchDAL.cs" />
     <Compile Include="Select\stockDetailsSelectDAL.cs" />
+    <Compile Include="Select\StockExpiryDetailsDal.cs" />
     <Compile Include="Select\SubCategorySelectByIdDAL.cs" />
     <Compile Include="Select\SubCategorySelectDAL.cs" />
     <Compile Include="Select\SystemRoleSelectByIdDAL.cs" />

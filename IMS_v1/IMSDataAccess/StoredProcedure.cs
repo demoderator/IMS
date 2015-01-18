@@ -42,7 +42,8 @@ namespace IMSDataAccess
             Sp_GetCategoryById,
             Sp_GetSubCategoryById,
             Sp_GetAllDepPerCategoryName,
-            Sp_GetDistinctCategories
+            Sp_GetDistinctCategories,
+            Sp_GetProductExpiryDetails
         }
         public enum Delete
         {
