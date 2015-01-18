@@ -13,6 +13,9 @@ namespace IMSCommon
         private int _subCategoryID;
         private string _name;
         private int _categoryID;
+        private string categoryName;
+        private string departmentName;
+       
 
         
         #endregion
@@ -37,7 +40,20 @@ namespace IMSCommon
         {
             get { return _categoryID; }
             set { _categoryID = value; }
-        }  
+        }
+
+        public string CategoryName
+        {
+            get { return categoryName; }
+            set { categoryName = value; }
+        }
+
+
+        public string DepartmentName
+        {
+            get { return departmentName; }
+            set { departmentName = value; }
+        }
         #endregion
     }
 }

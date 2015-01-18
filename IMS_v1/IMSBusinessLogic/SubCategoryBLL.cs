@@ -26,6 +26,15 @@ namespace IMSBusinessLogic
             return resultSet;
         }
 
+        public DataSet GetById(SubCategory val)
+        {
+            DataSet resultSet = new DataSet();
+
+            IMSDataAccess.Select.SubCategorySelectByIdDAL depInstance = new IMSDataAccess.Select.SubCategorySelectByIdDAL();
+            resultSet = depInstance.View(val);
+            return resultSet;
+        }
+
         public void Update(SubCategory subCategory)
         {
             SubCategoryUpdateDAL subCatUpdateDAL= new SubCategoryUpdateDAL();

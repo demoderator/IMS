@@ -20,7 +20,8 @@ namespace IMS_v1
             {
                 try
                 {
-                    BindGrid();
+                    BindGrid(false);
+                    BindDropSearch();
                 }
                 catch (Exception exp) { }
             }
@@ -29,15 +30,19 @@ namespace IMS_v1
         protected void CategoryDisplayGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             CategoryDisplayGrid.PageIndex = e.NewPageIndex;
-            BindGrid();
+            BindGrid(false);
         }
 
         protected void CategoryDisplayGrid_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             CategoryDisplayGrid.EditIndex = -1;
-            BindGrid();
+            BindGrid(false);
         }
 
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            BindGrid(true);
+        }
         protected void CategoryDisplayGrid_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             try
@@ -93,7 +98,7 @@ namespace IMS_v1
             finally 
             {
                     CategoryDisplayGrid.EditIndex = -1;
-                    BindGrid();
+                    BindGrid(false);
             }
         }
 
@@ -113,19 +118,29 @@ namespace IMS_v1
             finally 
             {   
                 CategoryDisplayGrid.EditIndex = -1;
-                BindGrid();
+                BindGrid(false);
             }
         }
 
         protected void CategoryDisplayGrid_RowEditing(object sender, GridViewEditEventArgs e)
         {
             CategoryDisplayGrid.EditIndex = e.NewEditIndex;
-            BindGrid();
+            BindGrid(false);
         }
 
-        private void BindGrid()
+        private void BindGrid(bool isSearch)
         {
-            ds = CategoryBLL.GetAllCategories();
+            if (ddlCatName.SelectedIndex != -1 && isSearch)
+            {
+                Category obj = new Category();
+                obj.CategoryID = int.Parse(ddlCatName.SelectedValue);
+                CategoryBLL ins = new CategoryBLL();
+                ds = ins.GetById(obj);
+            }
+            else
+            {
+                ds = CategoryBLL.GetAllCategories();
+            }
             CategoryDisplayGrid.DataSource = ds;
             CategoryDisplayGrid.DataBind();
 
@@ -137,6 +152,16 @@ namespace IMS_v1
             depList.DataBind();
         }
 
+        private void BindDropSearch()
+        {
+
+            ddlCatName.DataSource = CategoryBLL.GetAllCategories();
+            ddlCatName.Items.Insert(0, new ListItem("Select Category", ""));
+            ddlCatName.DataTextField = "categoryName";
+            ddlCatName.DataValueField = "categoryId";
+
+            ddlCatName.DataBind();
+        }
         protected void CategoryDisplayGrid_RowDataBound(object sender, GridViewRowEventArgs e)
         {
            

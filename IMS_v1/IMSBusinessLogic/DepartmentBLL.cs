@@ -48,6 +48,15 @@ namespace IMSBusinessLogic
             return resultSet;
         }
 
+        public DataSet GetById(Department val) 
+        {
+            DataSet resultSet = new DataSet();
+
+            IMSDataAccess.Select.DepartmentSelectByIdDAL depInstance = new IMSDataAccess.Select.DepartmentSelectByIdDAL();
+            resultSet = depInstance.View(val);
+            return resultSet;
+        }
+
         public void Update(Department dep) 
         {
             DepartmentUpdateDAL depUpdateDAL = new DepartmentUpdateDAL();

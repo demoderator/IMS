@@ -37,7 +37,8 @@ namespace IMSDataAccess.Update
         }
         public void Build()
         {
-            SqlParameter[] parameters = { new SqlParameter("@p_Id", SubCategory.SubCategoryID), new SqlParameter("@p_Name", SubCategory.Name), new SqlParameter("@p_CategoryId", SubCategory.CategoryID) };
+            SqlParameter[] parameters = { new SqlParameter("@p_Id", SubCategory.SubCategoryID), new SqlParameter("@p_Name", SubCategory.Name), new SqlParameter("@p_CategoryName", SubCategory.CategoryName)
+                                         ,new SqlParameter("@p_DepartmentName",SubCategory.DepartmentName) };
             Parameters = parameters;
         }
         public SqlParameter[] Parameters

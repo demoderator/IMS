@@ -105,6 +105,23 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="wrapper">
         <div class="right full">
+             <table>
+                <tr>
+                    <th colspan="2">Search</th>
+                </tr>
+
+                <tr>
+                    <td>Search by Category</td>
+                    <td>
+                        <asp:DropDownList ID="ddlCatName" runat="server"></asp:DropDownList></td>
+                </tr>
+
+                <tr><td colspan="2">
+
+                    <asp:Button ID="btnSubmit" runat="server" Text="Search" OnClick="btnSubmit_Click"  />
+                    </td></tr>
+               
+            </table>
             <asp:GridView ID="CategoryDisplayGrid" runat="server" CellSpacing="0" CellPadding="0" border="0" Width="100%" CssClass="grid" AllowPaging="True" PageSize="10"
                 AutoGenerateColumns="false" OnPageIndexChanging="CategoryDisplayGrid_PageIndexChanging" OnRowCancelingEdit="CategoryDisplayGrid_RowCancelingEdit" ShowFooter="true"
                 OnRowCommand="CategoryDisplayGrid_RowCommand"

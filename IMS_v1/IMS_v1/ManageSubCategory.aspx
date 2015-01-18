@@ -102,7 +102,26 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
      <div class="wrapper">
+         <%--<asp:DropDownList ID ="ddlSubCatName" runat="server" class="cp-in"  AutoPostBack="True" OnSelectedIndexChanged="ddlSubCatName_SelectedIndexChanged"  Font-Size="14pt" Width="50%"/>--%>
+      
          <div class="right full">
+                <table>
+                <tr>
+                    <th colspan="2">Search</th>
+                </tr>
+
+                <tr>
+                    <td>Search by SubCategory</td>
+                    <td>
+                        <asp:DropDownList ID="ddlSubCatName" runat="server"></asp:DropDownList></td>
+                </tr>
+
+                <tr><td colspan="2">
+
+                    <asp:Button ID="btnSubmit" runat="server" Text="Search" OnClick="btnSubmit_Click"  />
+                    </td></tr>
+               
+            </table>
              <asp:GridView ID="SubCategoryDisplayGrid" runat="server" cellspacing="0" cellpadding="0" border="0" width="100%" CssClass="grid" AllowPaging="True" PageSize="10" 
                 AutoGenerateColumns="false" OnPageIndexChanging="SubCategoryDisplayGrid_PageIndexChanging"   onrowcancelingedit="SubCategoryDisplayGrid_RowCancelingEdit" ShowFooter="true"
             onrowcommand="SubCategoryDisplayGrid_RowCommand" OnRowDataBound="SubCategoryDisplayGrid_RowDataBound" onrowdeleting="SubCategoryDisplayGrid_RowDeleting" onrowediting="SubCategoryDisplayGrid_RowEditing" >
@@ -138,14 +157,33 @@
                         
                         <EditItemTemplate>
                             <%--<asp:TextBox ID="txtCatID" runat="server" Text='<%#Eval("categoryName") %>'></asp:TextBox>--%>
-                             <asp:DropDownList ID="ddlCategoryName" runat="server">
+                             <asp:DropDownList ID="ddlCategoryName" AutoPostBack="true" runat="server" OnSelectedIndexChanged="ddlCategoryName_SelectedIndexChanged">
 
                              </asp:DropDownList>
                         </EditItemTemplate>
                         
                         <FooterTemplate>
                             <%--<asp:TextBox ID="txtAddCatID" runat="server"></asp:TextBox>--%>
-                             <asp:DropDownList ID="ddlAddCategoryName" runat="server">
+                             <asp:DropDownList ID="ddlAddCategoryName" AutoPostBack="true" runat="server"  OnSelectedIndexChanged="ddlAddCategoryName_SelectedIndexChanged">
+
+                             </asp:DropDownList>
+                        </FooterTemplate>
+                    </asp:TemplateField>
+                    
+                     <asp:TemplateField HeaderText="Department Name">
+                        <ItemTemplate>
+                            <asp:Label ID="lblDep_Id"  runat="server" Text='<%# Eval("DepartmentName") %>'></asp:Label>
+                        </ItemTemplate>
+                        
+                         <EditItemTemplate>
+                            <%--<asp:TextBox ID="txtCatID" runat="server" Text='<%#Eval("categoryName") %>'></asp:TextBox>--%>
+                             <asp:DropDownList ID="ddlDepName" runat="server" >
+
+                             </asp:DropDownList>
+                        </EditItemTemplate>                   
+                        <FooterTemplate>
+                            <%--<asp:TextBox ID="txtAddCatID" runat="server"></asp:TextBox>--%>
+                             <asp:DropDownList ID="ddlAddDepName" runat="server">
 
                              </asp:DropDownList>
                         </FooterTemplate>

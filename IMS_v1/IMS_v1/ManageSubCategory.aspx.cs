@@ -19,8 +19,9 @@ namespace IMS_v1
             if (!IsPostBack)
             {
                 try
-                {
-                    BindGrid();
+                {                    
+                    BindGrid(false);
+                    BindDropSearch();
                 }
                 catch (Exception exp) { }
             }
@@ -29,13 +30,13 @@ namespace IMS_v1
         protected void SubCategoryDisplayGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             SubCategoryDisplayGrid.PageIndex = e.NewPageIndex;
-            BindGrid();
+            BindGrid(false);
         }
 
         protected void SubCategoryDisplayGrid_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             SubCategoryDisplayGrid.EditIndex = -1;
-            BindGrid();
+            BindGrid(false);
         }
 
         protected void SubCategoryDisplayGrid_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -46,51 +47,42 @@ namespace IMS_v1
                 {
                     SubCategoryBLL subCategoryManager = new SubCategoryBLL();
                     TextBox txtname = (TextBox)SubCategoryDisplayGrid.FooterRow.FindControl("txtAddname");
-                    TextBox txtCatId = (TextBox)SubCategoryDisplayGrid.FooterRow.FindControl("txtAddCatID");
-
+                    string catName = ((DropDownList)(SubCategoryDisplayGrid.FooterRow.FindControl("ddlAddCategoryName"))).SelectedItem.Text;
+                    string depName = ((DropDownList)(SubCategoryDisplayGrid.FooterRow.FindControl("ddlAddDepName"))).SelectedItem.Text;
                     SubCategory subCategoryToAdd = new SubCategory();
                     subCategoryToAdd.Name = txtname.Text;
-                    int res;
-                    if (int.TryParse(txtCatId.Text, out res))
-                    {
-                        subCategoryToAdd.CategoryID = res;
-                        subCategoryManager.Add(subCategoryToAdd);
-                    }
-                    else
-                    {
-                        WebMessageBoxUtil.Show("Invalid input in Category field ");
-                    }
+                    subCategoryToAdd.CategoryName = catName;
+                    subCategoryToAdd.DepartmentName = depName;
+                    subCategoryManager.Add(subCategoryToAdd);
+                    
                  }
                 else if (e.CommandName.Equals("UpdateSubCategory")) 
                 {
                     SubCategoryBLL subCategoryManager = new SubCategoryBLL();
                     Label id = (Label)SubCategoryDisplayGrid.Rows[SubCategoryDisplayGrid.EditIndex].FindControl("lblSubCat_ID");
                     TextBox name = (TextBox)SubCategoryDisplayGrid.Rows[SubCategoryDisplayGrid.EditIndex].FindControl("txtname");
-                    DropDownList ddlDep = (DropDownList)(SubCategoryDisplayGrid.Rows[SubCategoryDisplayGrid.EditIndex].FindControl("ddlCategoryName"));
-                    string catName = ddlDep.SelectedItem.Value;
-                    
+                    DropDownList ddlCat = (DropDownList)(SubCategoryDisplayGrid.Rows[SubCategoryDisplayGrid.EditIndex].FindControl("ddlCategoryName"));
+                    string catName = ddlCat.SelectedItem.Text;
+
+                    DropDownList ddlDep = (DropDownList)(SubCategoryDisplayGrid.Rows[SubCategoryDisplayGrid.EditIndex].FindControl("ddlDepName"));
+                    string depName = ddlCat.SelectedItem.Text;
 
                     int selectedId = int.Parse(id.Text);
                     SubCategory subCategoryToUpdate = new SubCategory();//= empid.Text;
                     subCategoryToUpdate.SubCategoryID = selectedId;
                     subCategoryToUpdate.Name = name.Text;
-                    int res;
-                    if (int.TryParse(catName, out res))
-                    {
-                        subCategoryToUpdate.CategoryID = res;
-                        subCategoryManager.Update(subCategoryToUpdate);
-                    }
-                    else
-                    {
-                        WebMessageBoxUtil.Show("Invalid input in Category field ");
-                    }
+                    subCategoryToUpdate.CategoryName = catName;
+                    subCategoryToUpdate.DepartmentName = depName;
+
+                    subCategoryManager.Update(subCategoryToUpdate);
+                    
                 }
             }
             catch (Exception exp) { }
             finally 
             {
                 SubCategoryDisplayGrid.EditIndex = -1;
-                BindGrid();
+                BindGrid(false);
             }
         }
 
@@ -111,29 +103,57 @@ namespace IMS_v1
             finally 
             {
                 SubCategoryDisplayGrid.EditIndex = -1;
-                BindGrid();
+                BindGrid(false);
             }
         }
 
         protected void SubCategoryDisplayGrid_RowEditing(object sender, GridViewEditEventArgs e)
         {
             SubCategoryDisplayGrid.EditIndex = e.NewEditIndex;
-            BindGrid();
+            BindGrid(false);
         }
 
-     
-        private void BindGrid()
+        protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            ds = SubCategoryBLL.GetAllSubCategories();
+            BindGrid(true);
+        }
+        private void BindGrid(bool isSearch)
+        {
+            if (ddlSubCatName.SelectedIndex != -1 && isSearch)
+            {
+                SubCategoryBLL sub = new SubCategoryBLL();
+                SubCategory obj= new SubCategory();
+
+                obj.SubCategoryID = int.Parse(ddlSubCatName.SelectedValue);
+                ds =sub.GetById(obj) ;
+             
+            }
+            else 
+            {
+                ds = SubCategoryBLL.GetAllSubCategories();
+                
+            }
             SubCategoryDisplayGrid.DataSource = ds;
             SubCategoryDisplayGrid.DataBind();
 
             DropDownList catList = (DropDownList)SubCategoryDisplayGrid.FooterRow.FindControl("ddlAddCategoryName");
-            catList.DataSource = CategoryBLL.GetAllCategories();
+            catList.DataSource = CategoryBLL.GetDistinct();
             catList.DataBind();
             catList.DataTextField = "categoryName";
-            catList.DataValueField = "categoryID";
+            //catList.DataValueField = "categoryID";
             catList.DataBind();
+
+            DropDownList depList = (DropDownList)SubCategoryDisplayGrid.FooterRow.FindControl("ddlAddDepName");
+            string catId = ((DropDownList)(SubCategoryDisplayGrid.FooterRow.FindControl("ddlAddCategoryName"))).SelectedItem.Text;
+            Category obj2 = new Category();
+            obj2.Name = catId;
+            CategoryBLL ins = new CategoryBLL();
+            depList.DataSource = ins.GetDepListByCategoryName(obj2);
+            depList.DataBind();
+            depList.DataTextField = "DepName";
+            depList.DataValueField = "DepId";
+            depList.DataBind();
+
         }
 
         protected void SubCategoryDisplayGrid_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -143,16 +163,69 @@ namespace IMS_v1
                 try
                 {
                     DropDownList catList = (DropDownList)e.Row.FindControl("ddlCategoryName");
-                    catList.DataSource = CategoryBLL.GetAllCategories();
+                    catList.DataSource = CategoryBLL.GetDistinct();
                     catList.DataBind();
                     catList.DataTextField = "categoryName";
-                    catList.DataValueField = "categoryID";
+                   // catList.DataValueField = "categoryID";
                     catList.DataBind();
+
+                    DropDownList depList = (DropDownList)e.Row.FindControl("ddlDepName");
+                    string catId = ((DropDownList)(e.Row.FindControl("ddlCategoryName"))).SelectedItem.Text;
+                    Category obj2 = new Category();
+                    obj2.Name = catId;
+                    CategoryBLL ins = new CategoryBLL();
+                    depList.DataSource = ins.GetDepListByCategoryName(obj2);
+                    depList.DataBind();
+                    depList.DataTextField = "DepName";
+                    depList.DataValueField = "DepId";
+                    depList.DataBind();
                    
                 }
                 catch (Exception exo)
                 { }
             }
+        }
+
+       
+
+        private void BindDropSearch()
+        {
+          
+            ddlSubCatName.DataSource = SubCategoryBLL.GetAllSubCategories();
+            ddlSubCatName.Items.Insert(0, new ListItem("Select SubCategory", ""));
+            ddlSubCatName.DataTextField = "subCatName";
+            ddlSubCatName.DataValueField = "subCatID";
+
+            ddlSubCatName.DataBind();
+        }
+
+        protected void ddlAddCategoryName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DropDownList depList = (DropDownList)SubCategoryDisplayGrid.FooterRow.FindControl("ddlAddDepName");
+            string catId = ((DropDownList)(SubCategoryDisplayGrid.FooterRow.FindControl("ddlAddCategoryName"))).SelectedItem.Text;
+            Category obj2 = new Category();
+            obj2.Name = catId;
+            CategoryBLL ins = new CategoryBLL();
+            depList.DataSource = ins.GetDepListByCategoryName(obj2);
+            depList.DataBind();
+            depList.DataTextField = "DepName";
+            depList.DataValueField = "DepId";
+            depList.DataBind();
+        }
+
+        protected void ddlCategoryName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            DropDownList depList = (DropDownList)SubCategoryDisplayGrid.Rows[SubCategoryDisplayGrid.EditIndex].FindControl("ddlDepName");
+            string catId = ((DropDownList)(SubCategoryDisplayGrid.Rows[SubCategoryDisplayGrid.EditIndex].FindControl("ddlCategoryName"))).SelectedItem.Text;
+            Category obj2 = new Category();
+            obj2.Name = catId;
+            CategoryBLL ins = new CategoryBLL();
+            depList.DataSource = ins.GetDepListByCategoryName(obj2);
+            depList.DataBind();
+            depList.DataTextField = "DepName";
+            depList.DataValueField = "DepId";
+            depList.DataBind();
         }
     }
 }

@@ -22,7 +22,8 @@ namespace IMS_v1
                 try
                 {
 
-                    BindGrid();
+                    BindGrid(false);
+                    BindDropSearch();
                 }
                 catch (Exception exp) { }
             }
@@ -34,16 +35,20 @@ namespace IMS_v1
 
         }
 
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            BindGrid(true);
+        }
         protected void DepDisplayGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             DepDisplayGrid.PageIndex = e.NewPageIndex;
-            BindGrid();
+            BindGrid(false);
         }
 
         protected void DepDisplayGrid_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             DepDisplayGrid.EditIndex = -1;
-            BindGrid();
+            BindGrid(false);
         }
 
         protected void DepDisplayGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -63,7 +68,7 @@ namespace IMS_v1
             finally
             {
                 DepDisplayGrid.EditIndex = -1;
-                BindGrid();
+                BindGrid(false);
             }
         }
 
@@ -111,7 +116,7 @@ namespace IMS_v1
             finally
             {
                 DepDisplayGrid.EditIndex = -1;
-                BindGrid();
+                BindGrid(false);
             }
 
         }
@@ -121,13 +126,33 @@ namespace IMS_v1
             DepDisplayGrid.EditIndex = e.NewEditIndex;
            // BindGrid();
         }
-        private void BindGrid()
+        private void BindGrid(bool isSearch)
         {
-            ds = DepartmentBLL.GetAllDepartment();
+            if (ddlDepName.SelectedIndex != -1 && isSearch)
+            {
+                Department obj = new Department();
+                obj.DepartmentID = int.Parse(ddlDepName.SelectedValue);
+                DepartmentBLL depBll = new DepartmentBLL();
+                ds= depBll.GetById(obj);
+            }
+            else
+            {
+                ds = DepartmentBLL.GetAllDepartment();
+               
+            }
             DepDisplayGrid.DataSource = ds;
             DepDisplayGrid.DataBind();
         }
 
-      
+        private void BindDropSearch()
+        {
+
+            ddlDepName.DataSource = DepartmentBLL.GetAllDepartment();
+            ddlDepName.Items.Insert(0, new ListItem("Select Department", ""));
+            ddlDepName.DataTextField = "Name";
+            ddlDepName.DataValueField = "DepId";
+
+            ddlDepName.DataBind();
+        }
     }
 }

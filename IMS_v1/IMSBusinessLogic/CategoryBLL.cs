@@ -26,6 +26,32 @@ namespace IMSBusinessLogic
             return resultSet;
         }
 
+        public DataSet GetById(Category val)
+        {
+            DataSet resultSet = new DataSet();
+
+            IMSDataAccess.Select.CategorySelectByIdDAL depInstance = new IMSDataAccess.Select.CategorySelectByIdDAL();
+            resultSet = depInstance.View(val);
+            return resultSet;
+        }
+
+        public static DataSet GetDistinct() 
+        {
+            DataSet resultSet = new DataSet();
+
+            IMSDataAccess.Select.CategoryDistinctSelectDAL depInstance = new IMSDataAccess.Select.CategoryDistinctSelectDAL();
+            resultSet = depInstance.View();
+            return resultSet;
+        }
+        public DataSet GetDepListByCategoryName(Category val)
+        {
+            DataSet resultSet = new DataSet();
+
+            IMSDataAccess.Select.DepartmentSelectByCategoryNameDAL depInstance = new IMSDataAccess.Select.DepartmentSelectByCategoryNameDAL();
+            resultSet = depInstance.View(val);
+            return resultSet;
+        }
+
         public void Update(Category category)
         {
             CategoryUpdateDAL categoryUpdateDAL = new CategoryUpdateDAL();

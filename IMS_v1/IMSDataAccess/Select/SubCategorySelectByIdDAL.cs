@@ -1,44 +1,45 @@
 ﻿using IMSCommon;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
-namespace IMSDataAccess.Insert
+namespace IMSDataAccess.Select
 {
-    public class SubCategoryInsertDAL:DataAccessbase
+    public class SubCategorySelectByIdDAL:DataAccessbase
     {
-        SubCategoryInsertDataParameters  _insertParameters;
+        SubCategorySelectDataParameters  _insertParameters;
 
-        public SubCategoryInsertDAL() 
+        public SubCategorySelectByIdDAL() 
         {
-            StoredProcedureName = StoredProcedure.Insert.Sp_AddNewSubCategory.ToString();
+            StoredProcedureName = StoredProcedure.Select.Sp_GetSubCategoryById.ToString();
         }
 
-        public void Add(SubCategory subCategory)
+        public DataSet View(SubCategory subCategory)
         {
-
-            _insertParameters = new SubCategoryInsertDataParameters(subCategory);
+            DataSet ds;
+            _insertParameters = new SubCategorySelectDataParameters(subCategory);
             DataBaseHelper dbHelper = new DataBaseHelper(StoredProcedureName);
-            dbHelper.Run(base.ConnectionString, _insertParameters.Parameters);
+            ds=dbHelper.Run(base.ConnectionString, _insertParameters.Parameters);
+            return ds;
         }
     }
 
-    public class SubCategoryInsertDataParameters
+    public class SubCategorySelectDataParameters
     {
         private SubCategory _subCategory;
         private SqlParameter[] _parameters;
 
-        public SubCategoryInsertDataParameters(SubCategory subCat)
+        public SubCategorySelectDataParameters(SubCategory subCat)
         {
             SubCategory = subCat;
             Build();
         }
         public void Build()
         {
-            SqlParameter[] parameters = { new SqlParameter("@p_Name", SubCategory.Name), new SqlParameter("@p_CategoryName", SubCategory.CategoryName)
-                                         ,new SqlParameter("@p_DepartmentName",SubCategory.DepartmentName)};
+            SqlParameter[] parameters = { new SqlParameter("@p_Id", SubCategory.SubCategoryID) };
             Parameters = parameters;
         }
         public SqlParameter[] Parameters
