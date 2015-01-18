@@ -9,9 +9,11 @@ namespace IMS_v1
 {
     public partial class WarehouseMain : System.Web.UI.Page
     {
+
+        string userid;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            userid = Session["UserID"].ToString();
         }
 
         protected void btnManageOrders_Click(object sender, EventArgs e)

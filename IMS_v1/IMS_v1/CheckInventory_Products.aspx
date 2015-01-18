@@ -114,7 +114,11 @@
                 <tr>
                     <td>Search by Product</td>
                     <td>
-                        <asp:DropDownList ID="drpSerchUser" runat="server"></asp:DropDownList></td>
+
+                        <asp:DropDownList ID="drpSerchUser" runat="server" >
+                            
+                              <asp:ListItem Value=''> ------------------- Select ------------------ </asp:ListItem>
+                        </asp:DropDownList></td>
                 </tr>
 
                 <tr><td colspan="2">
@@ -174,6 +178,11 @@
 
                     <asp:TemplateField HeaderText="Actions">
                         <ItemTemplate>
+
+                              <asp:Label ID="Label1" runat="server" Text=''> 
+
+                                 <a href="GetExpiryDetails.aspx?uId=<%# Eval("UserRoleID")%>&Pid=<%# Eval("ProductID")%>">
+                                     Details</asp:Label>
                         </ItemTemplate>
 
                     </asp:TemplateField>
@@ -184,4 +193,7 @@
             onrowcommand="DepDisplayGrid_RowCommand" onrowdeleting="DepDisplayGrid_RowDeleting" onrowediting="DepDisplayGrid_RowEditing" onrowupdating="DepDisplayGrid_RowUpdating">--%>
         </div>
     </div>
+
+
+    
 </asp:Content>

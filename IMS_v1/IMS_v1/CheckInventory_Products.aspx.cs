@@ -15,6 +15,7 @@ namespace IMS_v1
         private DataSet ds;
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!IsPostBack)
             {
                 try
@@ -42,7 +43,7 @@ namespace IMS_v1
             {
                 ProdDisplayGrid.DataSource = ds;
                 ProdDisplayGrid.DataBind();
-            }  
+            }
             BindGrid();
         }
         public void BindDrpSearch()
@@ -58,20 +59,23 @@ namespace IMS_v1
         private void BindGrid()
         {
 
-            if (drpSerchUser.SelectedIndex != -1)
-            {
-                StockDetails obj = new StockDetails();
 
-                obj.ProductID = Convert.ToInt32(drpSerchUser.SelectedValue);
-                obj.UserRoleID = 1;
-                ds = stockDetailsBll.GetStockDetailSearch(obj);
+            if (drpSerchUser.SelectedValue!="")
+            {
+                StockDetails objdrp = new StockDetails();
+                objdrp.ProductID = Convert.ToInt32(drpSerchUser.SelectedValue);
+                objdrp.UserRoleID = Convert.ToInt32(Session["UserID"]);
+                ds = stockDetailsBll.GetStockDetailSearch(objdrp);
                 ProdDisplayGrid.DataSource = ds;
                 ProdDisplayGrid.DataBind();
 
             }
             else
             {
-                ds = stockDetailsBll.GetAllStockDetail();
+
+                StockDetails obj1 = new StockDetails();
+                obj1.UserRoleID = Convert.ToInt32(Session["UserID"]);
+                ds = stockDetailsBll.GetStockDetailSearch(obj1);
                 ProdDisplayGrid.DataSource = ds;
                 ProdDisplayGrid.DataBind();
             }
@@ -92,12 +96,13 @@ namespace IMS_v1
                 sortingDirection = "Asc";
 
             }
+
             if (drpSerchUser.SelectedIndex != -1)
             {
-                StockDetails obj = new StockDetails();
+                StockDetails objsort = new StockDetails();
 
-                obj.ProductID = Convert.ToInt32(drpSerchUser.SelectedValue);
-                ds = stockDetailsBll.GetStockDetailSearch(obj);
+                objsort.ProductID = Convert.ToInt32(drpSerchUser.SelectedValue);
+                ds = stockDetailsBll.GetStockDetailSearch(objsort);
                 ProdDisplayGrid.DataSource = ds;
                 ProdDisplayGrid.DataBind();
             }
@@ -105,7 +110,9 @@ namespace IMS_v1
             else
             {
 
-                ds = stockDetailsBll.GetAllStockDetail();
+                StockDetails objGrid = new StockDetails();
+                objGrid.UserRoleID = Convert.ToInt32(Session["UserID"]);
+                ds = stockDetailsBll.GetStockDetailSearch(objGrid);
             }
 
 

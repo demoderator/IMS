@@ -34,7 +34,7 @@
                 <tr>
                     <td>Search by Product</td>
                     <td>
-                        <asp:DropDownList ID="drpSerchUser" runat="server" ></asp:DropDownList></td>
+                        <asp:DropDownList ID="drpSerchProduct" runat="server" ></asp:DropDownList></td>
                 </tr>
 
                 <tr><td colspan="2">

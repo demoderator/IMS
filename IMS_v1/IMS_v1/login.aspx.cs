@@ -36,6 +36,7 @@ namespace IMS_v1
         {
             txtUse.Text = "store";
             txtUse.Enabled = false;
+            Session["UserID"] = 2;
             HtmlGenericControl Div = (HtmlGenericControl)FindControl("choice2");
             Div.Attributes["class"] = "col-lg-4 options-se selected";
             imgbtn2.ImageUrl = "images/store-on.png";
@@ -52,6 +53,7 @@ namespace IMS_v1
         protected void imgbtn1_Click(object sender, ImageClickEventArgs e)
         {
             txtUse.Text = "warehouse";
+            Session["UserID"] = 1;
             txtUse.Enabled = false;
             HtmlGenericControl Div = (HtmlGenericControl)FindControl("choice1");
             Div.Attributes["class"] = "col-lg-4 options-se selected";
@@ -79,14 +81,17 @@ namespace IMS_v1
 
             if (UserName.Equals("warehouse") && UserPass.Equals("warehouse"))
             {
+                Session["UserID"] = 1;
                 Response.Redirect("WarehouseMain.aspx");
             }
             else if (UserName.Equals("headoffice") && UserPass.Equals("headoffice"))
             {
+               
                 Response.Redirect("HeadOfficeMain.aspx");
             }
             else if (UserName.Contains("store") && UserPass.Contains("store"))
             {
+                Session["UserID"] = 2;
                 Response.Redirect("StoreMain.aspx");
             }
         }
