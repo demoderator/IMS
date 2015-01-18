@@ -65,7 +65,7 @@ namespace IMS_v1
                     string catName = ddlCat.SelectedItem.Text;
 
                     DropDownList ddlDep = (DropDownList)(SubCategoryDisplayGrid.Rows[SubCategoryDisplayGrid.EditIndex].FindControl("ddlDepName"));
-                    string depName = ddlCat.SelectedItem.Text;
+                    string depName = ddlDep.SelectedItem.Text;
 
                     int selectedId = int.Parse(id.Text);
                     SubCategory subCategoryToUpdate = new SubCategory();//= empid.Text;
