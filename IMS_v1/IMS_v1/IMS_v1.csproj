@@ -334,12 +334,11 @@
     <Content Include="SendToStore.aspx" />
     <Content Include="StoreMain.aspx" />
     <Content Include="StoreTransfer.aspx" />
-<<<<<<< HEAD
     <Content Include="UpdateRecivedOrder.aspx" />
-=======
+
     <Content Include="Style\chosen.css" />
     <Content Include="UserControls\uc_ProductMainEdit_Popup.ascx" />
->>>>>>> origin/master
+
     <Content Include="VendorHeadOffice.aspx" />
     <Content Include="VendorList.aspx" />
     <Content Include="ViewVendor.aspx" />
@@ -594,21 +593,21 @@
     <Compile Include="StoreTransfer.aspx.designer.cs">
       <DependentUpon>StoreTransfer.aspx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
+
     <Compile Include="UpdateRecivedOrder.aspx.cs">
       <DependentUpon>UpdateRecivedOrder.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UpdateRecivedOrder.aspx.designer.cs">
       <DependentUpon>UpdateRecivedOrder.aspx</DependentUpon>
-=======
+    </Compile>
     <Compile Include="UserControls\uc_ProductMainEdit_Popup.ascx.cs">
       <DependentUpon>uc_ProductMainEdit_Popup.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserControls\uc_ProductMainEdit_Popup.ascx.designer.cs">
       <DependentUpon>uc_ProductMainEdit_Popup.ascx</DependentUpon>
->>>>>>> origin/master
+
     </Compile>
     <Compile Include="VendorHeadOffice.aspx.cs">
       <DependentUpon>VendorHeadOffice.aspx</DependentUpon>
