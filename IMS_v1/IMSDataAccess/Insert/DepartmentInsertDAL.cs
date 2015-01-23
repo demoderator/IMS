@@ -13,7 +13,7 @@ namespace IMSDataAccess.Insert
 
         public DepartmentInsertDAL() 
         {
-            StoredProcedureName = StoredProcedure.Insert.Sp_AddNewDepartment.ToString();
+            StoredProcedureName = StoredProcedure.Insert.Sp_PalceeNewOrder.ToString();
         }
 
         public void Add(Department dep)

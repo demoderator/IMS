@@ -22,7 +22,7 @@ namespace IMSBusinessLogic
             return resultSet;
         }
 
-        public DataSet GetUserRoleById(UserRoles val) 
+        public static DataSet GetUserRoleById(UserRoles val) 
         {
             DataSet resultSet = new DataSet();
             UserRoleSelectByIdDAL instance = new UserRoleSelectByIdDAL();

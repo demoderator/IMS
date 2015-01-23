@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="CategoryBLL.cs" />
     <Compile Include="DepartmentBLL.cs" />
+    <Compile Include="PlaceOrderBLL.cs" />
     <Compile Include="ProductBLL.cs" />
     <Compile Include="ProductDetailBLL.cs" />
     <Compile Include="ProductMasterBLL.cs" />

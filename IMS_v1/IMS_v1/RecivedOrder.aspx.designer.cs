@@ -10,51 +10,33 @@
 namespace IMS_v1 {
     
     
-    public partial class StoreMain {
+    public partial class RecivedOrder {
         
         /// <summary>
-        /// lblheading control.
+        /// txtSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblheading;
+        protected global::System.Web.UI.WebControls.TextBox txtSearch;
         
         /// <summary>
-        /// btnPlaceOrders control.
+        /// btnSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPlaceOrders;
+        protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
-        /// btnStoreInventory control.
+        /// gdvReceived control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnStoreInventory;
-        
-        /// <summary>
-        /// btnPicking control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPicking;
-        
-        /// <summary>
-        /// btnVendors control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVendors;
+        protected global::System.Web.UI.WebControls.GridView gdvReceived;
     }
 }

@@ -10,51 +10,69 @@
 namespace IMS_v1 {
     
     
-    public partial class StoreMain {
+    public partial class UpdateRecivedOrder {
         
         /// <summary>
-        /// lblheading control.
+        /// txtQuantityUnit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblheading;
+        protected global::System.Web.UI.WebControls.TextBox txtQuantityUnit;
         
         /// <summary>
-        /// btnPlaceOrders control.
+        /// txtDiscount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPlaceOrders;
+        protected global::System.Web.UI.WebControls.TextBox txtDiscount;
         
         /// <summary>
-        /// btnStoreInventory control.
+        /// txtSalePrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnStoreInventory;
+        protected global::System.Web.UI.WebControls.TextBox txtSalePrice;
         
         /// <summary>
-        /// btnPicking control.
+        /// txtCostPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPicking;
+        protected global::System.Web.UI.WebControls.TextBox txtCostPrice;
         
         /// <summary>
-        /// btnVendors control.
+        /// txtDateExpired control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVendors;
+        protected global::System.Web.UI.WebControls.TextBox txtDateExpired;
+        
+        /// <summary>
+        /// txtStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtStatus;
+        
+        /// <summary>
+        /// btnSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
     }
 }

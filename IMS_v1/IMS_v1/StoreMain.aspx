@@ -8,13 +8,16 @@
 	
 		<asp:Label ID="lblheading" runat="server" CssClass="screen-heading" Text="Store Services"></asp:Label>
 		<br />
-		<div class="icons-cont">
+		<div class="icons-cont-ho-orders">
 			
 			<div class="icons-header">
 				Store Services
 			</div>
 			
 			<div class="icons-body">
+
+             
+                <asp:Button ID="btnPlaceOrders" CssClass="anch-blocks place-order" runat="server" BorderWidth="0px" OnClick="btnPlaceOrders_Click" />
 				<asp:Button ID ="btnStoreInventory" runat="server" CssClass="anch-blocks store-inventory" BorderWidth="0px"  OnClick="btnStoreInventory_Click"/>
 				<asp:Button ID ="btnPicking" runat="server" CssClass="anch-blocks store-receivings" BorderWidth="0px" OnClick="btnPicking_Click"/>
 				<asp:Button ID ="btnVendors" runat="server" CssClass=" anch-blocks store-transfers" BorderWidth="0px" OnClick="btnVendors_Click"/>

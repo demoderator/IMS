@@ -1,10 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManualPurchaseOrder.aspx.cs" Inherits="IMS_v1.ManualPurchaseOrder" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SendToStore.aspx.cs" Inherits="IMS_v1.SendToStore" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-
     <div class="wrapper">
         <div class="right">
             <asp:PlaceHolder ID="plhMaster" runat="server">
@@ -52,7 +49,13 @@
                             <asp:TextBox ID="txtQuantity" runat="server"></asp:TextBox></td>
                     </tr>
 
+                      <tr>
 
+                        <td>Sale Prize
+                        </td>
+                        <td>
+                            <asp:TextBox ID="txtPrize" runat="server"></asp:TextBox></td>
+                    </tr>
                     <tr>
                         <td colspan="2">
                             <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" /></td>
@@ -87,7 +90,7 @@
                                 <asp:Label ID="lblProName" runat="server" Text='<%# Eval("ProductName") %>'></asp:Label>
                             </ItemTemplate>
                             <EditItemTemplate>
-                                <asp:Label ID="lblProductName_Id" runat="server" Text='<%#Eval("ProductID") %>' Visible="false"></asp:Label>
+                                <asp:Label ID="lblProductName_Id" runat="server" Text='<%#Eval("ProductID") %>'></asp:Label>
                                 <asp:DropDownList ID="drpOrderDetail" runat="server">
                                 </asp:DropDownList>
                             </EditItemTemplate>
@@ -113,6 +116,22 @@
                                 <asp:TextBox ID="txtAddquantity" runat="server" Text='<%#Eval("OrderedQuantity") %>'></asp:TextBox>
                             </FooterTemplate>
                         </asp:TemplateField>
+
+                         <asp:TemplateField HeaderText="SalePrice">
+                            <ItemTemplate>
+                                <asp:Label ID="lblSalePrice" runat="server" Text='<%#Convert.ToInt32( Eval("SalePrice")) %>'></asp:Label>
+                            </ItemTemplate>
+
+                            <EditItemTemplate>
+                                <asp:TextBox ID="txtSalePrice" runat="server" Text='<%#Convert.ToInt32(Eval("SalePrice")) %>'></asp:TextBox>
+
+                            </EditItemTemplate>
+
+                            <FooterTemplate>
+                                <asp:TextBox ID="txtAddSalePrice" runat="server" Text='<%#Eval("SalePrice") %>'></asp:TextBox>
+                            </FooterTemplate>
+                        </asp:TemplateField>
+
                         <asp:TemplateField HeaderText="Edit">
                             <ItemTemplate>
                                 <asp:LinkButton ID="btnEdit" Text="Edit" runat="server" CommandName="Edit"></asp:LinkButton>

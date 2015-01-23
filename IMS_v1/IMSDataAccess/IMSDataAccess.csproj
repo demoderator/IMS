@@ -45,6 +45,7 @@
     <Compile Include="DataBaseHelper.cs" />
     <Compile Include="Delete\CategoryDeleteDAL.cs" />
     <Compile Include="Delete\DepartmentDeleteDAL.cs" />
+    <Compile Include="Delete\orderDetailByDetailsIdDeleteDAL.cs" />
     <Compile Include="Delete\ProductDetailDeleteDAL.cs" />
     <Compile Include="Delete\ProductMasterDeleteDAL.cs" />
     <Compile Include="Delete\stockDetailsDeleteDAL.cs" />
@@ -54,6 +55,8 @@
     <Compile Include="Delete\VendorDeleteDAL.cs" />
     <Compile Include="Insert\CategoryInsertDAL.cs" />
     <Compile Include="Insert\DepartmentInsertDAL.cs" />
+    <Compile Include="Insert\OrderInsertDetail.cs" />
+    <Compile Include="Insert\PlaceOrderInsertDAL.cs" />
     <Compile Include="Insert\ProductDetailInsertDAL.cs" />
     <Compile Include="Insert\ProductMasterInsertDAL.cs" />
     <Compile Include="Insert\stock_DetailInsertDAL.cs" />
@@ -68,6 +71,9 @@
     <Compile Include="Select\DepartmentSelectByCategoryNameDAL.cs" />
     <Compile Include="Select\DepartmentSelectByIdDAL.cs" />
     <Compile Include="Select\DepartmentSelectDAL.cs" />
+    <Compile Include="Select\GetPlaceOrderDAL.cs" />
+    <Compile Include="Select\OrderDetailsByOrderID.cs" />
+    <Compile Include="Select\PendingOrderDAL.cs" />
     <Compile Include="Select\ProductDetailSelectByDetailIdDAL.cs" />
     <Compile Include="Select\ProductDetailSelectByIdDAL.cs" />
     <Compile Include="Select\ProductDetailSelectDAL.cs" />
@@ -90,6 +96,8 @@
     <Compile Include="StoredProcedure.cs" />
     <Compile Include="Update\CategoryUpdateDAL.cs" />
     <Compile Include="Update\DepartmentUpdateDAL.cs" />
+    <Compile Include="Update\OrderDetailsUpdateByStatusDAL.cs" />
+    <Compile Include="Update\orderDetailsUpdateDAL.cs" />
     <Compile Include="Update\ProductDetailUpdateDAL.cs" />
     <Compile Include="Update\ProductMasterUpdateDAL.cs" />
     <Compile Include="Update\stockDetailsUpdateDAL.cs" />

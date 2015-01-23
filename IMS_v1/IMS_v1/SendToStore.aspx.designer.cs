@@ -10,7 +10,7 @@
 namespace IMS_v1 {
     
     
-    public partial class ManualPurchaseOrder {
+    public partial class SendToStore {
         
         /// <summary>
         /// plhMaster control.
@@ -56,6 +56,15 @@ namespace IMS_v1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtQuantity;
+        
+        /// <summary>
+        /// txtPrize control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPrize;
         
         /// <summary>
         /// btnSubmit control.

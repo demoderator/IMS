@@ -11,8 +11,7 @@ using IMSCommon.Util;
 
 namespace IMS_v1
 {
-
-    public partial class ManualPurchaseOrder : System.Web.UI.Page
+    public partial class SendToStore : System.Web.UI.Page
     {
         DataSet ds;
         protected void Page_Load(object sender, EventArgs e)
@@ -39,19 +38,15 @@ namespace IMS_v1
             {
 
 
-                // items.Add(new ListItem("WareHouse", "1"));
+                items.Add(new ListItem("Store", "2"));
 
-                items.Add(new ListItem("Vendor", "5"));
+                //  items.Add(new ListItem("Vendor", "5"));
             }
 
-            else if (Session["Type"] == "Store")
-            {
-                //  items.Add(new ListItem("Store", "2"));
+      
+                
 
-                items.Add(new ListItem("WareHouse", "1"));
-
-            }
-
+            
 
             drpOrderType.Items.AddRange(items.ToArray());
 
@@ -66,22 +61,10 @@ namespace IMS_v1
             obj.OrderAmount = float.Parse("00");
             obj.UserID = Convert.ToInt32(Session["UserID"]);
             obj.OrderStatus = "Pending";
-
             obj.OrderRequestBy = Convert.ToInt32(Session["UserID"]);
-            if (drpOrderType.SelectedValue == "5")
-            {
-                obj.OrderRequestedFor = Convert.ToInt32(Session["UserID"]);
-                obj.VendorID = drpOrderTo.SelectedValue;
-                obj.OrderMode = "vendor";
-            }
-            else
-            {
-
-                obj.OrderRequestedFor = Convert.ToInt32(drpOrderTo.SelectedValue);
-                obj.OrderMode = "Demand";
-            }
+            obj.OrderRequestedFor = Convert.ToInt32(drpOrderTo.SelectedValue);
             obj.OrderTypeID = Convert.ToInt32(drpOrderType.SelectedValue);
-
+            obj.OrderMode = "Request";
             ds = PlaceOrderBLL.GetNewOrderDetails(obj);
 
         }
@@ -115,19 +98,6 @@ namespace IMS_v1
                 drpOrderTo.DataBind();
             }
 
-            if (drpOrderType.SelectedValue == "5")
-            {
-                DataSet dsVendor = VendorBll.GetAllVendor();
-                drpOrderTo.DataSource = dsVendor;
-                drpOrderTo.DataSource = dsVendor;
-
-                drpOrderTo.DataTextField = "SupName";
-                drpOrderTo.DataValueField = "Supp_ID";
-
-                drpOrderTo.DataBind();
-
-
-            }
 
             //GetUserRoleById
         }
@@ -168,17 +138,9 @@ namespace IMS_v1
                 objDetails.ProductID = Convert.ToInt32(drpSerchProduct.SelectedValue);
                 objDetails.OrderDate = Convert.ToDateTime(ds.Tables[0].Rows[0]["OrderDate"]);
                 objDetails.OrderedQuantity = Convert.ToInt32(txtQuantity.Text);
-
-                if (Session["Type"] == "WareHouse")
-                {
-                    objDetails.StatusDetails = "Initiated";
-                }
-
-                else if (Session["Type"] == "Store")
-                {
-                    objDetails.StatusDetails = "Pending";
-                }
-
+                objDetails.StatusDetails = "Initiated";
+                objDetails.SalePrice =Convert.ToInt32( txtPrize.Text);
+                objDetails.OrderDescription = "Requested";
                 PlaceOrderBLL objAdd = new PlaceOrderBLL();
                 objAdd.AddOrderDetails(objDetails);
             }
@@ -202,21 +164,23 @@ namespace IMS_v1
             gdvOrderDetail.DataSource = ds2;
             gdvOrderDetail.DataBind();
 
-
-            if (Session["OrderID"] != null)
+            if (plsChilde.Visible == true)
             {
-                DataSet dspro = new DataSet();
-                dspro = ProductMasterBLL.GetAllProductMaster();
+                if (Session["OrderID"] != null)
+                {
+                    DataSet dspro = new DataSet();
+                    dspro = ProductMasterBLL.GetAllProductMaster();
 
-                DropDownList drpOrderDetail = (DropDownList)gdvOrderDetail.FooterRow.FindControl("drpAddOrderDetail");
+                    DropDownList drpOrderDetail = (DropDownList)gdvOrderDetail.FooterRow.FindControl("drpAddOrderDetail");
 
 
-                drpOrderDetail.DataSource = dspro;
+                    drpOrderDetail.DataSource = dspro;
 
-                drpOrderDetail.DataTextField = "ProductName";
-                drpOrderDetail.DataValueField = "ProductID";
+                    drpOrderDetail.DataTextField = "ProductName";
+                    drpOrderDetail.DataValueField = "ProductID";
 
-                drpOrderDetail.DataBind();
+                    drpOrderDetail.DataBind();
+                }
             }
 
 
@@ -244,21 +208,15 @@ namespace IMS_v1
 
                     TextBox txtAddquantity = (TextBox)gdvOrderDetail.FooterRow.FindControl("txtAddquantity");
 
+                    TextBox txtAddSalePrice = (TextBox)gdvOrderDetail.FooterRow.FindControl("txtAddSalePrice");
                     DropDownList drpOrderDetail = (DropDownList)gdvOrderDetail.FooterRow.FindControl("drpAddOrderDetail");
                     objDetails.OrderID = Convert.ToInt32(Session["OrderID"]);
                     objDetails.ProductID = Convert.ToInt32(drpOrderDetail.SelectedValue);
                     objDetails.OrderDate = DateTime.Now;
-                    if (Session["Type"] == "WareHouse")
-                    {
-                        objDetails.StatusDetails = "Initiated";
-                    }
-
-                    else if (Session["Type"] == "Store")
-                    {
-                        objDetails.StatusDetails = "Pending";
-                    }
-
+                    objDetails.StatusDetails = "Initiated";
+                    objDetails.OrderDescription = "Requested";
                     objDetails.OrderedQuantity = Convert.ToInt32(txtAddquantity.Text);
+                    objDetails.SalePrice = Convert.ToInt32(txtAddSalePrice.Text);
 
                     PlaceOrderBLL objAdd = new PlaceOrderBLL();
                     objAdd.AddOrderDetails(objDetails);
@@ -280,13 +238,14 @@ namespace IMS_v1
 
                     OrderDetails objOrder = new OrderDetails();
 
-
-
+                    TextBox txtSalePrice = (TextBox)gdvOrderDetail.Rows[gdvOrderDetail.EditIndex].FindControl("txtSalePrice");
                     TextBox txtquantity = (TextBox)gdvOrderDetail.Rows[gdvOrderDetail.EditIndex].FindControl("txtquantity");
                     DropDownList ddlPro = (DropDownList)(gdvOrderDetail.Rows[gdvOrderDetail.EditIndex].FindControl("drpOrderDetail"));
                     long DrpPro = Convert.ToInt64(ddlPro.SelectedItem.Value);
                     objOrder.OrderDetailID = Convert.ToInt32(e.CommandArgument);
+                    objOrder.SalePrice = Convert.ToInt32(txtSalePrice.Text);
                     objOrder.ProductID = DrpPro;
+                    objOrder.OrderDescription = "Requested";
                     objOrder.OrderedQuantity = Convert.ToInt32(txtquantity.Text);
                     objupd.update(objOrder);
 
@@ -339,7 +298,6 @@ namespace IMS_v1
 
         protected void btnFinal_Click(object sender, EventArgs e)
         {
-
             Session["OrderID"] = null;
 
 
@@ -357,6 +315,5 @@ namespace IMS_v1
                 Response.Redirect("StoreMain.aspx");
             }
         }
-
     }
 }

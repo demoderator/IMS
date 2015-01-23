@@ -81,6 +81,7 @@ namespace IMS_v1
 
             if (UserName.Equals("warehouse") && UserPass.Equals("warehouse"))
             {
+                Session["Type"] = "WareHouse";
                 Session["UserID"] = 1;
                 Response.Redirect("WarehouseMain.aspx");
             }
@@ -91,6 +92,7 @@ namespace IMS_v1
             }
             else if (UserName.Contains("store") && UserPass.Contains("store"))
             {
+                Session["Type"] = "Store";
                 Session["UserID"] = 2;
                 Response.Redirect("StoreMain.aspx");
             }

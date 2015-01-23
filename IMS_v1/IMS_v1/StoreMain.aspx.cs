@@ -23,12 +23,23 @@ namespace IMS_v1
 
         protected void btnPicking_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("RecivedOrder.aspx");
         }
 
         protected void btnVendors_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnManageOrders_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        protected void btnPlaceOrders_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManualPurchaseOrder.aspx");
+            
         }
     }
 }

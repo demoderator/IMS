@@ -10,7 +10,7 @@
 				Warehouse Services
 			</div>
 			
-	    <div class="icons-body">
+	    <div class="icons-body full">
                 <asp:Button ID="btnManageOrders" CssClass="anch-blocks manage-orders" runat="server" BorderWidth="0px" OnClick="btnManageOrders_Click" />
                 <asp:Button ID="btnManageInventory" CssClass="anch-blocks manage-inventorywarehouse" runat="server" BorderWidth="0px" OnClick="btnManageInventory_Click" />
                 <%--<asp:Button ID="btnManageStores" CssClass="anch-blocks manage-stores" runat="server" BorderWidth="0px" OnClick="btnManageStores_Click"  />--%>

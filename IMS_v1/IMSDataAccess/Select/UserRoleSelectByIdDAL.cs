@@ -40,7 +40,7 @@ namespace IMSDataAccess.Select
         }
         public void Build()
         {
-            SqlParameter[] parameters = { new SqlParameter("@Name", UserRoles.UserRoleId) };
+            SqlParameter[] parameters = { new SqlParameter("@p_userRoleID", UserRoles.UserRoleId) };
             Parameters = parameters;
         }
         public SqlParameter[] Parameters
