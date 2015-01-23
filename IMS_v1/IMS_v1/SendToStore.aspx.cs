@@ -113,7 +113,7 @@ namespace IMS_v1
         public void BindDrpProduct()
         {
             DataSet dspro = new DataSet();
-            dspro = ProductMasterBLL.GetAllProductMaster();
+            dspro = ProductBLL.GetAvailableProducts();
 
 
             drpSerchProduct.DataSource = dspro;
@@ -169,7 +169,7 @@ namespace IMS_v1
                 if (Session["OrderID"] != null)
                 {
                     DataSet dspro = new DataSet();
-                    dspro = ProductMasterBLL.GetAllProductMaster();
+                   dspro= ProductBLL.GetAvailableProducts();
 
                     DropDownList drpOrderDetail = (DropDownList)gdvOrderDetail.FooterRow.FindControl("drpAddOrderDetail");
 
@@ -278,7 +278,7 @@ namespace IMS_v1
                     try
                     {
                         DataSet dspro = new DataSet();
-                        dspro = ProductMasterBLL.GetAllProductMaster();
+                        dspro = ProductBLL.GetAvailableProducts();
                         DropDownList depList = (DropDownList)e.Row.FindControl("drpOrderDetail");
                         depList.DataSource = dspro;
 

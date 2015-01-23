@@ -71,6 +71,7 @@
     <Compile Include="Select\DepartmentSelectByCategoryNameDAL.cs" />
     <Compile Include="Select\DepartmentSelectByIdDAL.cs" />
     <Compile Include="Select\DepartmentSelectDAL.cs" />
+    <Compile Include="Select\GetAvailableProductDAL.cs" />
     <Compile Include="Select\GetPlaceOrderDAL.cs" />
     <Compile Include="Select\OrderDetailsByOrderID.cs" />
     <Compile Include="Select\PendingOrderDAL.cs" />

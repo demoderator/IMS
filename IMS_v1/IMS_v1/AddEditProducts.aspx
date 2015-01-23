@@ -265,7 +265,7 @@
 
                         <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
-                               <asp:LinkButton ID="lnkDisplay" runat="server" Text="Display" CommandName="displayPopup" CommandArgument='<%# Eval("ProductID")%>'></asp:LinkButton>
+                               <asp:LinkButton ID="lnkDisplay" runat="server" Text="Details" CommandName="displayPopup" CommandArgument='<%# Eval("ProductID")%>'></asp:LinkButton>
                                <asp:LinkButton ID="lnkEdit" runat="server" Text = "Edit" CommandName="EditVal"></asp:LinkButton>
                                 <span onclick="return confirm('Are you sure you want to delete this record?')">
                                 <asp:LinkButton ID="btnDelete" Text="Delete" runat="server" CommandName="Delete"></asp:LinkButton>

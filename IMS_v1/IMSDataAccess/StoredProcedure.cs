@@ -48,7 +48,8 @@ namespace IMSDataAccess
             Sp_GetDistinctCategories,
             Sp_GetProductExpiryDetails,
             Sp_GetOrderDetails,
-            Sp_GetPendingOrderDetails
+            Sp_GetPendingOrderDetails,
+            Sp_GetAvailableProduct
 
         }
         public enum Delete

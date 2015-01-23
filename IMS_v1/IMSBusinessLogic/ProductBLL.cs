@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IMSDataAccess.Select;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -20,5 +21,18 @@ namespace IMSBusinessLogic
            
             return resultSet;
         }
+
+
+        public static DataSet GetAvailableProducts()
+        {
+
+            DataSet resultSet = new DataSet();
+
+            GetAvailableProductDAL prodInstance = new GetAvailableProductDAL();
+            resultSet = prodInstance.View();
+
+            return resultSet;
+        }
+
     }
 }
