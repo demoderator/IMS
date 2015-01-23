@@ -37,16 +37,9 @@ namespace IMSDataAccess.Update
         public void Build()
         {
             SqlParameter[] parameters = { new SqlParameter("@p_ProductDetail_ID ", PDetails.ProductDetailID),
-                                        
-                                         new SqlParameter("@p_QuantityUnit", PDetails.Quantity), 
                                             new SqlParameter("@p_Discount", PDetails.Discount), 
                                             new SqlParameter("@p_SalePrice", PDetails.SalePrice), 
-                                            new SqlParameter("@p_DateExpired", PDetails.DateExpired), 
-                                            new SqlParameter("@p_ProductID ", PDetails.ProductMasterID), 
                                             new SqlParameter("@p_CostPrice", PDetails.CostPrice), 
-
-                                            new SqlParameter("@p_Status", PDetails.Status), 
-                                            new SqlParameter("@p_DateCreated ", PDetails.DateCreated), 
                                             new SqlParameter("@p_DateUpdated", PDetails.DateUpdated) };
 
             Parameters = parameters;

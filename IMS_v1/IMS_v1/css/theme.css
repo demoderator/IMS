@@ -372,6 +372,14 @@ padding-bottom: 30px;
 	background:url(../images/add-edit-inventory.png) left -196px no-repeat;
 	}
 
+.add-edit-product{
+    background:url(../images/add-edit-product.png) top left no-repeat;
+}
+
+.add-edit-product:hover {
+    background:url(../images/add-edit-product.png) left -196px no-repeat;
+}
+
 .receive-order{
 	background:url(../images/receive-order.png) top left no-repeat;
 	}

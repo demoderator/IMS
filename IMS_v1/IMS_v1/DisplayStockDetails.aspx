@@ -1,13 +1,8 @@
-﻿<%@ Page Title="Product Detail" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GetExpiryDetails.aspx.cs" Inherits="IMS_v1.GetExpiryDetails" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DisplayStockDetails.aspx.cs" Inherits="IMS_v1.DisplayStockDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="wrapper">
-        <div class="right full">
-            
-            <asp:GridView ID="gdvDetails" runat="server" CellSpacing="0" CellPadding="0" border="0" Width="100%" CssClass="grid" AllowPaging="True" 
+      <asp:GridView ID="gdvDetails" runat="server" CellSpacing="0" CellPadding="0" border="0" Width="100%" CssClass="grid" AllowPaging="True" 
                 OnRowCommand="gdvDetails_RowCommand" OnRowDeleting="gdvDetails_RowDeleting" OnRowCancelingEdit="gdvDetails_RowCancelingEdit" OnRowEditing="gdvDetails_RowEditing"
                 PageSize="10" AutoGenerateColumns="false" OnPageIndexChanging="gdvDetails_PageIndexChanging" OnSorting="gdvDetails_Sorting" AllowSorting="true">
                 <Columns>
@@ -84,6 +79,4 @@
 
                 </Columns>
             </asp:GridView>
-        </div>
-     </div>
 </asp:Content>

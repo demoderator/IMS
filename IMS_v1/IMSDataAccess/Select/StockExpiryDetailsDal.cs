@@ -43,20 +43,16 @@ namespace IMSDataAccess.Select
         public void Build()
         {
 
-            string GetID = null;
+            
             string prodId = null;
-            if (PDetail.UserRoleID != 0)
-            {
-                GetID = Convert.ToString(PDetail.UserRoleID);
-            }
+           
 
             if (PDetail.ProductID != 0)
             {
                 prodId = Convert.ToString(PDetail.ProductID);
             }
 
-            SqlParameter[] parameters = { new SqlParameter("@p_UserRoleID",GetID),
-                                            new SqlParameter("@p_ProductID", prodId)
+            SqlParameter[] parameters = { new SqlParameter("@p_ProductID", prodId)
                                         
                                         
                                         };

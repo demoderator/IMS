@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\..\..\Dlls\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
@@ -141,6 +144,7 @@
     <Content Include="css\demo.css" />
     <Content Include="css\jquery.navgoco.css" />
     <Content Include="css\theme.css" />
+    <Content Include="DisplayStockDetails.aspx" />
     <Content Include="dist\css\bootstrap-theme.css" />
     <Content Include="dist\css\bootstrap-theme.min.css" />
     <Content Include="dist\css\bootstrap.css" />
@@ -180,6 +184,7 @@
     <Content Include="fancybox\jquery.fancybox-1.3.4.js" />
     <Content Include="fancybox\jquery.fancybox-1.3.4.pack.js" />
     <Content Include="fancybox\jquery.mousewheel-3.0.4.pack.js" />
+    <Content Include="GetExpiryDetails.aspx" />
     <Content Include="HeadOfficeMain.aspx" />
     <Content Include="HistoryOrders.aspx" />
     <Content Include="HTML Layouts\form.html" />
@@ -191,6 +196,7 @@
     <Content Include="HTML Layouts\warehouse-main.html" />
     <Content Include="images\accent.png" />
     <Content Include="images\add-edit-inventory.png" />
+    <Content Include="images\add-edit-product.png" />
     <Content Include="images\add-edit-vendors.png" />
     <Content Include="images\all-stores-inventory-list.png" />
     <Content Include="images\auto-purchase-order.png" />
@@ -322,11 +328,18 @@
     <Content Include="RecivedOrder.aspx" />
     <Content Include="RecivedOrderWareHouse.aspx" />
     <Content Include="Reports.aspx" />
+    <Content Include="Scripts\chosen.jquery.js" />
+    <Content Include="Scripts\jquery.min.js" />
     <Content Include="SendOrder_Store.aspx" />
     <Content Include="SendToStore.aspx" />
     <Content Include="StoreMain.aspx" />
     <Content Include="StoreTransfer.aspx" />
+<<<<<<< HEAD
     <Content Include="UpdateRecivedOrder.aspx" />
+=======
+    <Content Include="Style\chosen.css" />
+    <Content Include="UserControls\uc_ProductMainEdit_Popup.ascx" />
+>>>>>>> origin/master
     <Content Include="VendorHeadOffice.aspx" />
     <Content Include="VendorList.aspx" />
     <Content Include="ViewVendor.aspx" />
@@ -377,12 +390,26 @@
     <Compile Include="CheckInventory_Products.aspx.designer.cs">
       <DependentUpon>CheckInventory_Products.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DisplayStockDetails.aspx.cs">
+      <DependentUpon>DisplayStockDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DisplayStockDetails.aspx.designer.cs">
+      <DependentUpon>DisplayStockDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EditVendor.aspx.cs">
       <DependentUpon>EditVendor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="EditVendor.aspx.designer.cs">
       <DependentUpon>EditVendor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetExpiryDetails.aspx.cs">
+      <DependentUpon>GetExpiryDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetExpiryDetails.aspx.designer.cs">
+      <DependentUpon>GetExpiryDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="HeadOfficeMain.aspx.cs">
       <DependentUpon>HeadOfficeMain.aspx</DependentUpon>
@@ -567,12 +594,21 @@
     <Compile Include="StoreTransfer.aspx.designer.cs">
       <DependentUpon>StoreTransfer.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="UpdateRecivedOrder.aspx.cs">
       <DependentUpon>UpdateRecivedOrder.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UpdateRecivedOrder.aspx.designer.cs">
       <DependentUpon>UpdateRecivedOrder.aspx</DependentUpon>
+=======
+    <Compile Include="UserControls\uc_ProductMainEdit_Popup.ascx.cs">
+      <DependentUpon>uc_ProductMainEdit_Popup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_ProductMainEdit_Popup.ascx.designer.cs">
+      <DependentUpon>uc_ProductMainEdit_Popup.ascx</DependentUpon>
+>>>>>>> origin/master
     </Compile>
     <Compile Include="VendorHeadOffice.aspx.cs">
       <DependentUpon>VendorHeadOffice.aspx</DependentUpon>
