@@ -11,7 +11,7 @@ namespace IMSDataAccess.Select
     {
         public ProductDetailSelectDAL() 
         {
-            StoredProcedureName = StoredProcedure.Select.Sp_GetProduct_Detail.ToString();
+            StoredProcedureName = StoredProcedure.Select.Sp_GetProductExpiryDetails.ToString();
         }
 
         public DataSet View()

@@ -27,13 +27,20 @@ namespace IMSCommon
         DateTime lastOrderDate;
         DateTime dateCreated;
         DateTime lastUpdatedDate;
- 
+        string genericName;
+
+      
         #endregion
 
         public ProductMaster() { }
 
         #region Properties
-
+        public string GenericName
+        {
+            get { return genericName; }
+            set { genericName = value; }
+        }
+ 
         public int ProductID
         {
             get { return productID; }

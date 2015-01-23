@@ -49,12 +49,11 @@ namespace IMSDataAccess.Insert
                                              new SqlParameter("@p_ProductType", ProductMaster.ProductType), 
                                              new SqlParameter("@p_ProductSelection", ProductMaster.ProductSelection), 
                                              new SqlParameter("@p_SubCategoryID", ProductMaster.SubCategoryID), 
-                                             new SqlParameter("@p_LastOrderDate", ProductMaster.LastOrderDate), 
-                                             new SqlParameter("@p_DateCreated", ProductMaster.DateCreated), 
+                                             new SqlParameter("@p_DateCreated", DateTime.Now), 
                                              new SqlParameter("@p_UPC", ProductMaster.Upc), 
-                                                  new SqlParameter("@p_ProductCode", ProductMaster.ProductCode), 
-                                            new SqlParameter("@p_ThreshHold", ProductMaster.ThreshHold), 
-                                            new SqlParameter("@p_lastUpdatedDate", ProductMaster.LastOrderDate)
+                                             new SqlParameter("@p_ProductCode", ProductMaster.ProductCode), 
+                                            new SqlParameter("@p_ThreshHold", ProductMaster.ThreshHold)
+                                           
                                         
                                         
                                         };
