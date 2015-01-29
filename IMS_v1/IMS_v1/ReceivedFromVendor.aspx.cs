@@ -20,6 +20,7 @@ namespace IMS_v1
 
             }
         }
+      
         public void BindGdvReceived()
         {
 
@@ -37,6 +38,11 @@ namespace IMS_v1
 
                 gdvReceived.DataSource = ds2;
                 gdvReceived.DataBind();
+                orderDet.Visible = true;
+            }
+            else 
+            {
+                orderDet.Visible = false;
             }
         }
         protected void gdvReceived_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -89,29 +95,30 @@ namespace IMS_v1
                     PlaceOrderBLL objupd = new PlaceOrderBLL();
 
                     OrderDetails objOrder = new OrderDetails();
-                    TextBox detailDescription = (TextBox)gdvReceived.Rows[gdvReceived.EditIndex].FindControl("txtDetailDescription");
 
-                    TextBox recivedQunatity = (TextBox)gdvReceived.Rows[gdvReceived.EditIndex].FindControl("txtOrderedQuantity");
-                    TextBox SalePrice = (TextBox)gdvReceived.Rows[gdvReceived.EditIndex].FindControl("txtSalePrice");
-
+                    TextBox receivedDate = (TextBox)gdvReceived.Rows[gdvReceived.EditIndex].FindControl("txtDateRec");
+                    TextBox recivedQunatity = (TextBox)gdvReceived.Rows[gdvReceived.EditIndex].FindControl("txtRecQuantity");
+                    
+                    TextBox discount = (TextBox)gdvReceived.Rows[gdvReceived.EditIndex].FindControl("txtBonus");
                     TextBox txtDateExpired = (TextBox)gdvReceived.Rows[gdvReceived.EditIndex].FindControl("txtDateExpired");
                     objOrder.ExpiryDate = Convert.ToDateTime(txtDateExpired.Text);
                   
                     objOrder.OrderDetailID = Convert.ToInt32(e.CommandArgument);
                     objOrder.ReceivedQuantity = Convert.ToInt32(recivedQunatity.Text);
                     objOrder.RoleType = Session["Type"].ToString();
-                    objOrder.OrderDescription = detailDescription.Text;
+                    objOrder.InvoiceNumber = txtInvoiceNum.Text;
                   
-                    objOrder.SalePrice = Convert.ToInt32(SalePrice.Text);
-                    objOrder.ReceivedDate = DateTime.Now;
-
+                   
+                    objOrder.Discount = float.Parse(discount.Text);
+                    objOrder.ReceivedDate =Convert.ToDateTime(receivedDate.Text);
+                    
                     objupd.updateOrderByStatus(objOrder);
                 }
             }
-            catch (Exception)
+            catch (Exception exp)
             {
 
-                throw;
+                //throw;
             }
             finally
             {

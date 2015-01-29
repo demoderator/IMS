@@ -88,17 +88,29 @@
                             </ItemTemplate>
                             <EditItemTemplate>
                                 <asp:Label ID="lblProductName_Id" runat="server" Text='<%#Eval("ProductID") %>' Visible="false"></asp:Label>
-                                <asp:DropDownList ID="drpOrderDetail" runat="server">
+                                <asp:DropDownList ID="drpOrderDetail" runat="server" OnSelectedIndexChanged="drpOrderDetail_SelectedIndexChanged">
                                 </asp:DropDownList>
                             </EditItemTemplate>
 
                             <FooterTemplate>
-                                <asp:DropDownList ID="drpAddOrderDetail" runat="server">
+                                <asp:DropDownList ID="drpAddOrderDetail" runat="server" >
                                 </asp:DropDownList>
 
                             </FooterTemplate>
 
                         </asp:TemplateField>
+                        <asp:TemplateField  HeaderText="Cost Price" >
+                            <ItemTemplate>
+                                <asp:Label ID="lblCP" runat="server"  Text=' <%#Eval("CostPrice")==DBNull.Value?0:float.Parse( Eval("CostPrice").ToString())  %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        
+                        <asp:TemplateField HeaderText="Sale Price" >
+                            <ItemTemplate>
+                                <asp:Label ID="lblSP" runat="server"  Text=' <%#Eval("SalePrice")==DBNull.Value?0:float.Parse( Eval("SalePrice").ToString())  %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
                         <asp:TemplateField HeaderText="OrderedQuantity">
                             <ItemTemplate>
                                 <asp:Label ID="lblQuantity" runat="server" Text='<%# Eval("OrderedQuantity") %>'></asp:Label>
@@ -113,6 +125,12 @@
                                 <asp:TextBox ID="txtAddquantity" runat="server" Text='<%#Eval("OrderedQuantity") %>'></asp:TextBox>
                             </FooterTemplate>
                         </asp:TemplateField>
+
+                        <%--<asp:TemplateField HeaderText="Total Cost" >
+                            <ItemTemplate>
+                                <asp:Label ID="lblCost" runat="server"></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>--%>
                         <asp:TemplateField HeaderText="Edit">
                             <ItemTemplate>
                                 <asp:LinkButton ID="btnEdit" Text="Edit" runat="server" CommandName="Edit"></asp:LinkButton>

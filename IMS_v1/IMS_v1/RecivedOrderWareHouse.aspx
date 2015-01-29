@@ -8,7 +8,7 @@
 
     <div class="wrapper">
         <div class="right full">
-            <a href="ReceivedFromVendor.aspx"> Received From Vendore</a>
+            <a href="ReceivedFromVendor.aspx"> Received From Vendor</a>
 
                   <table>
                 <tr>

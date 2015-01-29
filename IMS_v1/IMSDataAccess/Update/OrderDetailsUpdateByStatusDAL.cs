@@ -46,9 +46,9 @@ namespace IMSDataAccess.Update
             SqlParameter[] parameters = {
                                             new SqlParameter("@p_orderDetailID", OrderDetails.OrderDetailID), 
                                             new SqlParameter("@p_StatusDetails", OrderDetails.StatusDetails), 
-                                             new SqlParameter("@p_Description", OrderDetails.OrderDescription), 
-                                              new SqlParameter("@p_SalePrice", OrderDetails.SalePrice), 
-                                               new SqlParameter("@p_ExpiryDate", OrderDetails.ExpiryDate), 
+                                             new SqlParameter("@p_InvoiceNumber", OrderDetails.InvoiceNumber), 
+                                             new SqlParameter("@p_discount",OrderDetails.Discount),
+                                             new SqlParameter("@p_ExpiryDate", OrderDetails.ExpiryDate), 
                                                 new SqlParameter("@p_ReceivedDate", OrderDetails.ReceivedDate), 
                                                  new SqlParameter("@p_ReceivedQuantity", OrderDetails.ReceivedQuantity), 
                                                   new SqlParameter("@p_RoleType", OrderDetails.RoleType),

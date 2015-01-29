@@ -36,7 +36,7 @@ namespace IMS_v1
 
         protected void btnRecieveOrders_Click(object sender, EventArgs e)
         {
-            Response.Redirect("RecivedOrderWareHouse.aspx");
+            Response.Redirect("ReceivedFromVendor.aspx");
         }
 
         protected void btnSendOrderStores_Click(object sender, EventArgs e)

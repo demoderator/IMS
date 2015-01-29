@@ -8,6 +8,14 @@ namespace IMSCommon
     public class OrderDetails
     {
 
+        String invoiceNum;
+
+        public String InvoiceNumber
+        {
+            get { return invoiceNum; }
+            set { invoiceNum = value; }
+        }
+
         long orderDetailID;
 
         public long OrderDetailID

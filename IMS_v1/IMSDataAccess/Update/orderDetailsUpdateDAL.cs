@@ -45,7 +45,8 @@ namespace IMSDataAccess.Update
             SqlParameter[] parameters = {   new SqlParameter("@p_orderDetailID", OrderDetails.OrderDetailID), 
                                             new SqlParameter("@p_ProductID", OrderDetails.ProductID), 
                                             new SqlParameter("@p_OrderedQuantity", OrderDetails.OrderedQuantity),
-                                             new SqlParameter("@p_SalePrice", OrderDetails.SalePrice)
+                                             new SqlParameter("@p_SalePrice", OrderDetails.SalePrice),
+                                             new SqlParameter("@p_CostPrice", OrderDetails.CostPrice)
                                            
                                              
                                             

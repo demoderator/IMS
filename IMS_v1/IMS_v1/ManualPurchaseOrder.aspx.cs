@@ -247,6 +247,8 @@ namespace IMS_v1
                     DropDownList drpOrderDetail = (DropDownList)gdvOrderDetail.FooterRow.FindControl("drpAddOrderDetail");
                     objDetails.OrderID = Convert.ToInt32(Session["OrderID"]);
                     objDetails.ProductID = Convert.ToInt32(drpOrderDetail.SelectedValue);
+                   // objDetails.SalePrice = float.Parse(((Label)gdvOrderDetail.Rows[gdvOrderDetail.EditIndex].FindControl("lblSP")).Text);
+                    //objDetails.CostPrice = float.Parse(((Label)gdvOrderDetail.Rows[gdvOrderDetail.EditIndex].FindControl("lblCP")).Text);
                     objDetails.OrderDate = DateTime.Now;
                     if (Session["Type"] == "WareHouse")
                     {
@@ -287,6 +289,8 @@ namespace IMS_v1
                     long DrpPro = Convert.ToInt64(ddlPro.SelectedItem.Value);
                     objOrder.OrderDetailID = Convert.ToInt32(e.CommandArgument);
                     objOrder.ProductID = DrpPro;
+                    objOrder.SalePrice = float.Parse(((Label)gdvOrderDetail.Rows[gdvOrderDetail.EditIndex].FindControl("lblSP")).Text);
+                    objOrder.CostPrice = float.Parse(((Label)gdvOrderDetail.Rows[gdvOrderDetail.EditIndex].FindControl("lblCP")).Text);
                     objOrder.OrderedQuantity = Convert.ToInt32(txtquantity.Text);
                     objupd.update(objOrder);
 
@@ -330,6 +334,8 @@ namespace IMS_v1
 
                         DataRowView dr = e.Row.DataItem as DataRowView;
                         depList.SelectedValue = (string)e.Row.DataItem; // you can use e.Row.DataItem to get the value
+
+                      
                     }
                     catch (Exception exo)
                     { }
@@ -357,6 +363,44 @@ namespace IMS_v1
                 Response.Redirect("StoreMain.aspx");
             }
         }
+
+        protected void drpOrderDetail_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DropDownList dpList = (DropDownList)sender;
+            ProductDetail pd = new ProductDetail();
+            pd.ProductMasterID = int.Parse(dpList.SelectedValue);
+            DataSet ds_temp = ProductDetailBLL.GetProductDetailByID(pd);
+            
+          
+           // ds_temp.Tables[0].Columns
+                //Label lbl = gdvOrderDetail.Rows[gdvOrderDetail.SelectedIndex].FindControl("lblCP") as Label;
+            //lbl.Text = "1.0";
+
+            //Label lbl_SP = gdvOrderDetail.Rows[gdvOrderDetail.SelectedIndex].FindControl("lblSP") as Label;
+            //lbl_SP.Text = "1.2";
+
+            Label lbl = gdvOrderDetail.Rows[gdvOrderDetail.EditIndex].FindControl("lblSP") as Label;
+            lbl.Text = "3.2";
+
+            Label lbl1 = gdvOrderDetail.Rows[gdvOrderDetail.EditIndex].FindControl("lblCP") as Label;
+            lbl1.Text = "2.2"; 
+        }
+
+        //protected void drpAddOrderDetail_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    //DropDownList dpList = (DropDownList)sender;
+        //    //ProductDetail pd = new ProductDetail();
+        //    //pd.ProductMasterID = int.Parse(dpList.SelectedValue);
+        //    //DataSet ds_temp = ProductDetailBLL.GetProductDetailByID(pd);
+            
+        //    //Label lbl = gdvOrderDetail.Rows[gdvOrderDetail.SelectedIndex].FindControl("lblSP") as Label;
+        //    //lbl.Text = "3.2";
+
+        //    //Label lbl1 = gdvOrderDetail.Rows[gdvOrderDetail.SelectedIndex].FindControl("lblCP") as Label;
+        //    //lbl1.Text = "2.2"; 
+        //}
+
+       
 
     }
 }
