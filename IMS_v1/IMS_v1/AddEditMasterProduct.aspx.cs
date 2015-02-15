@@ -59,26 +59,26 @@ namespace IMS_v1
         {
             try
             {
-                ProductMaster obj = new ProductMaster();
-                obj.ProductName = txtProductName.Text;
-                obj.ProductDescription = txtDescription.Text;
-                obj.Status = txtStatus.Text;
-                obj.Manufacturer = txtManufacturer.Text;
-                obj.GreenRainCode = txtGreenRainCode.Text;
-                obj.Pack = Convert.ToInt32(txtPack.Text);
-                obj.UnitSize = Convert.ToInt32(txtUnitSize.Text);
-                obj.WUnit = txtWunit.Text;
-                obj.ProductType = txtProductType.Text;
-                obj.ProductSelection = txtProductSelection.Text;
-                obj.SubCategoryID = Convert.ToInt32(drpcategory.SelectedValue);
-                obj.LastOrderDate = DateTime.Now;
-                obj.DateCreated = DateTime.Now;
-                obj.Upc = "100";
-                obj.ProductCode = "20";
-                obj.ThreshHold = 500;
-                obj.LastUpdatedDate = DateTime.Now;
-                ProductMasterBLL add = new ProductMasterBLL();
-                add.Add(obj);
+                //ProductMaster obj = new ProductMaster();
+                //obj.ProductName = txtProductName.Text;
+                //obj.ProductDescription = txtDescription.Text;
+                //obj.Status = txtStatus.Text;
+                //obj.Manufacturer = txtManufacturer.Text;
+                //obj.GreenRainCode = txtGreenRainCode.Text;
+                //obj.Pack = Convert.ToInt32(txtPack.Text);
+                //obj.UnitSize = Convert.ToInt32(txtUnitSize.Text);
+                //obj.WUnit = txtWunit.Text;
+                //obj.ProductType = txtProductType.Text;
+                //obj.ProductSelection = txtProductSelection.Text;
+                //obj.SubCategoryID = Convert.ToInt32(drpcategory.SelectedValue);
+                //obj.LastOrderDate = DateTime.Now;
+                //obj.DateCreated = DateTime.Now;
+                //obj.Upc = "100";
+                //obj.ProductCode = "20";
+                //obj.ThreshHold = 500;
+                //obj.LastUpdatedDate = DateTime.Now;
+                //ProductMasterBLL add = new ProductMasterBLL();
+                //add.Add(obj);
 
 
 
@@ -96,21 +96,21 @@ namespace IMS_v1
             try
             {
 
-                obj.ProductID = Convert.ToInt32(Request.QueryString["id"]);
-                ds = ProductMasterBLL.GetProductMasterByID(obj);
-                // DS.Tables[<tablename>].Rows[<rowID>].ItemArray[<ColumnIndex>].ToString();
-                // ds.Tables[0].Rows[0]["ProductName"].ToString();
-                //ds.Tables[0].Rows[0].ItemArray[9].ToString();
-                txtProductName.Text = ds.Tables[0].Rows[0]["ProductName"].ToString();
-                txtDescription.Text = ds.Tables[0].Rows[0]["Description"].ToString();
-                txtStatus.Text = ds.Tables[0].Rows[0]["Status"].ToString();
-                txtManufacturer.Text = ds.Tables[0].Rows[0]["Manufacturer"].ToString();
-                txtGreenRainCode.Text = ds.Tables[0].Rows[0]["GreenRainCode"].ToString();
-                txtPack.Text = ds.Tables[0].Rows[0]["Pack"].ToString();
-                txtUnitSize.Text = ds.Tables[0].Rows[0]["UnitSize"].ToString();
-                txtWunit.Text = ds.Tables[0].Rows[0]["WUnit"].ToString();
-                txtProductType.Text = ds.Tables[0].Rows[0]["ProductType"].ToString();
-                txtProductSelection.Text = ds.Tables[0].Rows[0]["ProductSelection"].ToString();
+                //obj.ProductID = Convert.ToInt32(Request.QueryString["id"]);
+                //ds = ProductMasterBLL.GetProductMasterByID(obj);
+                //// DS.Tables[<tablename>].Rows[<rowID>].ItemArray[<ColumnIndex>].ToString();
+                //// ds.Tables[0].Rows[0]["ProductName"].ToString();
+                ////ds.Tables[0].Rows[0].ItemArray[9].ToString();
+                //txtProductName.Text = ds.Tables[0].Rows[0]["ProductName"].ToString();
+                //txtDescription.Text = ds.Tables[0].Rows[0]["Description"].ToString();
+                //txtStatus.Text = ds.Tables[0].Rows[0]["Status"].ToString();
+                //txtManufacturer.Text = ds.Tables[0].Rows[0]["Manufacturer"].ToString();
+                //txtGreenRainCode.Text = ds.Tables[0].Rows[0]["GreenRainCode"].ToString();
+                //txtPack.Text = ds.Tables[0].Rows[0]["Pack"].ToString();
+                //txtUnitSize.Text = ds.Tables[0].Rows[0]["UnitSize"].ToString();
+                //txtWunit.Text = ds.Tables[0].Rows[0]["WUnit"].ToString();
+                //txtProductType.Text = ds.Tables[0].Rows[0]["ProductType"].ToString();
+                //txtProductSelection.Text = ds.Tables[0].Rows[0]["ProductSelection"].ToString();
             }
             catch (Exception ex)
             {
@@ -124,27 +124,27 @@ namespace IMS_v1
         {
             try
             {
-                ProductMaster obj = new ProductMaster();
-                obj.ProductID = Convert.ToInt32(Request.QueryString["id"]);
-                obj.ProductName = txtProductName.Text;
-                obj.ProductDescription = txtDescription.Text;
-                obj.Status = txtStatus.Text;
-                obj.Manufacturer = txtManufacturer.Text;
-                obj.GreenRainCode = txtGreenRainCode.Text;
-                obj.Pack = Convert.ToInt32(txtPack.Text);
-                obj.UnitSize = Convert.ToInt32(txtUnitSize.Text);
-                obj.WUnit = txtWunit.Text;
-                obj.ProductType = txtProductType.Text;
-                obj.ProductSelection = txtProductSelection.Text;
-                obj.SubCategoryID = Convert.ToInt32(drpcategory.SelectedValue);
-                obj.LastOrderDate = DateTime.Now;
-                obj.DateCreated = DateTime.Now;
-                obj.Upc = "100";
-                obj.ProductCode = "20";
-                obj.ThreshHold = 500;
-                obj.LastUpdatedDate = DateTime.Now;
-                ProductMasterBLL objupd = new ProductMasterBLL();
-                objupd.Update(obj);
+                //ProductMaster obj = new ProductMaster();
+                //obj.ProductID = Convert.ToInt32(Request.QueryString["id"]);
+                //obj.ProductName = txtProductName.Text;
+                //obj.ProductDescription = txtDescription.Text;
+                //obj.Status = txtStatus.Text;
+                //obj.Manufacturer = txtManufacturer.Text;
+                //obj.GreenRainCode = txtGreenRainCode.Text;
+                //obj.Pack = Convert.ToInt32(txtPack.Text);
+                //obj.UnitSize = Convert.ToInt32(txtUnitSize.Text);
+                //obj.WUnit = txtWunit.Text;
+                //obj.ProductType = txtProductType.Text;
+                //obj.ProductSelection = txtProductSelection.Text;
+                //obj.SubCategoryID = Convert.ToInt32(drpcategory.SelectedValue);
+                //obj.LastOrderDate = DateTime.Now;
+                //obj.DateCreated = DateTime.Now;
+                //obj.Upc = "100";
+                //obj.ProductCode = "20";
+                //obj.ThreshHold = 500;
+                //obj.LastUpdatedDate = DateTime.Now;
+                //ProductMasterBLL objupd = new ProductMasterBLL();
+                //objupd.Update(obj);
 
             }
             catch (Exception ex)

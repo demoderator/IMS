@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -114,39 +115,61 @@ namespace IMS_v1
                 ProductMaster product = new ProductMaster();
                 product.ProductID = int.Parse(((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_id")).Text);
                 product.ProductName = ((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_Name")).Text;
-                product.GreenRainCode = ((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_GRC")).Text;
+                product.ProductOrgID = ((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_org_id")).Text;
                 product.Manufacturer = ((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_Man")).Text;
-                int res,res2,res4;
-                if( int.TryParse((((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_pack")).Text),out res)){
-                    product.Pack = res;
-                }
-                else
-                {
-                    product.Pack=10;
-                }
-                
                 product.ProductCode = ((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_Code")).Text;
                 product.ProductDescription = ((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_Desc")).Text;
                 product.ProductSelection = ((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_sel")).Text;
-                float res3;
-                if (float.TryParse((((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_us")).Text), out res3))
+                product.GenericName = ((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_Gen")).Text;
+                product.ProductType = ((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_Type")).Text;
+
+                product.BinNumber = ((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_bNum")).Text;
+                product.Control = ((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_con")).Text;
+                product.Expiry = ((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_exp")).Text;
+                product.MeasureQuantity = ((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_mQTY")).Text;
+                product.MeasureType = ((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_mType")).Text;
+               
+                int res,res2,res4,res6,res7;
+                float res3, res5;
+                if (int.TryParse((((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_qUnit")).Text), out res))
                 {
-                    product.UnitSize = res3;
+                    product.QuanityUnit = res;
                 }
-                product.Upc = ((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_upc")).Text;
-                product.WUnit = ((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_wunit")).Text;
+                else
+                {
+                    product.QuanityUnit=0;
+                }
+
+                if (int.TryParse((((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_line")).Text), out res6)) 
+                {
+                    product.LineID = res6;
+                }
+
+                if (int.TryParse((((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_Disc")).Text), out res7))
+                {
+                    product.MaxDiscount = res7;
+                }
+
+                if (float.TryParse((((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_SP")).Text), out res3))
+                {
+                    product.SalePrice = res3;
+                }
+
+                if (float.TryParse((((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_CP")).Text), out res5))
+                {
+                    product.CostPrice = res5;
+                }
 
                 if (int.TryParse((((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_tsh")).Text), out res2))
                 {
                     product.ThreshHold = res2;
                 }
-                product.ProductType = ((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_Type")).Text;
-
+             
                 if (int.TryParse((((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_subCatID")).Text), out res4))
                 {
                     product.SubCategoryID = res4;
                 }
-                product.GenericName = ((Label)ProdDisplayGrid.Rows[RowIndex].FindControl("lblProd_Gen")).Text;
+             
                 ucProdEdit.CurrentSource = product;
                 ucProdEdit.IsAdd = false;
                 
@@ -226,6 +249,7 @@ namespace IMS_v1
             {
                 
                 mpeEditProduct.Hide();
+                Thread.Sleep(1000);
                 BindGrid(false);
             }
             catch (Exception ex)

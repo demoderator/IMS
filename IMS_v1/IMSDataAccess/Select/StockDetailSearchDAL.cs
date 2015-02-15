@@ -58,8 +58,7 @@ namespace IMSDataAccess.Select
 
             SqlParameter[] parameters = { new SqlParameter("@p_UserRoleID",GetID),
                                             new SqlParameter("@p_ProductID", prodId)
-                                        
-                                        
+                                                                   
                                         };
 
 

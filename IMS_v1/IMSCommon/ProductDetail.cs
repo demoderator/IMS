@@ -9,11 +9,11 @@ namespace IMSCommon
     {
         #region fields
         int productDetailID;
-        float quantity;
-        string discount;
+        //float quantity;
+        //string discount;
         float salePrice;
         float costPrice;
-        string status;
+        int status;
         DateTime dateExpired;
         DateTime dateCreated;
         DateTime dateUpdated;
@@ -33,18 +33,18 @@ namespace IMSCommon
             get { return productDetailID; }
             set { productDetailID = value; }
         }
-        public float Quantity
-        {
-            get { return quantity; }
-            set { quantity = value; }
-        }
+        //public float Quantity
+        //{
+        //    get { return quantity; }
+        //    set { quantity = value; }
+        //}
 
 
-        public string Discount
-        {
-            get { return discount; }
-            set { discount = value; }
-        }
+        //public string Discount
+        //{
+        //    get { return discount; }
+        //    set { discount = value; }
+        //}
 
         public float SalePrice
         {
@@ -59,7 +59,7 @@ namespace IMSCommon
             set { costPrice = value; }
         }
 
-        public string Status
+        public int Status
         {
             get { return status; }
             set { status = value; }

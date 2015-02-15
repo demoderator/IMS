@@ -12,45 +12,134 @@ namespace IMSCommon
         int productID;
         string productName;
         string productDescription; 
-        string manufacturer;
-        string greenRainCode;
-        int pack;
-        int threshHold;
-        float unitSize;
-        string wUnit;
+        string brandName;
         string productType;
         string productSelection;
-        string upc;
-        string productCode;
         string status;
         int subCategoryID;
-        DateTime lastOrderDate;
         DateTime dateCreated;
         DateTime lastUpdatedDate;
         string genericName;
-
-      
+        string productOrgID;
+        string measureQuantity;
+        string measureType;
+        int quanityUnit;
+        string description;
+        string control;
+        string binNumber;
+        string productCode;
+        int maxDiscount;
+        string expiry;
+        int lineID;
+        int threshHold;
+        //string userID;
+        float salePrice;
+        float costPrice;
+              
         #endregion
 
         public ProductMaster() { }
 
         #region Properties
+
+        public string MeasureQuantity
+        {
+            get { return measureQuantity; }
+            set { measureQuantity = value; }
+        }
+
+        public string MeasureType
+        {
+            get { return measureType; }
+            set { measureType = value; }
+        }
+
+        public int QuanityUnit
+        {
+            get { return quanityUnit; }
+            set { quanityUnit = value; }
+        }
+
+        public string Description
+        {
+            get { return description; }
+            set { description = value; }
+        }
+
+        public string Control
+        {
+            get { return control; }
+            set { control = value; }
+        }
+
+        public string BinNumber
+        {
+            get { return binNumber; }
+            set { binNumber = value; }
+        }
+
+        public int MaxDiscount
+        {
+            get { return maxDiscount; }
+            set { maxDiscount = value; }
+        }
+
+        public string Expiry
+        {
+            get { return expiry; }
+            set { expiry = value; }
+        }
+
+        public int LineID
+        {
+            get { return lineID; }
+            set { lineID = value; }
+        }
+
+        public float SalePrice
+        {
+            get { return salePrice; }
+            set { salePrice = value; }
+        }
+
+
+        public float CostPrice
+        {
+            get { return costPrice; }
+            set { costPrice = value; }
+        }
         public string GenericName
         {
             get { return genericName; }
             set { genericName = value; }
         }
- 
+
+        public string ProductCode
+        {
+            get { return productCode; }
+            set { productCode = value; }
+        }
+
+        public string ProductOrgID
+        {
+            get { return productOrgID; }
+            set { productOrgID = value; }
+        }
+
+
+
+        public int ThreshHold
+        {
+            get { return threshHold; }
+            set { threshHold = value; }
+        }
+
         public int ProductID
         {
             get { return productID; }
             set { productID = value; }
         }
-        public string WUnit
-        {
-            get { return wUnit; }
-            set { wUnit = value; }
-        }
+      
 
         public string Status
         {
@@ -69,29 +158,13 @@ namespace IMSCommon
             set { productSelection = value; }
         }
 
-        public string Upc
-        {
-            get { return upc; }
-            set { upc = value; }
-        }
-
-        public string ProductCode
-        {
-            get { return productCode; }
-            set { productCode = value; }
-        }
-
         public int SubCategoryID
         {
             get { return subCategoryID; }
             set { subCategoryID = value; }
         }
 
-        public DateTime LastOrderDate
-        {
-            get { return lastOrderDate; }
-            set { lastOrderDate = value; }
-        }
+      
 
         public DateTime DateCreated
         {
@@ -105,30 +178,7 @@ namespace IMSCommon
             get { return lastUpdatedDate; }
             set { lastUpdatedDate = value; }
         }
-        public string GreenRainCode
-        {
-            get { return greenRainCode; }
-            set { greenRainCode = value; }
-        }
-
-        public int Pack
-        {
-            get { return pack; }
-            set { pack = value; }
-        }
-
-        public int ThreshHold
-        {
-            get { return threshHold; }
-            set { threshHold = value; }
-        }
-
-
-        public float UnitSize
-        {
-            get { return unitSize; }
-            set { unitSize = value; }
-        }
+       
 
         public string ProductName
         {
@@ -146,8 +196,8 @@ namespace IMSCommon
 
         public string Manufacturer
         {
-            get { return manufacturer; }
-            set { manufacturer = value; }
+            get { return brandName; }
+            set { brandName = value; }
         }
         #endregion
     }

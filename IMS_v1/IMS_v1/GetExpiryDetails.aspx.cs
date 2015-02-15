@@ -59,12 +59,23 @@ namespace IMS_v1
                 {
                     Label ID = (Label)gdvDetails.Rows[gdvDetails.EditIndex].FindControl("lblProd_Id");
                     TextBox SP = (TextBox)gdvDetails.Rows[gdvDetails.EditIndex].Cells[0].FindControl("txtSP");
-                    
+                    TextBox Exp = (TextBox)gdvDetails.Rows[gdvDetails.EditIndex].FindControl("txtEXP");
                     TextBox CP = (TextBox)gdvDetails.Rows[gdvDetails.EditIndex].FindControl("txtCP");
-                    TextBox Discount = (TextBox)gdvDetails.Rows[gdvDetails.EditIndex].FindControl("txtDiscount");
+                    
                     ProductDetail objdrp = new ProductDetail();
                     objdrp.ProductDetailID = int.Parse(ID.Text);
-
+                    DateTime resDate;
+                    if (DateTime.TryParse(Exp.Text, out resDate))
+                    {
+                        objdrp.DateExpired = resDate;
+                    }
+                    else
+                    {
+                        WebMessageBoxUtil.Show("Invalid input in Expiry Date field ");
+                        gdvDetails.EditIndex = -1;
+                        //BindGrid();
+                        return;
+                    }
                     float res;
                     if (float.TryParse(SP.Text, out res))
                     {
@@ -73,20 +84,9 @@ namespace IMS_v1
                         if (float.TryParse(CP.Text,out res2))
                         {
                             objdrp.CostPrice = res2;
-                            float res3;
-                            if (float.TryParse(Discount.Text, out res3))
-                            {
-                                objdrp.Discount = Discount.Text;
-                                objdrp.DateUpdated = DateTime.Now;
-
-                                ProductDetailBLL sdBLL = new ProductDetailBLL();
-                                sdBLL.Update(objdrp);
-
-                            }
-                            else
-                            {
-                                WebMessageBoxUtil.Show("Invalid input in Discount field ");
-                            }
+                            objdrp.DateUpdated = DateTime.Now;
+                            ProductDetailBLL sdBLL = new ProductDetailBLL();
+                            sdBLL.Update(objdrp);
                         }
                         else 
                         {

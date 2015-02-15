@@ -14,25 +14,6 @@ namespace IMSBusinessLogic
  public class stockDetailsBll
     {
 
-     public static DataSet GetAllStockDetail()
-     {
-         DataSet resultSet = new DataSet();
-         stockDetailsSelectDAL instance = new stockDetailsSelectDAL();
-         resultSet = instance.View();
-         return resultSet;
-     }
-
-
-     public static DataSet GetProductDetailByID(StockDetails val)
-     {
-         DataSet resultSet = new DataSet();
-         stockDetailsByIdDAL instance = new stockDetailsByIdDAL();
-         resultSet = instance.View(val);
-         return resultSet;
-     }
-
-
-
      public static DataSet GetStockDetailSearch(StockDetails val)
      {
          DataSet resultSet = new DataSet();

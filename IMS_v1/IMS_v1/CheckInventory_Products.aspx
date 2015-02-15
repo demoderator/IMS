@@ -187,47 +187,43 @@
             <asp:GridView ID="ProdDisplayGrid" runat="server" CellSpacing="0" CellPadding="0" border="0" Width="100%" CssClass="grid" AllowPaging="True" PageSize="10"
                 AutoGenerateColumns="false" OnPageIndexChanging="ProdDisplayGrid_PageIndexChanging" OnSorting="ProdDisplayGrid_Sorting" AllowSorting="true">
                 <Columns>
+                    <asp:TemplateField HeaderText="Product ID" >
+                        <ItemTemplate>
+                            <asp:Label ID="lblProd_ID" runat="server" Text='<%# Eval("prod_ID") %>'></asp:Label>
+                        </ItemTemplate>
+
+                    </asp:TemplateField>
+
                     <asp:TemplateField HeaderText="Product Name" SortExpression="productName">
                         <ItemTemplate>
-                            <asp:Label ID="lblProd_ID" runat="server" Text='<%# Eval("productName") %>'></asp:Label>
+                            <asp:Label ID="lblProd_Name" runat="server" Text='<%# Eval("productName") %>'></asp:Label>
                         </ItemTemplate>
 
                     </asp:TemplateField>
-
                     <asp:TemplateField HeaderText="Sub Category"  SortExpression="SubCategory">
                         <ItemTemplate>
-                            <asp:Label ID="lblProd_Name" runat="server" Text='<%# Eval("SubCategory") %>'></asp:Label>
+                            <asp:Label ID="lblProd_subCat" runat="server" Text='<%# Eval("SubCategory") %>'></asp:Label>
                         </ItemTemplate>
 
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="Assigned To"  SortExpression="AssignedTo">
+                   <asp:TemplateField HeaderText="quantity">
                         <ItemTemplate>
-                            <asp:Label ID="lblProd_Quan" runat="server" Text='<%# Eval("AssignedTo") %>'></asp:Label>
+                            <asp:Label ID="lblProd_Quan" runat="server" Text='<%# Eval("quantity") %>'></asp:Label>
                         </ItemTemplate>
 
                     </asp:TemplateField>
 
-
-                    <asp:TemplateField HeaderText="quantity">
+                   <asp:TemplateField HeaderText="Sale Price">
                         <ItemTemplate>
-                            <asp:Label ID="lblProd_CP" runat="server" Text='<%# Eval("quantity") %>'></asp:Label>
-                        </ItemTemplate>
-
-                    </asp:TemplateField>
-
-                 
-
-                    <asp:TemplateField HeaderText="Sale Price">
-                        <ItemTemplate>
-                            <asp:Label ID="lblProd_ExD" runat="server" Text='<%# Eval("salePrice") %>'></asp:Label>
+                            <asp:Label ID="lblProd_SP" runat="server" Text='<%# Eval("salePrice") %>'></asp:Label>
                         </ItemTemplate>
 
                     </asp:TemplateField>
 
                     <asp:TemplateField HeaderText="Cost Price">
                         <ItemTemplate>
-                            <asp:Label ID="lblProd_man" runat="server" Text='<%# Eval("costPrice") %>'></asp:Label>
+                            <asp:Label ID="lblProd_CP" runat="server" Text='<%# Eval("costPrice") %>'></asp:Label>
                         </ItemTemplate>
 
                     </asp:TemplateField>

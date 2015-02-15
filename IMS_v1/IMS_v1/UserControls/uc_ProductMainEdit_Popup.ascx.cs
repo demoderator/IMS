@@ -39,16 +39,17 @@ namespace IMS_v1.UserControls
                 txtProductID.Text = _currentSource.ProductID.ToString();
                 prodID.Visible = false;
                 txtDescription.Text = _currentSource.ProductDescription;
-               
-                txtGreenRainCode.Text = _currentSource.GreenRainCode;
-                txtManufacturer.Text = _currentSource.Manufacturer;
-                txtGreenRainCode.Text = _currentSource.GreenRainCode;
-                txtPack.Text = _currentSource.Pack.ToString();
-                txtUnitSize.Text = _currentSource.UnitSize.ToString();
-                txtWunit.Text = _currentSource.WUnit;
-                txtProductType.Text =_currentSource.ProductType;
-                txtProductSelection.Text = _currentSource.ProductSelection;
-                txtUPC.Text = _currentSource.Upc;
+                txtBrndName.Text = _currentSource.Manufacturer;
+                txtCP.Text = _currentSource.CostPrice.ToString();
+                txtSP.Text = _currentSource.SalePrice.ToString();
+                txtDescription.Text = _currentSource.Description;
+                TxtDisc.Text = _currentSource.MaxDiscount.ToString();
+                txtGName.Text = _currentSource.GenericName;
+                txtMeasQty.Text = _currentSource.MeasureQuantity;
+                txtMeasType.Text = _currentSource.MeasureType;
+                txtProdOrgID.Text = _currentSource.ProductOrgID;
+                txtProdType.Text = _currentSource.ProductType;
+                txtQUnit.Text = _currentSource.QuanityUnit.ToString();
                 txtProdCode.Text = _currentSource.ProductCode;
                 txtThreshold.Text = _currentSource.ThreshHold.ToString();
                 drpcategory.Items.Insert(0, new ListItem("Select Sub-Category", ""));
@@ -90,36 +91,60 @@ namespace IMS_v1.UserControls
                 ProductMaster obj = new ProductMaster();
                
                 obj.ProductName = txtProductName.Text;
-                obj.ProductDescription = txtDescription.Text;
+                obj.ProductCode = txtProdCode.Text;
+                obj.Manufacturer= txtBrndName.Text;
                 obj.Status = "1";
-                obj.Manufacturer = txtManufacturer.Text;
-                obj.GreenRainCode = txtGreenRainCode.Text;
-                int pck, us;
-                if (int.TryParse(txtPack.Text, out pck))
+                obj.ProductDescription=txtDescription.Text;
+                obj.GenericName=txtGName.Text;
+                obj.MeasureQuantity=txtMeasQty.Text;
+                obj.MeasureType = txtMeasType.Text;
+                obj.ProductOrgID=txtProdOrgID.Text;
+                obj.ProductType=txtProdType.Text;
+                float res1, res2;
+                    int res3,res4;
+
+                if (float.TryParse(txtCP.Text.ToString(), out res1))
                 {
-                    obj.Pack = pck;
-                    if (int.TryParse(txtUnitSize.Text, out us))
-                    {
-                        obj.UnitSize = us;
-                    }
-                    else
-                    {
-                        WebMessageBoxUtil.Show("Invalid input value for unit size");
-                        return;
-                    }
+                    obj.CostPrice = res1;
                 }
-                else
+                else 
                 {
-                    WebMessageBoxUtil.Show("Invalid input value for Pack");
+                    WebMessageBoxUtil.Show("Invalid input of Cost Price");
                     return;
                 }
 
-                obj.LastUpdatedDate = DateTime.Now;
-                obj.WUnit = txtWunit.Text;
-                obj.ProductType = txtProductType.Text;
-                obj.ProductSelection = txtProductSelection.Text;
+                if (float.TryParse(txtSP.Text.ToString(), out res2))
+                {
+                    obj.SalePrice = res2;
+                }
+                else
+                {
+                    WebMessageBoxUtil.Show("Invalid input of Sale Price");
+                    return;
+                }
+                if (int.TryParse(TxtDisc.Text.ToString(), out res3))
+                {
+                    obj.MaxDiscount = res3;
+                }
+                else
+                {
+                    WebMessageBoxUtil.Show("Invalid input of Discount");
+                    return;
+                }
+
+
+                if (int.TryParse(txtQUnit.Text.ToString(), out res4))
+                {
+                    obj.QuanityUnit = res4;
+                }
+                else
+                {
+                    WebMessageBoxUtil.Show("Invalid input of Quantity Unit");
+                    return;
+                }           
+             
                 obj.SubCategoryID = Convert.ToInt32(drpcategory.SelectedValue);
-                obj.Upc = txtUPC.Text;
+             
                 obj.ProductCode = txtProdCode.Text;
                 int thd;
                 if (int.TryParse(txtThreshold.Text, out thd))
@@ -150,10 +175,12 @@ namespace IMS_v1.UserControls
 
                 throw ex;
             }
+           
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
+          
             _closeParam.DynamicInvoke();
         }
 

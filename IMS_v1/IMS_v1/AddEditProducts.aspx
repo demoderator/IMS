@@ -131,7 +131,7 @@
                     <Columns>
                         <asp:TemplateField HeaderText="Product Id">
                             <ItemTemplate>
-                                <asp:Label ID="lblProd_id" runat="server" Text='<%# Eval("ProductID") %>'></asp:Label>
+                                <asp:Label ID="lblProd_org_id" runat="server" Text='<%# Eval("org_ID") %>'></asp:Label>
                             </ItemTemplate>
 
                         </asp:TemplateField>
@@ -142,22 +142,29 @@
                             </ItemTemplate>
 
                         </asp:TemplateField>
-
-                        <asp:TemplateField HeaderText="Product Code" >
+                                                
+                       <asp:TemplateField HeaderText="Unit Cost">
                             <ItemTemplate>
-                                <asp:Label ID="lblProd_Code" runat="server" Text='<%# Eval("prodCode") %>'></asp:Label>
+                                <asp:Label ID="lblProd_CP" runat="server" Text='<%# Eval("costPrice") %>'></asp:Label>
                             </ItemTemplate>
 
                         </asp:TemplateField>
 
-                        <asp:TemplateField HeaderText="Manufacturer">
+                        <asp:TemplateField HeaderText="Sale Price">
                             <ItemTemplate>
-                                <asp:Label ID="lblProd_Man" runat="server" Text='<%# Eval("man") %>'></asp:Label>
+                                <asp:Label ID="lblProd_SP" runat="server" Text='<%# Eval("salePrice") %>'></asp:Label>
                             </ItemTemplate>
 
                         </asp:TemplateField>
 
-                        <asp:TemplateField HeaderText="Sub Category">
+                         <asp:TemplateField HeaderText="Maximum Discount">
+                            <ItemTemplate>
+                                <asp:Label ID="lblProd_Disc" runat="server" Text='<%# Eval("discount") %>'></asp:Label>
+                            </ItemTemplate>
+
+                        </asp:TemplateField>
+
+                       <asp:TemplateField HeaderText="Sub Category">
                             <ItemTemplate>
                                 <asp:Label ID="lblProd_SubCat" runat="server" Text='<%# Eval("subCatName") %>'></asp:Label>
                             </ItemTemplate>
@@ -177,7 +184,15 @@
                             </ItemTemplate>
 
                         </asp:TemplateField>
+                                               
+
                         <%-- Hidden fields used for update --%>
+                        <asp:TemplateField HeaderText="Product Id Internal" Visible="false">
+                            <ItemTemplate>
+                                <asp:Label ID="lblProd_id" runat="server" Text='<%# Eval("ProductID") %>'></asp:Label>
+                            </ItemTemplate>
+
+                        </asp:TemplateField>
 
                         <asp:TemplateField HeaderText="Description" Visible="false">
                             <ItemTemplate>
@@ -186,16 +201,16 @@
 
                          </asp:TemplateField>
 
+                         <asp:TemplateField HeaderText="Manufacturer" Visible="false">
+                            <ItemTemplate>
+                                <asp:Label ID="lblProd_Man" runat="server" Text='<%# Eval("man") %>'></asp:Label>
+                            </ItemTemplate>
+
+                        </asp:TemplateField>
+
                         <asp:TemplateField HeaderText="Generic Name" Visible="false">
                             <ItemTemplate>
                                 <asp:Label ID="lblProd_Gen" runat="server" Text='<%# Eval("genName") %>'></asp:Label>
-                            </ItemTemplate>
-
-                         </asp:TemplateField>
-
-                        <asp:TemplateField HeaderText="GreenRainCode" Visible="false">
-                            <ItemTemplate>
-                                <asp:Label ID="lblProd_GRC" runat="server" Text='<%# Eval("GRC") %>'></asp:Label>
                             </ItemTemplate>
 
                          </asp:TemplateField>
@@ -207,44 +222,72 @@
 
                          </asp:TemplateField>
 
-                        <asp:TemplateField HeaderText="Pack" Visible="false">
+                        <asp:TemplateField HeaderText="Product Code" Visible="false">
                             <ItemTemplate>
-                                <asp:Label ID="lblProd_pack" runat="server" Text='<%# Eval("pack") %>'></asp:Label>
+                                <asp:Label ID="lblProd_Code" runat="server" Text='<%# Eval("prodCode") %>'></asp:Label>
                             </ItemTemplate>
 
                         </asp:TemplateField>
 
-                        <asp:TemplateField HeaderText="UnitSize" Visible="false">
+                         <asp:TemplateField HeaderText="Product Selection" Visible="false">
                             <ItemTemplate>
-                                <asp:Label ID="lblProd_us" runat="server" Text='<%# Eval("US") %>'></asp:Label>
+                                <asp:Label ID="lblProd_sel" runat="server" Text='<%# Eval("prodSel") %>'></asp:Label>
                             </ItemTemplate>
 
                         </asp:TemplateField>
 
-                        <asp:TemplateField HeaderText="Product Selection" Visible="false">
+                        <asp:TemplateField HeaderText="Measuring Quantity" Visible="false">
                             <ItemTemplate>
-                                <asp:Label ID="lblProd_sel" runat="server" Text='<%# Eval("US") %>'></asp:Label>
+                                <asp:Label ID="lblProd_mQTY" runat="server" Text='<%# Eval("measQty") %>'></asp:Label>
                             </ItemTemplate>
 
                         </asp:TemplateField>
 
-                        <asp:TemplateField HeaderText="Product Threshold" Visible="false">
+                        <asp:TemplateField HeaderText="Measuring Type " Visible="false">
                             <ItemTemplate>
-                                <asp:Label ID="lblProd_tsh" runat="server" Text='<%# Eval("TSH") %>'></asp:Label>
+                                <asp:Label ID="lblProd_mType" runat="server" Text='<%# Eval("measType") %>'></asp:Label>
                             </ItemTemplate>
 
                         </asp:TemplateField>
 
-                        <asp:TemplateField HeaderText="UPC" Visible="false">
+                        <asp:TemplateField HeaderText="Line ID" Visible="false">
                             <ItemTemplate>
-                                <asp:Label ID="lblProd_upc" runat="server" Text='<%# Eval("upc") %>'></asp:Label>
+                                <asp:Label ID="lblProd_line" runat="server" Text='<%# Eval("line_ID") %>'></asp:Label>
                             </ItemTemplate>
 
                         </asp:TemplateField>
 
-                        <asp:TemplateField HeaderText="WUnit" Visible="false">
+                        <asp:TemplateField HeaderText="Quantity Unit" Visible="false">
                             <ItemTemplate>
-                                <asp:Label ID="lblProd_wunit" runat="server" Text='<%# Eval("wUnit") %>'></asp:Label>
+                                <asp:Label ID="lblProd_qUnit" runat="server" Text='<%# Eval("qUnit") %>'></asp:Label>
+                            </ItemTemplate>
+
+                        </asp:TemplateField>
+
+                        <asp:TemplateField HeaderText="Control" Visible="false">
+                            <ItemTemplate>
+                                <asp:Label ID="lblProd_con" runat="server" Text='<%# Eval("control") %>'></asp:Label>
+                            </ItemTemplate>
+
+                        </asp:TemplateField>
+
+                         <asp:TemplateField HeaderText="Thresh-Hold" Visible="false">
+                            <ItemTemplate>
+                                <asp:Label ID="lblProd_tsh" runat="server" Text='<%# Eval("ThreshHold") %>'></asp:Label>
+                            </ItemTemplate>
+
+                        </asp:TemplateField>
+
+                        <asp:TemplateField HeaderText="Bin Number" Visible="false">
+                            <ItemTemplate>
+                                <asp:Label ID="lblProd_bNum" runat="server" Text='<%# Eval("binNum") %>'></asp:Label>
+                            </ItemTemplate>
+
+                        </asp:TemplateField>
+                        
+                        <asp:TemplateField HeaderText="Exipry " Visible="false">
+                            <ItemTemplate>
+                                <asp:Label ID="lblProd_exp" runat="server" Text='<%# Eval("exp") %>'></asp:Label>
                             </ItemTemplate>
 
                         </asp:TemplateField>

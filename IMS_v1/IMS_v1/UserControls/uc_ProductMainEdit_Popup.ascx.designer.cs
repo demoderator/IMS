@@ -31,13 +31,22 @@ namespace IMS_v1.UserControls {
         protected global::System.Web.UI.WebControls.TextBox txtProductID;
         
         /// <summary>
-        /// ProdName control.
+        /// IDName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow ProdName;
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow IDName;
+        
+        /// <summary>
+        /// txtProdOrgID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtProdOrgID;
         
         /// <summary>
         /// txtProductName control.
@@ -49,76 +58,112 @@ namespace IMS_v1.UserControls {
         protected global::System.Web.UI.WebControls.TextBox txtProductName;
         
         /// <summary>
-        /// txtDescription control.
+        /// txtGName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescription;
+        protected global::System.Web.UI.WebControls.TextBox txtGName;
         
         /// <summary>
-        /// txtManufacturer control.
+        /// txtBrndName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtManufacturer;
+        protected global::System.Web.UI.WebControls.TextBox txtBrndName;
         
         /// <summary>
-        /// txtGreenRainCode control.
+        /// txtProdCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGreenRainCode;
+        protected global::System.Web.UI.WebControls.TextBox txtProdCode;
         
         /// <summary>
-        /// txtPack control.
+        /// txtProdType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPack;
+        protected global::System.Web.UI.WebControls.TextBox txtProdType;
         
         /// <summary>
-        /// txtUnitSize control.
+        /// SCPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUnitSize;
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow SCPrice;
         
         /// <summary>
-        /// txtWunit control.
+        /// txtCP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtWunit;
+        protected global::System.Web.UI.WebControls.TextBox txtCP;
         
         /// <summary>
-        /// txtProductType control.
+        /// txtSP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProductType;
+        protected global::System.Web.UI.WebControls.TextBox txtSP;
         
         /// <summary>
-        /// txtProductSelection control.
+        /// txtMeasQty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProductSelection;
+        protected global::System.Web.UI.WebControls.TextBox txtMeasQty;
+        
+        /// <summary>
+        /// txtMeasType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMeasType;
+        
+        /// <summary>
+        /// txtQUnit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtQUnit;
+        
+        /// <summary>
+        /// TxtDisc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtDisc;
+        
+        /// <summary>
+        /// TrExp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow TrExp;
         
         /// <summary>
         /// txtThreshold control.
@@ -130,22 +175,40 @@ namespace IMS_v1.UserControls {
         protected global::System.Web.UI.WebControls.TextBox txtThreshold;
         
         /// <summary>
-        /// txtUPC control.
+        /// TextExp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUPC;
+        protected global::System.Web.UI.WebControls.TextBox TextExp;
         
         /// <summary>
-        /// txtProdCode control.
+        /// Description control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProdCode;
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow Description;
+        
+        /// <summary>
+        /// txtDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDescription;
+        
+        /// <summary>
+        /// subCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow subCategory;
         
         /// <summary>
         /// drpcategory control.

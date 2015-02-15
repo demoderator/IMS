@@ -21,14 +21,17 @@
                     <asp:TemplateField HeaderText="DateExpired">
 
                         <ItemTemplate>
-                            <asp:Label ID="lblProd_DE" runat="server" Text='<%#Eval("ExpiryDate") %>'></asp:Label>
+                            <asp:Label ID="lblProd_DE" runat="server" Text='<%#Eval("ExpiryDate")==DBNull.Value? "":Convert.ToDateTime( Eval("ExpiryDate")).ToString("MMM dd ,yyyy") %>'></asp:Label>
                         </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtEXP" runat="server" Text='<%#Eval("ExpiryDate") %>'></asp:TextBox>
+                        </EditItemTemplate>
                     </asp:TemplateField>
                     
                     <asp:TemplateField HeaderText="SalePrice">
 
                         <ItemTemplate>
-                              <asp:Label ID="lblProd_SP" runat="server" Text='<%#Eval("salePrice") %>'></asp:Label>
+                              <asp:Label ID="lblProd_SP" runat="server" Text='<%#Eval("salePrice")==DBNull.Value?0:float.Parse( Eval("salePrice").ToString()) %>'></asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
                             <asp:TextBox ID="txtSP" runat="server" Text='<%#Eval("salePrice") %>'></asp:TextBox>
@@ -37,24 +40,14 @@
                     <asp:TemplateField HeaderText="CostPrice">
 
                         <ItemTemplate>
-                            <asp:Label ID="lblProd_CP" runat="server" Text='<%#Eval("costPrice") %>'></asp:Label>
+                            <asp:Label ID="lblProd_CP" runat="server" Text='<%#Eval("costPrice")==DBNull.Value?0:float.Parse( Eval("costPrice").ToString()) %>'></asp:Label>
                         </ItemTemplate>
                          <EditItemTemplate>
                             <asp:TextBox ID="txtCP" runat="server" Text='<%#Eval("costPrice") %>'></asp:TextBox>
                         </EditItemTemplate>
                     </asp:TemplateField>
                     
-                    <asp:TemplateField HeaderText="Discount">
-
-                        <ItemTemplate>
-                            <asp:Label ID="lblProd_Discount" runat="server" Text='<%#Eval("discount") %>'></asp:Label>
-                        </ItemTemplate>
-                         <EditItemTemplate>
-                            <asp:TextBox ID="txtDiscount" runat="server" Text='<%#Eval("discount") %>'></asp:TextBox>
-                        </EditItemTemplate>
-                    </asp:TemplateField>
-
-                    <asp:TemplateField HeaderText="id" Visible="false">
+                   <asp:TemplateField HeaderText="id" Visible="false">
 
                         <ItemTemplate>
                             <asp:Label ID="lblProd_Id" runat="server" Text='<%#Eval("id") %>'></asp:Label>

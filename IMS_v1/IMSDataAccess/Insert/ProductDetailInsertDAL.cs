@@ -42,16 +42,12 @@ namespace IMSDataAccess.Insert
         public void Build()
         {
             SqlParameter[] parameters = {
-                                            new SqlParameter("@p_QuantityUnit", ProductDetail.Quantity), 
-                                            new SqlParameter("@p_Discount", ProductDetail.Discount), 
+                                            
                                             new SqlParameter("@p_SalePrice", ProductDetail.SalePrice), 
                                             new SqlParameter("@p_DateExpired", ProductDetail.DateExpired), 
                                             new SqlParameter("@p_ProductID ", ProductDetail.ProductMasterID), 
                                             new SqlParameter("@p_CostPrice", ProductDetail.CostPrice), 
-
-                                            new SqlParameter("@p_Status", ProductDetail.Status), 
-                                            new SqlParameter("@p_DateCreated ", ProductDetail.DateCreated), 
-                                            new SqlParameter("@p_DateUpdated", ProductDetail.DateUpdated) 
+                                            new SqlParameter("@p_Status", ProductDetail.Status)
                                         
                                         
                                         };

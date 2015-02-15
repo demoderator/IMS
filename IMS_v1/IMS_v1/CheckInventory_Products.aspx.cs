@@ -22,7 +22,7 @@ namespace IMS_v1
                 {
                     // drpSerchUser.Items.Insert(0, new ListItem("Select Product", ""));
 
-                    BindGrid();
+                    BindGrid(false);
                     BindDrpSearch();
                 }
                 catch (Exception exp) { }
@@ -44,7 +44,7 @@ namespace IMS_v1
                 ProdDisplayGrid.DataSource = ds;
                 ProdDisplayGrid.DataBind();
             }
-            BindGrid();
+            BindGrid(false);
         }
         public void BindDrpSearch()
         {
@@ -56,11 +56,11 @@ namespace IMS_v1
 
             drpSerchUser.DataBind();
         }
-        private void BindGrid()
+        private void BindGrid(bool drpSelected)
         {
 
 
-            if (drpSerchUser.SelectedValue!="")
+            if (drpSerchUser.SelectedValue!="" && drpSelected)
             {
                 StockDetails objdrp = new StockDetails();
                 objdrp.ProductID = Convert.ToInt32(drpSerchUser.SelectedValue);
@@ -140,7 +140,7 @@ namespace IMS_v1
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            BindGrid();
+            BindGrid(true);
         }
 
 

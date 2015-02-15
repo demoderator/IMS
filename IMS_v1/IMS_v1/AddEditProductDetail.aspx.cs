@@ -64,19 +64,19 @@ namespace IMS_v1
         {
             try
             {
-                ProductDetail obj = new ProductDetail();
-                obj.ProductMasterID = Convert.ToInt32(drpProductMaster.SelectedValue);
-                obj.Quantity = float.Parse(txtQuantityUnit.Text);
-                obj.CostPrice = float.Parse(txtCostPrice.Text);
-                obj.SalePrice = float.Parse(txtSalePrice.Text);
-                obj.Discount = (txtDiscount.Text);
-                obj.Status = txtStatus.Text;
-                obj.DateCreated = DateTime.Now;
-                obj.DateUpdated = DateTime.Now;
-                obj.DateExpired = DateTime.Now.AddDays(1000);
+                //ProductDetail obj = new ProductDetail();
+                //obj.ProductMasterID = Convert.ToInt32(drpProductMaster.SelectedValue);
+                //obj.Quantity = float.Parse(txtQuantityUnit.Text);
+                //obj.CostPrice = float.Parse(txtCostPrice.Text);
+                //obj.SalePrice = float.Parse(txtSalePrice.Text);
+                //obj.Discount = (txtDiscount.Text);
+                //obj.Status = txtStatus.Text;
+                //obj.DateCreated = DateTime.Now;
+                //obj.DateUpdated = DateTime.Now;
+                //obj.DateExpired = DateTime.Now.AddDays(1000);
 
-                ProductDetailBLL addobj = new ProductDetailBLL();
-                addobj.Add(obj);
+                //ProductDetailBLL addobj = new ProductDetailBLL();
+                //addobj.Add(obj);
 
             }
             catch (Exception)
@@ -131,20 +131,20 @@ namespace IMS_v1
         {
             try
             {
-                ProductDetail obj = new ProductDetail();
-                obj.ProductDetailID = Convert.ToInt32(Request.QueryString["detaiiId"]);
-                obj.ProductMasterID = Convert.ToInt32(drpProductMaster.SelectedValue);
-                obj.Quantity = float.Parse(txtQuantityUnit.Text);
-                obj.CostPrice = float.Parse(txtCostPrice.Text);
-                obj.SalePrice = float.Parse(txtSalePrice.Text);
-                obj.Discount = (txtDiscount.Text);
-                obj.Status = txtStatus.Text;
-                obj.DateCreated = DateTime.Now; //DateCreated.Date;
-                obj.DateUpdated = DateTime.Now;// DateUpdated.Date;
-                obj.DateExpired = DateTime.Now.AddDays(1000);//DateExpired.Date;
+                //ProductDetail obj = new ProductDetail();
+                //obj.ProductDetailID = Convert.ToInt32(Request.QueryString["detaiiId"]);
+                //obj.ProductMasterID = Convert.ToInt32(drpProductMaster.SelectedValue);
+                //obj.Quantity = float.Parse(txtQuantityUnit.Text);
+                //obj.CostPrice = float.Parse(txtCostPrice.Text);
+                //obj.SalePrice = float.Parse(txtSalePrice.Text);
+                //obj.Discount = (txtDiscount.Text);
+                //obj.Status = txtStatus.Text;
+                //obj.DateCreated = DateTime.Now; //DateCreated.Date;
+                //obj.DateUpdated = DateTime.Now;// DateUpdated.Date;
+                //obj.DateExpired = DateTime.Now.AddDays(1000);//DateExpired.Date;
 
-                ProductDetailBLL updobj = new ProductDetailBLL();
-                updobj.Update(obj);
+                //ProductDetailBLL updobj = new ProductDetailBLL();
+                //updobj.Update(obj);
             }
             catch (Exception)
             {
